@@ -1,0 +1,28 @@
+[
+    {
+        "id": "about-us-page-section",
+        "section_title": {
+            "subTitle": "About Us.",
+            "title": "<span>Givest</span> is The Non Profitable Organization."
+        },
+        "image1": "../images/about/3.jpg",
+        "content1": "Lorem Ipsum simply dummy text the printing and typesettin industry. Lorem Ipsum has been the industry's standard dumm text ever since the unknown.",
+        "content2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when and unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "mission": [
+            {
+                "id": "mission",
+                "VerientClassName": "bg-color1",
+                "title": "Mission",
+                "text1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since 1500 when unknown printer took a galley of type and scram bled it to make a type specimen book.",
+                "text2": "Lorem Ipsum simply dummy text the printing &amp; typesetting industry been the industry standard dummy make type specimen book."
+            },
+            {
+                "id": "vission",
+                "VerientClassName": "bg-color2",
+                "title": "Vission",
+                "text1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since 1500 when unknown printer took a galley of type and scram bled it to make a type specimen book.",
+                "text2": "Lorem Ipsum simply dummy text the printing &amp; typesetting industry been the industry standard dummy make type specimen book."
+            }
+        ]
+    }
+]

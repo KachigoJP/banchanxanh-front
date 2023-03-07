@@ -1,0 +1,62 @@
+[
+    {
+        "text": "Home",
+        "link": "/",
+        "isSubmenu": false
+    },
+    {
+        "text": "About",
+        "link": "/about-us",
+        "isSubmenu": false
+    },
+    {
+        "text": "Causes",
+        "link": "/causes",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "Causes",
+                "link": "/causes"
+            },
+            {
+                "text": "Causes Details",
+                "link": "/causes/children-education-needs-for-change-the-world"
+            }
+        ]
+    },
+    {
+        "text": "Blog",
+        "link": "/blog",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "Blog Grid",
+                "link": "/blog"
+            },
+            {
+                "text": "Blog Single",
+                "link": "/needs-for-change-the-world"
+            }
+        ]
+    },
+    {
+        "text": "Pages",
+        "link": "/volunteer",
+        "isSubmenu": true,
+        "submenu": [
+            {
+                "text": "Event Details",
+                "link": "/events/need-school-for-mozambique-children"
+            },
+            {
+                "text": "Volunteer",
+                "link": "/volunteer"
+            }
+        ]
+    },
+    {
+        "text": "Contact Us",
+        "link": "/contact-us",
+        "isSubmenu": false
+    }
+]

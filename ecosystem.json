@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "Ban Chan Xanh",
+      "script": "yarn start",
+      "merge_logs": true
+    }
+  ]
+}

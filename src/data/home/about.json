@@ -1,0 +1,15 @@
+[
+    {
+        "section_title": {
+            "subTitle": "About Us.",
+            "title": "<span>Givest</span> is The Non Profitable Organization."
+        },
+        "image1": "../images/about/1.jpg",
+        "image2": "../images/about/2.jpg",
+        "content1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry standard.",
+        "content2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.",
+        "content3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.",
+        "listText1": "Need your simple help <br />for save children.",
+        "listText2": "Need your simple help <br />for save children."
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "thumbImg": "../../data/images/events/d1.jpg",
+        "path": "/",
+        "eventSubject": "Education",
+        "title": "Need School For Mozambique Children.",
+        "eventDate": "22 Jan 2021",
+        "eventTime": "10 AM - 02 PM",
+        "eventAddress": "Helvetica Street, Jordan",
+        "eventSpeaker": "Marinda Roderick",
+        "detailsText1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages.",
+        "detailsText2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185374!2d144.95373631590425!3d-37.81720974201477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2ssg!4v1607294780661!5m2!1sen!2ssg"
+    },
+    {
+        "thumbImg": "../../data/images/events/d2.jpg",
+        "path": "/",
+        "eventSubject": "Education",
+        "title": "Save The Children Helps Girls And Boys.",
+        "eventDate": "25 Fab 2021",
+        "eventTime": "10 AM - 02 PM",
+        "eventAddress": "Helvetica Street, Jordan",
+        "eventSpeaker": "Marinda Roderick",
+        "detailsText1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages.",
+        "detailsText2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185374!2d144.95373631590425!3d-37.81720974201477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2ssg!4v1607294780661!5m2!1sen!2ssg"
+    },
+    {
+        "thumbImg": "../../data/images/events/d3.jpg",
+        "path": "/",
+        "eventSubject": "Education",
+        "title": "Need Your Big Hand For Change The World.",
+        "eventDate": "11 March 2021",
+        "eventTime": "10 AM - 02 PM",
+        "eventAddress": "Helvetica Street, Jordan",
+        "eventSpeaker": "Marinda Roderick",
+        "detailsText1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages.",
+        "detailsText2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185374!2d144.95373631590425!3d-37.81720974201477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2ssg!4v1607294780661!5m2!1sen!2ssg"
+    }
+]
