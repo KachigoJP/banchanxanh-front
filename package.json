@@ -1,5 +1,5 @@
 {
-  "name": "tes",
+  "name": "banchanxanh",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,13 +18,17 @@
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "next": "13.2.3",
+    "parallax-js": "^3.1.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-emotion": "^10.0.0",
+    "react-helmet": "^6.1.0",
     "styled-system": "^5.1.5",
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@types/parallax-js": "^3.1.0",
     "@types/react-helmet": "^6.1.6",
     "@types/styled-system": "^5.1.16",
     "@types/styled-system__theme-get": "^5.0.2"
