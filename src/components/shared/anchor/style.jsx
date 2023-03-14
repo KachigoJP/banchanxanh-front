@@ -1,5 +1,5 @@
 import styled from "@theme/utils";
-import Link from "next/link";
+import { Link } from "gatsby";
 
 export const LinkWrapper = styled(Link)``;
 

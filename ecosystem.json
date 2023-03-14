@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "Ban Chan Xanh",
-      "script": "yarn start",
+      "script": "yarn server",
       "merge_logs": true
     }
   ]
