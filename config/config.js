@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
 module.exports = {
-    title: "Givest",
-    titleTemplate: "Givest – Non Profit Gatsby Template",
+    title: "Ban Chan Xanh",
+    titleTemplate: "Ban Chan Xanh – Non Profit Website",
     description:
         "Non Profit Best Gatsby and react Templates are available on this website.",
     author: "",
     twitterUsername: "@Givest",
     keywords: ["bootstrap", "html", "react", "vue"],
     image: "",
-    siteUrl: "https://givest.com",
+    siteUrl: "https://banchanxanh.com",
     pathPrefix: "/",
     localUrl: "http://localhost:8000",
     canonical: "",
@@ -19,7 +19,7 @@ module.exports = {
     },
     siteLanguage: "en",
     favicon: "src/assets/images/favicon.png", // Used for manifest favicon generation
-    shortName: "Givest Gatsby", // shortname for manifest. *Must* be shorter than 12 characters
+    shortName: "Ban Chan Xanh", // shortname for manifest. *Must* be shorter than 12 characters
     themeColor: "#5E60E7",
     backgroundColor: "#fff",
 };

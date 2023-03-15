@@ -1,0 +1,16 @@
+
+version: '3'
+
+services:
+  banchanxanh:
+    image: banchanxanh
+    container_name: banchanxanh
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: "dev"
+    ports:
+      - 443:443
+    volumes:
+      - ./ssl:/etc/ssl/

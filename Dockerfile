@@ -1,14 +1,18 @@
-FROM node:18 as builder
+FROM node:16.17.0 as builder
+
+WORKDIR /app
+
+COPY . /app
+
+RUN yarn install
+RUN yarn build
+
+FROM nginx:1.23.3 as final
 
 # Create app directory
 WORKDIR /app
-COPY package.json .
-COPY yarn.lock .
-RUN yarn global add serve pm2
-RUN yarn install
-COPY . .
-RUN yarn build
 
-EXPOSE 5000
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/public /usr/share/nginx/html
 
-ENTRYPOINT [ "pm2-runtime", "start", "ecosystem.json" ]
+EXPOSE 80

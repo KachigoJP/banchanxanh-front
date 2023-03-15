@@ -1,9 +1,0 @@
-{
-  "apps": [
-    {
-      "name": "Ban Chan Xanh",
-      "script": "yarn server",
-      "merge_logs": true
-    }
-  ]
-}
