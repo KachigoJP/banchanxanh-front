@@ -7,6 +7,6 @@ COPY . /app
 RUN yarn install
 RUN yarn build
 
-EXPOSE 80
+EXPOSE 8080
 
-CMD [ "npx", "serve", "-s", "public", "-l", "80" ]
+CMD npm run start
