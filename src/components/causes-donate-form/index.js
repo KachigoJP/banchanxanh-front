@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Col, Row } from "react-bootstrap";
-import Button from "../../components/ui/button";
 import { StaticImage } from "gatsby-plugin-image";
+import { useTranslation } from "react-i18next";
+import Button from "@components/ui/button";
 import {
     DonationFormArea,
     SectionTitle,
@@ -23,11 +24,12 @@ import {
 } from "./style";
 
 const CausesDonateForm = () => {
+    const { t } = useTranslation();
     return (
         <DonationFormArea>
             <SectionTitle>
                 <Subtitle>Make A Donation</Subtitle>
-                <Title>Donate Now</Title>
+                <Title>{t("Donate Now")}</Title>
                 <StaticImage
                     className="line-shape"
                     src="../../data/images/shape/line-t3.png"
@@ -144,7 +146,7 @@ const CausesDonateForm = () => {
                 </PaymentPersonalInfo>
                 <ButtonWrap>
                     <Button path="#/" color="gradient">
-                        Donate Now
+                        {t("Donate Now")}
                         <StaticImage
                             className="icon icon-img"
                             src="../../data/images/icons/arrow-line-right2.png"

@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Col, Container, Row } from "react-bootstrap";
-import SectionTitle from "@components/title";
-import Button from "@components/ui/button";
 import { graphql, useStaticQuery } from "gatsby";
+import { useTranslation } from "react-i18next";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import Tilt from "react-parallax-tilt";
+
+// Source
+import SectionTitle from "@components/title";
+import Button from "@components/ui/button";
 import {
     SectionArea,
     LayerStyle,
@@ -18,6 +21,7 @@ import {
 } from "./style";
 
 const AboutArea = () => {
+    const { t } = useTranslation();
     const aboutSectonQery = useStaticQuery(graphql`
         query AboutSectonQuery {
             aboutJson {
@@ -159,7 +163,7 @@ const AboutArea = () => {
                                 </ListLi>
                             </LlistIconStyle>
                             <Button path="/donate" color="gradient">
-                                Donate Now
+                                {t("Donate Now")}
                             </Button>
                         </AboutContent>
                     </Col>

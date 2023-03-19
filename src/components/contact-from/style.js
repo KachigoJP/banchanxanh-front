@@ -1,4 +1,6 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
+
 export const ContactFormArea = styled.div`
     padding: 65px 30px 70px;
     margin-bottom: 90px;
@@ -32,7 +34,7 @@ export const SectionTitle = styled.form`
     margin-bottom: 54px;
 `;
 export const Subtitle = styled.h5`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     display: inline-block;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
@@ -42,7 +44,7 @@ export const Subtitle = styled.h5`
     padding-left: 64px;
     position: relative;
     &:after {
-        background-color: #fc6539;
+        background-color: ${theme.colors.primary};
         content: "";
         height: 3px;
         left: 0;

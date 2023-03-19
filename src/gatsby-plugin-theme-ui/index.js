@@ -1,6 +1,6 @@
 const theme = {
     colors: {
-        primary: "#fc6539",
+        primary: "#6bbd46",
         text: "#333",
         heading: "#414141",
         border: "#E0E0E0",
@@ -24,7 +24,7 @@ const theme = {
         alabaster: "#fafafa",
         mystic: "#e1e8ed",
         facebook: "#3b5998",
-        gradient: "linear-gradient(to right, #FEA444 0%, #FC6539 100%)",
+        gradient: "linear-gradient(to right, #abcd3c 0%, #6bbd46 100%)",
     },
     fontSize: {
         body: "16px",
@@ -37,7 +37,7 @@ const theme = {
     },
     fonts: {
         body: `'Roboto', sans-serif`,
-        heading: `'Yeseva One'`,
+        heading: `'Georgia', sans-serif`,
     },
     fontWeights: {
         body: 400,

@@ -4,6 +4,7 @@ import HeartIcon from "@assets/images/svg/heart.svg";
 import { Col, Container, Row } from "react-bootstrap";
 import Logo from "@components/logo";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import { useTranslation } from "react-i18next";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import {
     FooterWrap,
@@ -25,6 +26,7 @@ import {
 } from "./style";
 
 const Footer = () => {
+    const { t } = useTranslation();
     const footerQuery = useStaticQuery(graphql`
         query FooterQuery {
             footerJson {
@@ -81,7 +83,7 @@ const Footer = () => {
                                         {footerAbout}
                                     </AboutWidgetText>
                                     <WidgetTotalRaised>
-                                        <RaisedTitle>Total Raised:</RaisedTitle>
+                                        <RaisedTitle>{t("Total Raised")}:</RaisedTitle>
                                         <TaisedAmount>
                                             {raisedAmount}
                                         </TaisedAmount>
@@ -185,14 +187,14 @@ const Footer = () => {
                 <Row>
                     <Col sx={{ textAlign: "center" }}>
                         <CopyrightText>
-                            &copy; {new Date().getFullYear()} Givest. Made with{" "}
+                            &copy; {new Date().getFullYear()} Ban Chan Xanh. Made with{" "}
                             <HeartIcon /> by{" "}
                             <a
                                 href="https://hasthemes.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                HasThemes
+                                Chien Kieu
                             </a>
                         </CopyrightText>
                     </Col>

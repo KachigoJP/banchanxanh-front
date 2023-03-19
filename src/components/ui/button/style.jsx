@@ -1,4 +1,5 @@
 import styled, { themeGet, device, css } from "@theme/utils";
+import theme from "@theme";
 import { Link } from "gatsby";
 
 export const createStyles = (theme, color, size, shape, variant) => css`

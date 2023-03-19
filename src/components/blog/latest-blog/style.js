@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const PostItemWrap = styled.div`
     margin-bottom: 150px;
@@ -32,7 +33,7 @@ export const Thumb = styled.div`
 
 export const MetaDate = styled.div`
     align-items: center;
-    background-color: #fc6539;
+    background-color: ${theme.colors.primary};
     display: flex;
     height: 92px;
     justify-content: center;
@@ -195,7 +196,7 @@ export const MetaBox = styled.div`
     margin-bottom: 10px;
     .post-category {
         background-color: #e6e6e6;
-        color: #fc6539;
+        color: ${theme.colors.primary};
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1.2px;

@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const BlogDetailsArea = styled.section`
     padding: 70px 0 280px;
@@ -67,7 +68,7 @@ export const InfoItemTitle = styled.span`
     line-height: 1;
 `;
 export const Amount = styled.span`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     font-size: 16px;
     background: #fea444;
     background: ${themeGet("colors.gradient")};
@@ -84,7 +85,7 @@ export const SingleDetailsText = styled.p``;
 
 export const DocumentItem = styled.a`
     align-items: center;
-    background-color: #fc6539;
+    background-color: ${theme.colors.primary};
     display: flex;
     height: 75px;
     justify-content: space-between;

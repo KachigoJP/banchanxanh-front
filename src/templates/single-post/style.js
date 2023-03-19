@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const BlogDetailsArea = styled.section`
     padding: 70px 0 280px;
@@ -34,7 +35,7 @@ export const MetaBox = styled.div`
     justify-content: start;
     margin-bottom: 30px;
     .post-category {
-        background-color: #fc6539;
+        background-color: ${theme.colors.primary};
         color: #fff;
         display: inline-block;
         font-size: 13px;
@@ -132,7 +133,7 @@ export const PostSocialItems = styled.div`
         &:hover {
             color: #fff;
             background: #fea444;
-            background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+            background: ${theme.colors.gradient};
         }
     }
 `;
@@ -145,7 +146,7 @@ export const PostCategoryItems = styled.div`
         margin-right: 1px;
     }
     a {
-        color: #fc6539;
+        color: ${theme.colors.primary};
         margin-left: 3px;
         &::after {
             contain: ","

@@ -1,9 +1,11 @@
 import { Link } from "gatsby";
 import React from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { HeaderNavigationArea, Navbar, Navitem } from "./style";
 
 const MainMenu = ({ allmenuData }) => {
+    const { t } = useTranslation();
     const menuarr = allmenuData;
     return (
         <HeaderNavigationArea>
@@ -17,7 +19,7 @@ const MainMenu = ({ allmenuData }) => {
                             className={`${hasSubmenu ? "has-submenu" : ""}`}
                         >
                             <Link activeClassName="active" to={menu.node.link}>
-                                {menu.node.text}
+                                {t(menu.node.text)}
                             </Link>
                             {submenu && (
                                 <ul className="submenu-nav">
@@ -25,7 +27,7 @@ const MainMenu = ({ allmenuData }) => {
                                         return (
                                             <Navitem key={`submenu${i}`}>
                                                 <Link to={submenu.link}>
-                                                    {submenu.text}
+                                                    {t(submenu.text)}
                                                 </Link>
                                             </Navitem>
                                         );

@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const SectionArea = styled.section`
     padding: 78px 0 157px;
@@ -92,7 +93,7 @@ export const Thumb = styled.div`
             width: 100px;
             z-index: 1;
             background: #fea444;
-            background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+            background: ${theme.colors.gradient};
         }
         .wave-btn {
             cursor: pointer;
@@ -117,7 +118,7 @@ export const Thumb = styled.div`
             &:nth-of-type(3) {
                 animation: wave-button 4s infinite 1s linear backwards;
                 background: #fea444;
-                background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+                background: ${theme.colors.gradient};
             }
         }
 

@@ -1,4 +1,6 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
+
 export const SectionArea = styled.section``;
 export const VolunteerFormArea = styled.div`
     background-color: #f7f7f7;
@@ -11,7 +13,7 @@ export const VolunteerFormArea = styled.div`
     }
     .section-title {
         .subtitle {
-            color: #fc6539;
+            color: ${theme.colors.primary};
             display: inline-block;
             font-family: "Roboto", sans-serif;
             font-size: 18px;
@@ -63,7 +65,7 @@ export const SectionTitle = styled.div`
 `;
 
 export const SubTitle = styled.h5`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     display: inline-block;
     font-family: "Roboto", sans-serif;
     font-size: 18px;

@@ -1,4 +1,5 @@
 import styled, { device, themeGet } from "@theme/utils";
+import theme from "@theme";
 
 export const FooterWrap = styled.footer`
     background-color: #001d23;
@@ -76,7 +77,7 @@ export const TaisedAmount = styled.div`
     }
     line-height: 1;
     background: #fea444;
-    background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+    background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
@@ -89,7 +90,7 @@ export const WidgetTitle = styled.h4`
     margin-bottom: 34px;
     margin-top: 17px;
     &:before {
-        background-color: #fc6539;
+        background-color: ${theme.colors.primary};
         content: "";
         height: 4px;
         left: 0;
@@ -126,7 +127,7 @@ export const GalleryItem = styled.div`
         top: 0;
         width: 100%;
         background: #fea444;
-        background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+        background: ${theme.colors.gradient};
         transition: 0.3s;
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;

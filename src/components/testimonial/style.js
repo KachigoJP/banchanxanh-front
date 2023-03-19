@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const ClientThumbWrap = styled.div`
     margin-bottom: 39px;
@@ -19,14 +20,14 @@ export const ClientThumb = styled.div`
 
 export const QuoteIcon = styled.div`
     font-size: 280px;
-    font-family: "Yeseva One", cursive;
+    font-family: "Roboto", sans-serif;
     left: 98px;
     line-height: 212px;
     position: absolute;
     top: 24px;
     z-index: -1;
     background: #fea444;
-    background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+    background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
@@ -55,7 +56,7 @@ export const ClientName = styled.h4`
     margin-bottom: 29px;
 `;
 export const ClientDesignation = styled.h6`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     font-family: ${themeGet("fonts.heading")};
     font-size: 14px;
     font-weight: 700;

@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const ServicesDetailsArea = styled.section`
     padding: 70px 0 280px;
@@ -30,7 +31,7 @@ export const ServicesTitle = styled.h4`
 
 export const DocumentItem = styled.a`
     align-items: center;
-    background-color: #fc6539;
+    background-color: ${theme.colors.primary};
     display: flex;
     height: 75px;
     justify-content: space-between;

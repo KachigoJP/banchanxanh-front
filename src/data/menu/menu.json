@@ -25,21 +25,6 @@
         ]
     },
     {
-        "text": "Blog",
-        "link": "/blog",
-        "isSubmenu": true,
-        "submenu": [
-            {
-                "text": "Blog Grid",
-                "link": "/blog"
-            },
-            {
-                "text": "Blog Single",
-                "link": "/needs-for-change-the-world"
-            }
-        ]
-    },
-    {
         "text": "Pages",
         "link": "/volunteer",
         "isSubmenu": true,

@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const WidgetCausesItem = styled.div`
     margin-bottom: -10px;
@@ -46,7 +47,7 @@ export const InfoItemTitle = styled.span`
     line-height: 1;
 `;
 export const Amount = styled.span`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     font-size: 16px;
     background: #fea444;
     background: ${themeGet("colors.gradient")};
@@ -69,9 +70,9 @@ export const ProgressItem = styled.div`
             white-space: nowrap;
             border-radius: 0;
             background: #fea444;
-            background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+            background: ${theme.colors.gradient};
             &::after {
-                background-color: #fc6539;
+                background-color: ${theme.colors.primary};
                 border-radius: 50%;
                 content: "";
                 height: 12px;

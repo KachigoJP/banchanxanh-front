@@ -5,6 +5,7 @@ import { GlobalCSS } from "@assets/css/style";
 import "@assets/css/fonts.css";
 import "@assets/css/icofont.css";
 import "@assets/css/bootstrap.css";
+import "@lang";
 import Header from "./header";
 import Footer from "./footer";
 

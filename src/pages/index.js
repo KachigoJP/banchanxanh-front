@@ -23,10 +23,10 @@ const IndexPage = () => {
             <CausesArea />
             <DonateArea />
             <FunfactArea />
-            <EventArea />
-            <TestimonialArea />
-            <LatestBlog />
-            <SponsorsArea />
+            {/* <EventArea />
+            <TestimonialArea /> */}
+            {/* <LatestBlog /> */}
+            {/* <SponsorsArea /> */}
         </Layout>
     );
 };

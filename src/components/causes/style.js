@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const CausesItemWrap = styled.div`
     margin-bottom: 30px;
@@ -63,7 +64,7 @@ export const InfoItemTitle = styled.span`
     line-height: 1;
 `;
 export const Amount = styled.span`
-    color: #fc6539;
+    color: ${theme.colors.primary};
     font-size: 16px;
     background: #fea444;
     background: ${themeGet("colors.gradient")};

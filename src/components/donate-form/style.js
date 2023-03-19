@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const DonateFormArea = styled.div`
     position: relative;
@@ -51,7 +52,7 @@ export const DonateAmount = styled.div`
         min-width: 100%;
         margin-right: 0;
         &:hover {
-            border: 2px solid #fc6539;
+            border: 2px solid ${theme.colors.primary};
             cursor: pointer;
         }
         ${device.small} {

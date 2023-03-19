@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Button from "@components/ui/button";
+import { useTranslation } from "react-i18next";
 import { DonateFormArea, DonateAmountInfo, DonateAmount } from "./style";
 
 const DonateForm = () => {
+    const { t } = useTranslation();
     return (
         <DonateFormArea>
             <form action="#">
@@ -24,7 +26,8 @@ const DonateForm = () => {
                 </DonateAmountInfo>
                 <div className="btn-wrp" sx={{ display: "flex", mb: "30px" }}>
                     <Button path="#!" color="gradient" sx={{ color: "#fff" }}>
-                        Donate Now <i className="flaticon-right-arrow"></i>
+                        {t("Donate Now")}{" "}
+                        <i className="flaticon-right-arrow"></i>
                     </Button>
                     <Button
                         path="#!"

@@ -11,6 +11,6 @@ services:
       args:
         NODE_ENV: "dev"
     ports:
-      - 443:443
+      - 8080:8080
     volumes:
       - ./ssl:/etc/ssl/

@@ -1,4 +1,5 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const EventDetailsArea = styled.section`
     padding: 70px 0 280px;
@@ -74,7 +75,7 @@ export const EventItemTitle = styled.h6`
     font-size: 16px;
     margin-bottom: 0;
     background: #fea444;
-    background: linear-gradient(to right, #fea444 0%, #fc6539 100%);
+    background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.1s;
@@ -97,7 +98,7 @@ export const EventCategoryPost = styled.div`
     }
 `;
 export const EventCategory = styled.div`
-    background-color: #fc6539;
+    background-color: ${theme.colors.primary};
     color: #fff;
     display: inline-block;
     font-size: 13px;

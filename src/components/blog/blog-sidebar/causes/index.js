@@ -1,7 +1,8 @@
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { ProgressBar } from "react-bootstrap";
-import Button from "../../../../components/ui/button";
+import { useTranslation } from "react-i18next";
+import Button from "@components/ui/button";
 import {
     WidgetCausesItem,
     Thumb,
@@ -17,6 +18,7 @@ import {
 } from "./style";
 
 const UrgentCauses = () => {
+    const { t } = useTranslation();
     return (
         <WidgetCausesItem>
             <Thumb>
@@ -64,7 +66,7 @@ const UrgentCauses = () => {
                         </DonateAmount>
                     </AmountInfo>
                     <Button color="gradient" path="#">
-                        <span>Donate Now</span>
+                        <span>{t("Donate Now")}</span>
                     </Button>
                 </form>
             </CauseContentBox>

@@ -3,9 +3,11 @@ import { jsx } from "theme-ui";
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useEffect, useRef } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Button from "@components/ui/button";
 import Parallax from "parallax-js";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useTranslation } from "react-i18next";
+
+import Button from "@components/ui/button";
 import {
     HomeSliderItem,
     Section,
@@ -19,6 +21,7 @@ import {
 } from "./style";
 
 const Hero = () => {
+    const { t } = useTranslation();
     const heroSlider = useStaticQuery(graphql`
         query HeroSlider {
             heroJson {
@@ -99,7 +102,7 @@ const Hero = () => {
                                     sx={{ display: "flex" }}
                                 >
                                     <Button path="/causes" color="gradient">
-                                        All Causes{" "}
+                                        {t("Learn More")}
                                         <i className="flaticon-right-arrow"></i>
                                     </Button>
                                     <Button
@@ -107,7 +110,7 @@ const Hero = () => {
                                         variant="outlined"
                                         sx={{ ml: "10px" }}
                                     >
-                                        Donate Now{" "}
+                                        {t("Donate Now")}
                                         <i className="flaticon-right-arrow"></i>
                                     </Button>
                                 </div>
@@ -172,7 +175,7 @@ const Hero = () => {
                                             alt="Image-Givest"
                                         />
                                         <h5 className="donate-title">
-                                            Total Raised
+                                            {t("Total Raised")}
                                         </h5>
                                     </DonateContent>
                                 </DonateCircleWrap>

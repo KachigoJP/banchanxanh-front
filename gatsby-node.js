@@ -20,6 +20,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 "@constants": path.resolve(__dirname, "./src/constants"),
                 "@hooks": path.resolve(__dirname, "./src/hooks"),
                 "@data": path.resolve(__dirname, "./src/data"),
+                "@lang": path.resolve(__dirname, "./src/i18n"),
             },
         },
     });

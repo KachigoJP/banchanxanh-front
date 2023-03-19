@@ -2,8 +2,9 @@
 import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import Button from "@components/ui/button";
+import { useTranslation } from "react-i18next";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Button from "@components/ui/button";
 import {
     CausesItemWrap,
     Thumb,
@@ -27,6 +28,7 @@ const CausesItem = ({
     adminImage,
     slug,
 }) => {
+    const { t } = useTranslation();
     const Thumbimage = getImage(image);
     const adminImg = getImage(adminImage);
     const donateInfoData = donateInfo;
@@ -72,7 +74,7 @@ const CausesItem = ({
                     color="light"
                     sx={{ color: "#FEA444", fontWeight: "400" }}
                 >
-                    Donate Now{" "}
+                    {t("Donate Now")}
                     <i
                         sx={{ ml: "8px", fontSize: "12px !important" }}
                         className="flaticon-right-arrow"
