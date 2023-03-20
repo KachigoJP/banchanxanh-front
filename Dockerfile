@@ -1,4 +1,4 @@
-FROM node:16.17.0
+FROM node:16.17.0 as builder
 
 WORKDIR /app
 # Copies only package.json and yarn.lock before running yarn install. This enables better caching, as the yarn install step will only be re-run if these files have changed.
@@ -11,12 +11,11 @@ COPY . .
 
 RUN yarn build
 
-EXPOSE 8080
-
-# Create app directory
-WORKDIR /app
+FROM nginx:1.21-alpine
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/public /usr/share/nginx/html
-
+ENV PORT 8080
 EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
+
