@@ -11,3 +11,5 @@ steps:
     args: ['run', 'deploy', 'banchanxanh-hp', '--image', 'gcr.io/language-moress/banchanxanh-hp', '--region', 'asia-northeast1', '--platform', 'managed']
 images:
   - gcr.io/language-moress/banchanxanh-hp
+options:
+  machineType: 'E2_HIGHCPU_8'
