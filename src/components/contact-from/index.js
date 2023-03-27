@@ -19,13 +19,9 @@ const ContactForm = () => {
             <Row>
                 <Col lg={12}>
                     <SectionTitle>
-                        <Subtitle>Contact Now</Subtitle>
+                        <Subtitle>Liên hệ với chúng tôi</Subtitle>
                         <Title>Get In Touch.</Title>
-                        <SectionDec>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting typesetting remaining essentially
-                            unchanged.
-                        </SectionDec>
+                        <SectionDec>Cảm ơn bạn đã để lại ý kiến. Chúng tôi sẽ sớm liên lạc lại với bạn.</SectionDec>
                     </SectionTitle>
                 </Col>
             </Row>
@@ -38,7 +34,7 @@ const ContactForm = () => {
                                     <Input
                                         type="text"
                                         name="con_name"
-                                        placeholder="Name"
+                                        placeholder="Họ tên"
                                     />
                                 </FormGroup>
                             </Col>
@@ -47,7 +43,7 @@ const ContactForm = () => {
                                     <Input
                                         type="email"
                                         name="con_email"
-                                        placeholder="Email"
+                                        placeholder="Địa chỉ Email"
                                     />
                                 </FormGroup>
                             </Col>
@@ -56,7 +52,7 @@ const ContactForm = () => {
                                     <Input
                                         type="text"
                                         name="con_phone"
-                                        placeholder="Phone"
+                                        placeholder="Số điện thoại"
                                     />
                                 </FormGroup>
                             </Col>
@@ -64,14 +60,14 @@ const ContactForm = () => {
                                 <FormGroup>
                                     <Textarea
                                         name="con_message"
-                                        placeholder="Message"
+                                        placeholder="Nội dung tin nhắn"
                                     ></Textarea>
                                 </FormGroup>
                             </Col>
                             <Col lg={12}>
                                 <FormGroup>
                                     <Button type="submit" color="gradient">
-                                        Submit Now
+                                        Gửi tin nhắn
                                     </Button>
                                 </FormGroup>
                             </Col>
