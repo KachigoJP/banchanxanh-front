@@ -1,8 +1,8 @@
 [
     {
         "image": "../images/causes/01.jpg",
-        "title": "Children Education Needs For Change The World.",
-        "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
+        "title": "Hành trình số 1. Núi Tōnodake (塔ノ岳) 1/4/2023  Kanagawa",
+        "dec": "Là hành trình đầu tiên trong dự án thiện nguyện đầy ý nghĩa của Bàn Chân Xanh. Tōnodake có độ cao 1.490m nằm tại tỉnh Kanagawa. Quãng đường leo dài 14km với thời gian leo dự tính mất khoảng 7 giờ đồng hồ.",
         "donateInfo": [
             {
                 "donateTitle": "Goal:",
@@ -18,7 +18,7 @@
             }
         ],
         "adminImage": "../images/icons/admin1.png",
-        "adminName": "Kristin",
+        "adminName": "Giang",
         "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
         "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
@@ -28,8 +28,8 @@
     },
     {
         "image": "../images/causes/02.jpg",
-        "title": "Old Education Needs For All",
-        "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
+        "title": "Hành trình số 2. Núi Chausudake (茶臼岳) 29/4/2023 Tochigi",
+        "dec": "Chausudake là một ngọn núi có độ cao vừa phải 1.1915m nằm tại tỉnh Tochigi. Quãng đường leo dài 7.6km với thời gian leo dự tính mất khoảng 4 giờ đồng hồ.",
         "donateInfo": [
             {
                 "donateTitle": "Goal:",
@@ -45,7 +45,7 @@
             }
         ],
         "adminImage": "../images/icons/admin1.png",
-        "adminName": "Horton",
+        "adminName": "Giang",
         "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
         "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
@@ -55,7 +55,61 @@
     },
     {
         "image": "../images/causes/03.jpg",
-        "title": "Needs For Change The World.",
+        "title": "Hành trình số 3. Karasawa - Hotaka 22-23/4/2023  Nagano",
+        "dec": "Karasawa là một trong những bãi cắm trại trên núi nổi tiếng nhất của Nhật Bản nằm trên dãy Kita alps với 2 đỉnh nổi tiếng nhất là Hotakadake và Yarigatake (cao 3180m top 4) và cũng có cung đường leo núi nguy hiểm bậc nhất Nhật Bản là Gendarme với Daikiretto.",
+        "donateInfo": [
+            {
+                "donateTitle": "Goal:",
+                "amount": "$ 5,000"
+            },
+            {
+                "donateTitle": "Raised:",
+                "amount": "$ 2,000"
+            },
+            {
+                "donateTitle": "To Go:",
+                "amount": "$ 1,000"
+            }
+        ],
+        "adminImage": "../images/icons/admin1.png",
+        "adminName": "Hoài",
+        "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "detailstext5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+        "image": "../images/causes/04.jpg",
+        "title": "Hành trình số 4. Chinh Phục Đỉnh TATEYAMA 3.015ｍ 2930-/4/2023 Toyama",
+        "dec": "Tateyama có ba đỉnh núi, trong đó nổi tiếng nhất (Oyama) chỉ là đỉnh núi cao thứ hai. Cùng với núi Phú Sĩ và Hakusan, Tateyama tự hào với danh hiệu là một trong Ba Núi Thánh của Nhật Bản.",
+        "donateInfo": [
+            {
+                "donateTitle": "Goal:",
+                "amount": "$ 5,000"
+            },
+            {
+                "donateTitle": "Raised:",
+                "amount": "$ 2,000"
+            },
+            {
+                "donateTitle": "To Go:",
+                "amount": "$ 1,000"
+            }
+        ],
+        "adminImage": "../images/icons/admin1.png",
+        "adminName": "Phong",
+        "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "detailstext5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
+        "detailstext6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    },
+    {
+        "image": "../images/causes/05.jpg",
+        "title": "Hành trình số 5.",
         "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
         "donateInfo": [
             {
@@ -81,62 +135,8 @@
         "detailstext6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
     {
-        "image": "../images/causes/02.jpg",
-        "title": "Education Needs Every Poor People.",
-        "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
-        "donateInfo": [
-            {
-                "donateTitle": "Goal:",
-                "amount": "$ 5,000"
-            },
-            {
-                "donateTitle": "Raised:",
-                "amount": "$ 2,000"
-            },
-            {
-                "donateTitle": "To Go:",
-                "amount": "$ 1,000"
-            }
-        ],
-        "adminImage": "../images/icons/admin1.png",
-        "adminName": "Horton",
-        "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "detailstext5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-        "image": "../images/causes/01.jpg",
-        "title": "Needs Every Foor People Well Food.",
-        "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
-        "donateInfo": [
-            {
-                "donateTitle": "Goal:",
-                "amount": "$ 5,000"
-            },
-            {
-                "donateTitle": "Raised:",
-                "amount": "$ 2,000"
-            },
-            {
-                "donateTitle": "To Go:",
-                "amount": "$ 1,000"
-            }
-        ],
-        "adminImage": "../images/icons/admin1.png",
-        "adminName": "Horton",
-        "detailstext1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "detailstext3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "detailstext5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages",
-        "detailstext6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 an when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-        "image": "../images/causes/03.jpg",
-        "title": "Needs All For Children Education.",
+        "image": "../images/causes/06.jpg",
+        "title": "Hành trình số 6.",
         "dec": "Lorem Ipsum is simply dummy text of the industry's since the unknown.",
         "donateInfo": [
             {
