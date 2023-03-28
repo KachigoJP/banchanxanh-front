@@ -42,7 +42,7 @@ const TeamArea = () => {
                             sx={{ mb: "50px" }}
                             titleStyle
                             textCenter
-                            title={"Các thành viên năng nổ của chúng tôi"}
+                            title={"Những thành viên của Bàn Chân Xanh"}
                             subTitle={subTitle}
                         />
                     </Col>
