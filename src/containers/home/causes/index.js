@@ -40,6 +40,7 @@ const CausesArea = () => {
     `);
 
     const causesAreaData = causesAreaQuery.allCausesJson.edges;
+    console.log("causesAreaData", causesAreaData);
 
     return (
         <SectionArea>
@@ -72,6 +73,7 @@ const CausesArea = () => {
                                         title={causesData.node.title}
                                         dec={causesData.node.dec}
                                         slug={causesData.node.fields.slug}
+                                        donateInfo={causesData.node.donateInfo}
                                     />
                                 </Col>
                             );
