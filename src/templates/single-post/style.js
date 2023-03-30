@@ -132,7 +132,7 @@ export const PostSocialItems = styled.div`
         -o-transition: 0.1s;
         &:hover {
             color: #fff;
-            background: #fea444;
+            background: ${themeGet("colors.secondary")};
             background: ${theme.colors.gradient};
         }
     }

@@ -76,7 +76,7 @@ export const TaisedAmount = styled.div`
         font-size: 60px;
     }
     line-height: 1;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -126,7 +126,7 @@ export const GalleryItem = styled.div`
         left: 0;
         top: 0;
         width: 100%;
-        background: #fea444;
+        background: ${themeGet("colors.secondary")};
         background: ${theme.colors.gradient};
         transition: 0.3s;
         -webkit-transition: 0.3s;

@@ -8,8 +8,12 @@ export const NavItem = styled.li`
     padding: 2px;
     width: 50px;
     &:hover {
-        background: #fea444;
-        background: linear-gradient(to left, #fea444 0%, #fc6539 100%);
+        background: ${themeGet("colors.secondary")};
+        background: linear-gradient(
+            to left,
+            ${themeGet("colors.secondary")} 0%,
+            ${themeGet("colors.primary")} 100%
+        );
     }
 
     &.disabled {
@@ -32,7 +36,11 @@ export const NavLink = styled.a`
     width: 100%;
     &.active {
         color: #fff;
-        background: #fea444;
-        background: linear-gradient(to left, #fea444 0%, #fc6539 100%);
+        background: ${themeGet("colors.secondary")};
+        background: linear-gradient(
+            to left,
+            ${themeGet("colors.secondary")} 0%,
+            ${themeGet("colors.primary")} 100%
+        );
     }
 `;

@@ -73,7 +73,7 @@ export const MobileMenuBtn = styled.button`
         display: none;
     }
     span {
-        background-color: #fea444;
+        background-color: ${themeGet("colors.secondary")};
         border-radius: 2px;
         display: block;
         height: 3px;

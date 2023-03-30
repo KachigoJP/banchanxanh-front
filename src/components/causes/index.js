@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { themeGet } from "@theme/utils";
 import Button from "@components/ui/button";
 import {
     CausesItemWrap,
@@ -72,7 +73,10 @@ const CausesItem = ({
                     size="small"
                     variant="outlined"
                     color="light"
-                    sx={{ color: "#FEA444", fontWeight: "400" }}
+                    sx={{
+                        color: themeGet("colors.primary"),
+                        fontWeight: "400",
+                    }}
                 >
                     {t("Donate Now")}
                     <i

@@ -92,7 +92,7 @@ export const Thumb = styled.div`
             text-align: center;
             width: 100px;
             z-index: 1;
-            background: #fea444;
+            background: ${themeGet("colors.secondary")};
             background: ${theme.colors.gradient};
         }
         .wave-btn {
@@ -108,16 +108,16 @@ export const Thumb = styled.div`
             width: 200px;
 
             &:nth-of-type(1) {
-                background: #fc6539;
+                background: ${themeGet("colors.secondary")};
                 animation: wave-button 2s infinite 0.1s linear backwards;
             }
             &:nth-of-type(2) {
-                background: #fea444;
+                background: ${themeGet("colors.secondary")};
                 animation: wave-button 3s infinite 0.5s linear backwards;
             }
             &:nth-of-type(3) {
                 animation: wave-button 4s infinite 1s linear backwards;
-                background: #fea444;
+                background: ${themeGet("colors.secondary")};
                 background: ${theme.colors.gradient};
             }
         }

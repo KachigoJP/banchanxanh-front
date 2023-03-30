@@ -50,7 +50,7 @@ export const PageTitleContent = styled.div`
                 font-weight: 700;
                 margin-bottom: 8px;
                 &.breadcrumb__link__active {
-                    color: #fea444;
+                    color: ${themeGet("colors.secondary")};
                 }
             }
         }

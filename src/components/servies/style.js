@@ -8,7 +8,7 @@ export const IconBoxitem = styled.div`
         background-color: #001d23;
     }
     &.item-three {
-        background-color: #fea444;
+        background-color: ${themeGet("colors.secondary")};
     }
     ${device.medium} {
         padding: 45px 25px;
