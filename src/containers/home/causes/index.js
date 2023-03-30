@@ -52,8 +52,8 @@ const CausesArea = () => {
                             sx={{
                                 mb: ["30px", "50px", "80px", "110", "123px"],
                             }}
-                            title={"Donate For Poor People. Causes of Givest"}
-                            subTitle={"Check Causes"}
+                            title={"Các chuyến leo núi sắp tới"}
+                            subTitle={"Hành trình"}
                         />
                     </Col>
                 </Row>
@@ -71,9 +71,6 @@ const CausesArea = () => {
                                         image={causesData.node.image}
                                         title={causesData.node.title}
                                         dec={causesData.node.dec}
-                                        adminName={causesData.node.adminName}
-                                        donateInfo={causesData.node.donateInfo}
-                                        adminImage={causesData.node.adminImage}
                                         slug={causesData.node.fields.slug}
                                     />
                                 </Col>

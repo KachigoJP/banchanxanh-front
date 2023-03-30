@@ -3,11 +3,15 @@
         "id": "about-us-page-section",
         "section_title": {
             "subTitle": "Về chúng tôi.",
-            "title": "<span>Bàn Chân Xanh</span> là 1 tổ chức phi lợi nhuận."
+            "title": "<span>BÀN CHÂN XANH</span> là 1 tổ chức phi lợi nhuận."
         },
         "image1": "../images/about/3.jpg",
-        "content1": "Lorem Ipsum simply dummy text the printing and typesettin industry. Lorem Ipsum has been the industry's standard dumm text ever since the unknown.",
-        "content2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when and unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "content1": "Khởi nguồn gây quỹ bởi những người trẻ đam mê leo núi mang quốc tịch Việt Nam đang sinh sống, làm việc và hoạt động tại Nhật Bản. Chúng tôi gây quỹ trên toàn nước Nhật và các quốc gia khác. Các các nhân, tổ chức có thể quyên góp ủng hộ các em theo các hình thức như, tham gia leo núi cùng team và quyên góp tiền mặt, mua thêm các sản phẩm leo núi (khăn, chuông …), ủng hộ bằng sách cũ, ủng hộ bằng cách chuyển khoản …",
+        "content2": "Đối tượng : Tất cả các trẻ em nghèo cần sự giúp đỡ trên toàn lãnh thổ Việt Nam nhưng chủ yếu là ở vùng cao.",
+        "content3": "Mục đích : Kết nối cộng đồng thông qua hoạt động leo núi, gây quỹ quyên góp nhằm giúp đỡ các trẻ em nghèo vùng cao luôn nở nụ cười trên môi.Giúp các em có cuộc sống đủ đầy hơn và có ý muốn đến trường nhiều hơn.",
+        "content4": "Hoạt động: Tổ chức các buổi leo núi kết nối cộng đồng trên toàn Nhật bản, Việt Nam ... đồng thời nhận quyên góp.",
+        "content5": "Ngoài leo núi ra còn nhiều các hoạt động gây quỹ dưới nhiều hình thức như tổ chức cắm trại, workshops ...",
+        "content6": "Các hoạt động hỗ trợ<br>Giai đoạn 1: Hỗ trợ giúp các trẻ em nghèo vùng cao có hoàn cảnh đặc biệt khó khăn có đời sống vật chất đủ đầy, ấm no hơn. Từ đó khích lệ tạo cho các em cảm giác muốn đến trường.<br>Giai đoạn 2: Hỗ trợ xây dựng, sửa sang phòng học, trường học, phòng ăn, đồ dùng hỗ trợ việc học cho các em nhỏ vùng cao , dụng cụ hỗ trợ giảng dạy cho các thầy cô tại các điểm trường còn khó khăn.",
         "mission": [
             {
                 "id": "mission",

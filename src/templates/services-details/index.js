@@ -87,6 +87,10 @@ const ServicesPosts = ({ data, location, pageContext }) => {
                                         {servicesPostData &&
                                             servicesPostData.destails3}
                                     </p>
+                                    <p>
+                                        {servicesPostData &&
+                                            servicesPostData.destails4}
+                                    </p>
                                 </ServicesDetails>
                             </ServicesDetailsContent>
                         </Col>
@@ -116,6 +120,7 @@ export const servicesPostsQuery = graphql`
             destails1
             destails2
             destails3
+            destails4
             image {
                 childImageSharp {
                     gatsbyImageData(width: 780)

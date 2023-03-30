@@ -1,31 +1,31 @@
 [
     {
-        "text": "Home",
+        "text": "Trang chủ",
         "link": "/",
         "isSubmenu": false
     },
     {
-        "text": "About",
+        "text": "Về chúng tôi",
         "link": "/about-us",
         "isSubmenu": false
     },
     {
-        "text": "Causes",
+        "text": "Hành trình",
         "link": "/causes",
         "isSubmenu": true,
         "submenu": [
             {
-                "text": "Causes",
+                "text": "Hành trình",
                 "link": "/causes"
             },
             {
-                "text": "Causes Details",
+                "text": "Chi tiết",
                 "link": "/causes/children-education-needs-for-change-the-world"
             }
         ]
     },
     {
-        "text": "Pages",
+        "text": "Liên kết",
         "link": "/volunteer",
         "isSubmenu": true,
         "submenu": [
@@ -34,13 +34,13 @@
                 "link": "/events/need-school-for-mozambique-children"
             },
             {
-                "text": "Volunteer",
+                "text": "Hợp tác",
                 "link": "/volunteer"
             }
         ]
     },
     {
-        "text": "Contact Us",
+        "text": "Liên hệ",
         "link": "/contact-us",
         "isSubmenu": false
     }

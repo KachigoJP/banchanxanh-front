@@ -135,7 +135,7 @@ const AboutArea = () => {
                             <AboutTextStyle>{content1}</AboutTextStyle>
                             <p>{content2}</p>
                             <p className="mb-0">{content3}</p>
-                            <LlistIconStyle>
+                            /*<LlistIconStyle>
                                 <ListLi>
                                     <StaticImage
                                         className="icon-img"
@@ -161,7 +161,7 @@ const AboutArea = () => {
                                         }}
                                     />
                                 </ListLi>
-                            </LlistIconStyle>
+                            </LlistIconStyle>*/
                             <Button path="/donate" color="gradient">
                                 {t("Donate Now")}
                             </Button>

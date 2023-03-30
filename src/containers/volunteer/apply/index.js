@@ -18,21 +18,13 @@ const JoinApplyArea = () => {
                     <Col lg={12}>
                         <VolunteerFormArea>
                             <SectionTitle>
-                                <SubTitle>Join With Us</SubTitle>
-                                <Title>
-                                    If You Interest! You Can Join With Us{" "}
-                                    <span>As A Volunteer.</span>
-                                </Title>
+                                <SubTitle>Tham gia cùng chúng tôi</SubTitle>
+                                <Title>Lời mời hợp tác</Title>
                                 <Text>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. Lorem
-                                    Ipsum has been the industry&apos;s standard
-                                    dummy text ever since 1500 an when an
-                                    unknown printer took a galley of type and
-                                    scrambled it to make a type specimen book.
-                                    It has survived not only five centuries but
-                                    electronic typesetting, remaining
-                                    essentially unchanged.
+                                    Hiện tại Bàn Chân Xanh hoạt động chính tại 2 quốc gia là Việt Nam và Nhật Bản,
+                                    nếu bạn cũng là một người đam mê leo núi và muốn tham gia hỗ trợ mở rộng cho dự án,
+                                    dù ở bất kì quốc gia và vùng lãnh thổ nào, hãy chung tay với chúng mình nhé!
+                                    Bàn Chân Xanh luôn chờ liên lạc từ các bạn ❤️
                                 </Text>
                             </SectionTitle>
 
