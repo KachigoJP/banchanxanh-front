@@ -74,7 +74,7 @@ export const EventItemIcon = styled.div`
 export const EventItemTitle = styled.h6`
     font-size: 16px;
     margin-bottom: 0;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -49,7 +49,7 @@ export const InfoItemTitle = styled.span`
 export const Amount = styled.span`
     color: ${theme.colors.primary};
     font-size: 16px;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${themeGet("colors.gradient")};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,7 +69,7 @@ export const ProgressItem = styled.div`
             text-align: center;
             white-space: nowrap;
             border-radius: 0;
-            background: #fea444;
+            background: ${themeGet("colors.secondary")};
             background: ${theme.colors.gradient};
             &::after {
                 background-color: ${theme.colors.primary};

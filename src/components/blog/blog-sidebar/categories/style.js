@@ -45,7 +45,7 @@ export const Widgetcategory = styled.div`
             }
             color: #fff;
             padding-left: 38px;
-            background: #fea444;
+            background: ${themeGet("colors.secondary")};
             background: ${themeGet("colors.gradient")};
         }
     }

@@ -99,7 +99,7 @@ export const DonnerNumber = styled.div`
     font-size: 14px;
     font-family: ${themeGet("fonts.heading")};
     text-align: center;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${themeGet("colors.gradient")};
     ${device.xlarge} {
         height: 76px;

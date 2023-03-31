@@ -26,7 +26,7 @@ export const QuoteIcon = styled.div`
     position: absolute;
     top: 24px;
     z-index: -1;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${theme.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

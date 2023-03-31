@@ -1,10 +1,10 @@
 const theme = {
     colors: {
         primary: "#6bbd46",
+        secondary: "#abcd3c",
         text: "#333",
         heading: "#414141",
         border: "#E0E0E0",
-        secondary: "#4054b2",
         background: "#fff",
         hover: "#3f41e2",
         shark: "#929496",

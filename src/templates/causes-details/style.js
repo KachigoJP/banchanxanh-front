@@ -70,7 +70,7 @@ export const InfoItemTitle = styled.span`
 export const Amount = styled.span`
     color: ${theme.colors.primary};
     font-size: 16px;
-    background: #fea444;
+    background: ${themeGet("colors.secondary")};
     background: ${themeGet("colors.gradient")};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,7 +94,9 @@ export const DocumentItem = styled.a`
     padding: 15px 30px;
     width: 100%;
     &.bgcolor-theme2 {
-        background-color: #fea444 !important;
+        background-color: ${themeGet(
+            "colors.secondary"
+        )}Get("colors.secondary")} !important;
     }
 `;
 export const DocumentItemTitle = styled.h6`
