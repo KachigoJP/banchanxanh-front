@@ -35,6 +35,7 @@ const VolunteerArea = () => {
         text,
         team,
     } = volunteerQuery.volunteerJson;
+
     return (
         <SectionArea>
             <Container>

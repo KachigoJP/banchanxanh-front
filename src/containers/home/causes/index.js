@@ -40,7 +40,6 @@ const CausesArea = () => {
     `);
 
     const causesAreaData = causesAreaQuery.allCausesJson.edges;
-    console.log("causesAreaData", causesAreaData);
 
     return (
         <SectionArea>
