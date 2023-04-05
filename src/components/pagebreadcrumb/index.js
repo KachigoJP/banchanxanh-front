@@ -7,6 +7,7 @@ const PageBreadcrumb = ({ crumbLabel, location, title, pageContext }) => {
     const {
         breadcrumb: { crumbs },
     } = pageContext;
+
     const customCrumbLabel = location.pathname.toLowerCase();
     const crumbLabelArr = customCrumbLabel.split("/");
     const label = crumbLabelArr[crumbLabelArr.length - 1];

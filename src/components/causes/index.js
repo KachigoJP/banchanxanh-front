@@ -33,7 +33,6 @@ const CausesItem = ({
     const Thumbimage = getImage(image);
     const adminImg = getImage(adminImage);
     const donateInfoData = donateInfo;
-    console.log("DONATETETE", donateInfoData);
 
     return (
         <CausesItemWrap>

@@ -1,4 +1,5 @@
-import styled from "@theme/utils";
+import styled, { themeGet } from "@theme/utils";
+
 export const NavItem = styled.li`
     background-color: #ececec;
     display: inline-block;
