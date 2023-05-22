@@ -167,7 +167,7 @@ const Hero = () => {
                                     <div className="pie-chart-circle"></div>
                                     <DonateContent>
                                         <div className="raised-amount">
-                                            $865M
+                                            62,110
                                         </div>
                                         <StaticImage
                                             className="line-shape-img"

@@ -28,7 +28,7 @@ const CausesDonateForm = () => {
     return (
         <DonationFormArea>
             <SectionTitle>
-                <Subtitle>Make A Donation</Subtitle>
+                <Subtitle>Chung tay cùng chúng tôi tùy theo sức của bạn</Subtitle>
                 <Title>{t("Donate Now")}</Title>
                 <StaticImage
                     className="line-shape"
@@ -37,10 +37,10 @@ const CausesDonateForm = () => {
                 />
             </SectionTitle>
             <form action="#">
-                <AmountInfo>
-                    <DonateAmount>$20</DonateAmount>
-                    <DonateAmount>$50</DonateAmount>
-                    <DonateAmount>$200</DonateAmount>
+                {/* <AmountInfo>
+                    <DonateAmount>2000¥</DonateAmount>
+                    <DonateAmount>5000¥</DonateAmount>
+                    <DonateAmount>10000¥</DonateAmount>
                     <DonateAmount className="donate-custom-amount">
                         <input
                             className="form-control"
@@ -48,9 +48,9 @@ const CausesDonateForm = () => {
                             placeholder="Custom"
                         />
                     </DonateAmount>
-                </AmountInfo>
+                </AmountInfo> */}
                 <PaymentMethodWrap>
-                    <PaymentTitle>Payment Method:</PaymentTitle>
+                    <PaymentTitle>Cách thức ủng hộ:</PaymentTitle>
                     <PaymentMethod>
                         <PaymentType>
                             <FormCheckBox>
@@ -65,7 +65,22 @@ const CausesDonateForm = () => {
                                     className="form-check-label"
                                     htmlFor="inlineRadio1"
                                 >
-                                    Offline
+                                    Ủng hộ tiền mặt khi tham gia leo núi
+                                </label>
+                            </FormCheckBox>
+                            <FormCheckBox>
+                                <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="inlineRadioOptions"
+                                    id="inlineRadio1"
+                                    value="option1"
+                                />
+                                <label
+                                    className="form-check-label"
+                                    htmlFor="inlineRadio1"
+                                >
+                                    Chuyển khoản
                                 </label>
                             </FormCheckBox>
                             <FormCheckBox>
@@ -80,20 +95,26 @@ const CausesDonateForm = () => {
                                     className="form-check-label"
                                     htmlFor="inlineRadio2"
                                 >
-                                    Credit Card
+                                    Mua khăn rằn
                                 </label>
                             </FormCheckBox>
                         </PaymentType>
-                        <StaticImage
+                        {/* <StaticImage
                             src="../../data/images/photos/payment-card.png"
                             alt="Image-Givest"
-                        />
+                        /> */}
                     </PaymentMethod>
                 </PaymentMethodWrap>
                 <PaymentPersonalInfo>
-                    <PersonalInfoTitle>Personal Info:</PersonalInfoTitle>
+                    <PersonalInfoTitle>Tài khoản nhận ủng hộ:</PersonalInfoTitle>
                     <Row className="row-gutter-20">
-                        <Col md={6}>
+                        <Col md={12}>
+                            <p><b>Ngân hàng:</b> SMBC (三井住友銀行)</p>
+                            <p><b>Chi nhánh:</b> 672 ときわ台店</p>
+                            <p><b>Số tài khoản:</b> 7230273</p>
+                            <p><b>Tên tài khoản:</b> ﾊﾞﾝ　ﾁｬﾝ　ｻﾝ</p>
+                        </Col>
+                        {/* <Col md={6}>
                             <FormGroup htmlFor="blogs_name">
                                 <input
                                     className="form-control"
@@ -141,10 +162,10 @@ const CausesDonateForm = () => {
                                     placeholder="Message"
                                 ></textarea>
                             </FormGroup>
-                        </Col>
+                        </Col>*/}
                     </Row>
                 </PaymentPersonalInfo>
-                <ButtonWrap>
+                {/* <ButtonWrap>
                     <Button path="#/" color="gradient">
                         {t("Donate Now")}
                         <StaticImage
@@ -164,7 +185,7 @@ const CausesDonateForm = () => {
                     >
                         Total Donation: $50
                     </Button>
-                </ButtonWrap>
+                </ButtonWrap> */}
             </form>
             <LayerStyle>
                 <StaticImage

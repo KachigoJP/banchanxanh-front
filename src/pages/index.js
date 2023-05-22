@@ -21,8 +21,8 @@ const IndexPage = () => {
             <ServiceArea />
             <AboutArea />
             <CausesArea />
-            <DonateArea />
-            <FunfactArea />
+            {/* <DonateArea />
+            <FunfactArea /> */}
             {/* <EventArea />
             <TestimonialArea /> */}
             {/* <LatestBlog /> */}

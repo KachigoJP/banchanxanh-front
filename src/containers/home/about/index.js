@@ -135,36 +135,6 @@ const AboutArea = () => {
                             <AboutTextStyle>{content1}</AboutTextStyle>
                             <p>{content2}</p>
                             <p className="mb-0">{content3}</p>
-                            /*<LlistIconStyle>
-                                <ListLi>
-                                    <StaticImage
-                                        className="icon-img"
-                                        src="../../../data/images/icons/check-double-line.png"
-                                        alt="Image-Givest"
-                                    />
-                                    <ListText
-                                        dangerouslySetInnerHTML={{
-                                            __html: listText1,
-                                        }}
-                                    />
-                                </ListLi>
-                                <ListLi className="line-center"></ListLi>
-                                <ListLi>
-                                    <StaticImage
-                                        className="icon-img"
-                                        src="../../../data/images/icons/check-double-line.png"
-                                        alt="Image-Givest"
-                                    />
-                                    <ListText
-                                        dangerouslySetInnerHTML={{
-                                            __html: listText2,
-                                        }}
-                                    />
-                                </ListLi>
-                            </LlistIconStyle>*/
-                            <Button path="/donate" color="gradient">
-                                {t("Donate Now")}
-                            </Button>
                         </AboutContent>
                     </Col>
                 </Row>

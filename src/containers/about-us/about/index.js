@@ -29,6 +29,8 @@ const AboutPageArea = () => {
                 content4
                 content5
                 content6
+                content7
+                content8
                 image1 {
                     childImageSharp {
                         gatsbyImageData
@@ -54,6 +56,8 @@ const AboutPageArea = () => {
         content4,
         content5,
         content6,
+        content7,
+        content8,
         mission,
     } = aboutSectonQery.aboutUsJson;
 
@@ -91,9 +95,11 @@ const AboutPageArea = () => {
                             <p>{content3}</p>
                             <p>{content4}</p>
                             <p>{content5}</p>
-                            <p className="mb-0">{content6}</p>
+                            <p>{content6}</p>
+                            <p>{content7}</p>
+                            <p className="mb-0">{content8}</p>
                         </AboutContent>
-                        /*<ContentBoxWrp>
+                        {/* <ContentBoxWrp>
                             <Row>
                                 {mission.map((itemData) => {
                                     return (
@@ -115,7 +121,7 @@ const AboutPageArea = () => {
                                     );
                                 })}
                             </Row>
-                        </ContentBoxWrp>*/
+                        </ContentBoxWrp> */}
                     </Col>
                 </Row>
             </Container>

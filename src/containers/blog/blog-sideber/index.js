@@ -10,7 +10,7 @@ const BlogSidebar = () => {
     return (
         <SidebarArea>
             <Widget>
-                <WidgetTitle>Search Here</WidgetTitle>
+                <WidgetTitle>Tim kiếm trong bài</WidgetTitle>
                 <SeparatorLine>
                     <StaticImage
                         className="me-1"
@@ -21,7 +21,7 @@ const BlogSidebar = () => {
                 <SearchBox />
             </Widget>
 
-            <Widget>
+            {/* <Widget>
                 <WidgetTitle>Causes Categories</WidgetTitle>
                 <SeparatorLine>
                     <StaticImage
@@ -55,7 +55,7 @@ const BlogSidebar = () => {
                     />
                 </SeparatorLine>
                 <AllTags />
-            </Widget>
+            </Widget> */}
         </SidebarArea>
     );
 };

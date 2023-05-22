@@ -36,8 +36,8 @@ const theme = {
         h6: ["16px", "18px"],
     },
     fonts: {
-        body: `'Roboto', sans-serif`,
-        heading: `'Georgia', sans-serif`,
+        body: `'Verdana', sans-serif`,
+        heading: `'Verdana', sans-serif`,
     },
     fontWeights: {
         body: 400,

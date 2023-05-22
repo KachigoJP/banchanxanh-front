@@ -93,7 +93,7 @@ const EventPosts = ({ data, location, pageContext }) => {
                                         </EventCategory>
                                         <EventAuthor>
                                             By: {eventpostData.eventSpeaker},
-                                            <span>Web Technologist</span>
+                                            {/* <span>Web Technologist</span> */}
                                         </EventAuthor>
                                     </EventCategoryPost>
                                     <EventTitle>
@@ -107,7 +107,7 @@ const EventPosts = ({ data, location, pageContext }) => {
                                         {eventpostData.detailsText2 &&
                                             eventpostData.detailsText2}
                                     </DetailsText>
-                                    <MapContent>
+                                    {/* <MapContent>
                                         <iframe
                                             title="map"
                                             src={eventpostData.mapLink}
@@ -134,10 +134,10 @@ const EventPosts = ({ data, location, pageContext }) => {
 
                                     <div className="brand-logo-area brand-logo-default-area p-0">
                                         <div className="brand-logo-content"></div>
-                                    </div>
+                                    </div>*/}
                                 </EventDetails>
 
-                                <InnerTitle>Why Join This Event?</InnerTitle>
+                                {/* <InnerTitle>Why Join This Event?</InnerTitle>
                                 <DetailsText>
                                     {eventpostData.detailsText1 &&
                                         eventpostData.detailsText1}
@@ -170,7 +170,7 @@ const EventPosts = ({ data, location, pageContext }) => {
                                         />
                                         +88 469 963 467
                                     </Button>
-                                </ButtonWrap>
+                                </ButtonWrap> */}
                             </EventDetailsContentArea>
                         </Col>
                         <Col lg={4}>

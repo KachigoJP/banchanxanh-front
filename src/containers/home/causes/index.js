@@ -71,6 +71,8 @@ const CausesArea = () => {
                                         image={causesData.node.image}
                                         title={causesData.node.title}
                                         dec={causesData.node.dec}
+                                        adminName={causesData.node.adminName}
+                                        adminImage={causesData.node.adminImage}
                                         slug={causesData.node.fields.slug}
                                         donateInfo={causesData.node.donateInfo}
                                     />

@@ -10,11 +10,11 @@ import CausesAll from "../containers/causes/causes";
 const CausesPages = ({ location, pageContext }) => {
     return (
         <Layout>
-            <SEO title="Causes" pathname="/" />
+            <SEO title="Hành trình" pathname="/" />
             <PageBreadcrumb
                 pageContext={pageContext}
                 location={location}
-                title="Causes"
+                title="Hành trình"
             />
             <CausesAll />
             <FunfactArea />

@@ -314,6 +314,7 @@ export const GlobalCSS = () => {
                     margin: 0 0 15px;
                     font-family: ${theme.fonts.body};
                     color: ${theme.colors.text};
+                    text-align: justify;
                     &:last-child {
                         margin-bottom: 0;
                     }

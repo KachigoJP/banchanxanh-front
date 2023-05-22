@@ -79,9 +79,8 @@ const Header = () => {
     return (
         <Fragment>
             <HeaderTop
-                className={`header-section ${
-                    scroll > headerTop ? "is-sticky" : ""
-                }`}
+                className={`header-section ${scroll > headerTop ? "is-sticky" : ""
+                    }`}
             >
                 <Container>
                     <Row className="align-items-center">
@@ -108,7 +107,7 @@ const Header = () => {
                                             path="/contact-us"
                                             color="gradient"
                                         >
-                                            Give Support{" "}
+                                            Liên hệ{" "}
                                             <i className="flaticon-right-arrow"></i>
                                         </Button>
                                     </ButtonBoxArea>

@@ -33,11 +33,11 @@ const CausesPosts = ({ data, location, pageContext }) => {
 
     return (
         <Layout>
-            <SEO title={"Causes Posts"} pathname="/" />
+            <SEO title={"Chi tiết hành trình"} pathname="/" />
             <PageBreadcrumb
                 pageContext={pageContext}
                 location={location}
-                title="Causes Posts"
+                title="Chi tiết hành trình"
             />
             <BlogDetailsArea>
                 <Container>
@@ -54,7 +54,7 @@ const CausesPosts = ({ data, location, pageContext }) => {
                                     <CauseTitle>
                                         {causespostData.title}
                                     </CauseTitle>
-                                    <DonateInfoWrap>
+                                    {/* <DonateInfoWrap>
                                         <Row>
                                             <Col md={6}>
                                                 <DonateInfo>
@@ -79,7 +79,7 @@ const CausesPosts = ({ data, location, pageContext }) => {
                                                 </DonateInfo>
                                             </Col>
                                         </Row>
-                                    </DonateInfoWrap>
+                                    </DonateInfoWrap> */}
                                     <SingleDetailsText>
                                         {causespostData.detailstext1 &&
                                             causespostData.detailstext1}
@@ -88,7 +88,7 @@ const CausesPosts = ({ data, location, pageContext }) => {
                                         {causespostData.detailstext2 &&
                                             causespostData.detailstext2}
                                     </SingleDetailsText>
-                                    <ShortTitle>Cause Challenge</ShortTitle>
+                                    {/* <ShortTitle>Cause Challenge</ShortTitle> */}
                                     <SingleDetailsText>
                                         {causespostData.detailstext3 &&
                                             causespostData.detailstext3}
@@ -97,7 +97,7 @@ const CausesPosts = ({ data, location, pageContext }) => {
                                         {causespostData.detailstext4 &&
                                             causespostData.detailstext4}
                                     </SingleDetailsText>
-                                    <ShortTitle>
+                                    {/* <ShortTitle>
                                         Summery And Documents
                                     </ShortTitle>
                                     <Row>
@@ -123,7 +123,7 @@ const CausesPosts = ({ data, location, pageContext }) => {
                                                 />
                                             </DocumentItem>
                                         </Col>
-                                    </Row>
+                                    </Row> */}
                                     <SingleDetailsText>
                                         {causespostData.detailstext5 &&
                                             causespostData.detailstext5}

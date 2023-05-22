@@ -12,17 +12,7 @@
     {
         "text": "Hành trình",
         "link": "/causes",
-        "isSubmenu": true,
-        "submenu": [
-            {
-                "text": "Hành trình",
-                "link": "/causes"
-            },
-            {
-                "text": "Chi tiết",
-                "link": "/causes/children-education-needs-for-change-the-world"
-            }
-        ]
+        "isSubmenu": true
     },
     {
         "text": "Liên kết",
@@ -30,7 +20,7 @@
         "isSubmenu": true,
         "submenu": [
             {
-                "text": "Event Details",
+                "text": "Sự kiện tình nguyện",
                 "link": "/events/need-school-for-mozambique-children"
             },
             {

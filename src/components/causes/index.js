@@ -40,7 +40,7 @@ const CausesItem = ({
                 <GatsbyImage image={Thumbimage} alt={title} />
             </Thumb>
             <ContentBox>
-                <DonateInfo>
+                {/* <DonateInfo>
                     {donateInfoData.map((infoData, i) => {
                         return (
                             <InfoItem key={`donate-${i}`}>
@@ -51,7 +51,7 @@ const CausesItem = ({
                             </InfoItem>
                         );
                     })}
-                </DonateInfo>
+                </DonateInfo> */}
                 <Title>
                     <Link to={`/causes/${slug}`}>{title}</Link>
                 </Title>
@@ -68,7 +68,7 @@ const CausesItem = ({
                         </Link>
                     </UserAdminTitle>
                 </UserAdmin>
-                <Button
+                {/* <Button
                     path={`/causes/${slug}`}
                     size="small"
                     variant="outlined"
@@ -83,7 +83,7 @@ const CausesItem = ({
                         sx={{ ml: "8px", fontSize: "12px !important" }}
                         className="flaticon-right-arrow"
                     ></i>
-                </Button>
+                </Button> */}
             </CausesFooter>
         </CausesItemWrap>
     );
