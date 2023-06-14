@@ -12,6 +12,7 @@ export const createStyles = (theme, color, size, shape, variant) => css`
     transition: all 0.3s ease;
     font-weight: 600;
     text-transform: capitalize;
+    text-decoration: none;
     line-height: 1;
     position: relative;
     i {
@@ -23,6 +24,7 @@ export const createStyles = (theme, color, size, shape, variant) => css`
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 10px;
         .icon-img {
             margin-left: 12px;
             img {
@@ -250,6 +252,12 @@ export const createStyles = (theme, color, size, shape, variant) => css`
 
 export const StyledAnchor = styled.a``;
 
-export const StyledLink = styled(Link)``;
+export const StyledLink = styled(Link)`
+`;
 
-export const StyledButton = styled.button``;
+export const StyledButton = styled.button`
+`;
+
+export const StyledSpan = styled.span`
+    margin: 0 10px;
+`;

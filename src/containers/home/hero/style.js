@@ -41,7 +41,11 @@ export const Content = styled.div`
 
 export const SubTitle = styled.div`
     margin-bottom: 28px;
-    display: inline-block;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    float: left;
+    width: 100%;
 
     img {
         margin-right: 14px;
@@ -60,6 +64,9 @@ export const SubTitle = styled.div`
         background: ${themeGet("colors.gradient")};
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+    .logo {
+        width: 50px;
     }
 `;
 export const HeroTitleWrap = styled.div`

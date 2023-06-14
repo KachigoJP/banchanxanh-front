@@ -85,8 +85,9 @@ const Hero = () => {
                             <Content>
                                 <SubTitle>
                                     <StaticImage
-                                        src="../../../data/images/icons/1.png"
-                                        alt="Givest"
+                                        src="../../../data/images/icons/logo.png"
+                                        alt="BanChanXanh"
+                                        className="logo"
                                     />
                                     <h6>{subTitle}</h6>
                                 </SubTitle>

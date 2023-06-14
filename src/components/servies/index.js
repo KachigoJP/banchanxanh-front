@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import Button from "@components/ui/button";
 import {
     IconBoxitem,
@@ -14,6 +15,7 @@ import {
 } from "./style";
 
 const ServiceItem = ({ title, parText, slug, image, itemClassName }) => {
+    const { t } = useTranslation();
     const iconImg = getImage(image);
     return (
         <IconBoxitem className={`${itemClassName} mb-5`}>
@@ -38,7 +40,7 @@ const ServiceItem = ({ title, parText, slug, image, itemClassName }) => {
                     color="light"
                     sx={{ color: "#fff" }}
                 >
-                    View Details{" "}
+                    {t("View Details")}
                     <i sx={{ ml: "8px" }} className="flaticon-right-arrow"></i>
                 </Button>
             </ContentBox>

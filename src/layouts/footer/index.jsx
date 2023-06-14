@@ -121,7 +121,7 @@ const Footer = () => {
                                 </WidgetGallery>
                             </WidgetItem>
                         </Col>
-                        <Col sm={6} md={6} lg={4} xl={4}>
+                        {/* <Col sm={6} md={6} lg={4} xl={4}>
                             <WidgetItem className="menu-wrap-two-column">
                                 <WidgetTitle>{menuTitle}</WidgetTitle>
                                 <WidgetMenuWrap>
@@ -178,7 +178,7 @@ const Footer = () => {
                                     </Row>
                                 </WidgetMenuWrap>
                             </WidgetItem>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
                 {/* <div className="scroll-to-top"><img src="assets/img/icons/arrow-up-line.png" alt="Icon-Image" /></div> */}
@@ -187,8 +187,8 @@ const Footer = () => {
                 <Row>
                     <Col sx={{ textAlign: "center" }}>
                         <CopyrightText>
-                            &copy; {new Date().getFullYear()} Ban Chan Xanh. Made with{" "}
-                            <HeartIcon /> by{" "}
+                            &copy; {new Date().getFullYear()} Ban Chan Xanh. Made with
+                            <HeartIcon /> by
                             <a
                                 href="https://hasthemes.com/"
                                 target="_blank"

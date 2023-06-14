@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import PropTypes from "prop-types";
-import { StyledButton, StyledAnchor, StyledLink, createStyles } from "./style";
+import { StyledButton, StyledAnchor, StyledLink, createStyles, StyledSpan } from "./style";
 
 const Button = ({
     children,
@@ -45,7 +45,7 @@ const Button = ({
                     sx={sx}
                 >
                     {label && <span className="sr-only">{label}</span>}
-                    <span>{children}</span>
+                    <StyledSpan>{children}</StyledSpan>
                 </StyledAnchor>
             );
         }
@@ -59,7 +59,7 @@ const Button = ({
                 className={className}
             >
                 {label && <span className="sr-only">{label}</span>}
-                <span>{children}</span>
+                <StyledSpan>{children}</StyledSpan>
             </StyledAnchor>
         );
     }

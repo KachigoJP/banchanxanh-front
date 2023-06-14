@@ -4,4 +4,5 @@ export const vi = {
     "Total Raised": "Tổng số tiền quyên góp (JPY)",
     Home: "Trang chủ",
     About: "Về nhóm",
+    "View Details": "Chi Tiết",
 };
