@@ -168,7 +168,6 @@ const Hero = () => {
                                     <div className="pie-chart-circle"></div>
                                     <DonateContent>
                                         <div className="raised-amount">
-                                            62,110
                                         </div>
                                         <StaticImage
                                             className="line-shape-img"
@@ -176,7 +175,7 @@ const Hero = () => {
                                             alt="Image-Givest"
                                         />
                                         <h5 className="donate-title">
-                                            {t("Total Raised")}
+                                            {/* {t("Total Raised")} */}
                                         </h5>
                                     </DonateContent>
                                 </DonateCircleWrap>
