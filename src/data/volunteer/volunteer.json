@@ -28,11 +28,6 @@
                 "designation": "Thành viên năng nổ"
             },
             {
-                "images": "../../data/images/team/5.jpg",
-                "name": "MAI NGỌC MỸ",
-                "designation": "Thành viên năng nổ"
-            },
-            {
                 "images": "../../data/images/team/6.jpg",
                 "name": "VĂN HOÀI",
                 "designation": "Thành viên năng nổ"
@@ -53,11 +48,6 @@
                 "designation": "Thành viên năng nổ"
             },
             {
-                "images": "../../data/images/team/10.jpg",
-                "name": "VŨ NHO",
-                "designation": "Thành viên năng nổ"
-            },
-            {
                 "images": "../../data/images/team/11.jpg",
                 "name": "VŨ ĐÌNH PHONG",
                 "designation": "Thành viên năng nổ"
@@ -65,6 +55,21 @@
             {
                 "images": "../../data/images/team/12.jpg",
                 "name": "KIỀU QUỐC CHIẾN",
+                "designation": "Thành viên năng nổ"
+            },
+            {
+                "images": "../../data/images/team/13.jpg",
+                "name": "TRẦN THỊ TÂM LY",
+                "designation": "Thành viên năng nổ"
+            },
+            {
+                "images": "../../data/images/team/14.jpg",
+                "name": "LÊ NGHĨA",
+                "designation": "Thành viên năng nổ"
+            },
+            {
+                "images": "../../data/images/team/15.jpg",
+                "name": "ĐỖ VĂN NAM",
                 "designation": "Thành viên năng nổ"
             }
         ]
