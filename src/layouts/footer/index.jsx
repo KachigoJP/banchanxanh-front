@@ -83,7 +83,7 @@ const Footer = () => {
                                         {footerAbout}
                                     </AboutWidgetText>
                                     <WidgetTotalRaised>
-                                        <RaisedTitle>{/* {t("Total Raised")}: */}</RaisedTitle>
+                                        <RaisedTitle>{t("Total Raised")}:</RaisedTitle>
                                         <TaisedAmount>
                                             {raisedAmount}
                                         </TaisedAmount>

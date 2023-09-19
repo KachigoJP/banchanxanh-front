@@ -406,7 +406,7 @@ export const DonateContent = styled.div`
     -o-transform: translate(-50%, -50%);
     .raised-amount {
         font-family: ${themeGet("fonts.heading")};
-        font-size: 28px;
+        font-size: 26px;
         line-height: 1;
         margin-bottom: 12px;
         ${device.large} {
