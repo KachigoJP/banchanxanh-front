@@ -18,10 +18,10 @@ const AboutUsPage = ({ location, pageContext }) => {
                 title="About Us"
             />
             <AboutPageArea />
-            <VolunteerArea />
-            <FunfactArea />
+            {/* <VolunteerArea /> */}
+            {/* <FunfactArea />
             <TestimonialArea />
-            <SponsorsArea />
+            <SponsorsArea /> */}
         </Layout>
     );
 };

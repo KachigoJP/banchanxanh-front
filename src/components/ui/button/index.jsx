@@ -69,6 +69,7 @@ const Button = ({
             className={className}
             type={type}
             {...buttonProps}
+            {...props}
             sx={sx}
         >
             {children}

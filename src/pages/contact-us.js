@@ -11,7 +11,7 @@ const ContactPages = ({ location, pageContext }) => {
             <PageBreadcrumb
                 pageContext={pageContext}
                 location={location}
-                title="Contact Us"
+                title="Liên Hệ"
             />
             <ContactUsArea />
         </Layout>

@@ -18,10 +18,10 @@ const CausesPages = ({ location, pageContext }) => {
                 title="Volunteer"
             />
             <JoinApplyArea />
-            <TeamArea />
-            <FunfactArea />
+            {/* <TeamArea /> */}
+            {/* <FunfactArea />
             <TestimonialArea />
-            <SponsorsArea />
+            <SponsorsArea /> */}
         </Layout>
     );
 };

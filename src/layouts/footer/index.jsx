@@ -194,7 +194,7 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Chien Kieu
+                                {" "}Chien Kieu
                             </a>
                         </CopyrightText>
                     </Col>

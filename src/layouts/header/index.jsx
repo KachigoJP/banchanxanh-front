@@ -36,10 +36,6 @@ const Header = () => {
                         text
                         link
                         isSubmenu
-                        submenu {
-                            link
-                            text
-                        }
                     }
                 }
             }
@@ -84,10 +80,10 @@ const Header = () => {
             >
                 <Container>
                     <Row className="align-items-center">
-                        <Col lg={2} md={3} sm={3} xs={5}>
+                        <Col lg={3} md={4} sm={5} xs={8}>
                             <Logo />
                         </Col>
-                        <Col lg={10} md={9} sm={9} xs={7}>
+                        <Col lg={9} md={8} sm={7} xs={4}>
                             <HeaderMenuArea>
                                 <MainMenu allmenuData={menuData} />
 
@@ -107,7 +103,7 @@ const Header = () => {
                                             path="/contact-us"
                                             color="gradient"
                                         >
-                                            Liên hệ{" "}
+                                            Liên hệ
                                             <i className="flaticon-right-arrow"></i>
                                         </Button>
                                     </ButtonBoxArea>

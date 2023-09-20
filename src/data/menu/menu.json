@@ -10,26 +10,6 @@
         "isSubmenu": false
     },
     {
-        "text": "Hành trình",
-        "link": "/causes",
-        "isSubmenu": true
-    },
-    {
-        "text": "Liên kết",
-        "link": "/volunteer",
-        "isSubmenu": true,
-        "submenu": [
-            {
-                "text": "Sự kiện tình nguyện",
-                "link": "/events/need-school-for-mozambique-children"
-            },
-            {
-                "text": "Hợp tác",
-                "link": "/volunteer"
-            }
-        ]
-    },
-    {
         "text": "Liên hệ",
         "link": "/contact-us",
         "isSubmenu": false

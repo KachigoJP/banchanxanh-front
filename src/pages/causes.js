@@ -5,7 +5,7 @@ import SponsorsArea from "../containers/home/sponsors";
 import TestimonialArea from "../containers/home/testimonial";
 import FunfactArea from "../containers/home/funfact";
 import PageBreadcrumb from "../components/pagebreadcrumb";
-import CausesAll from "../containers/causes/causes";
+import CausesAll from "../containers/causes";
 
 const CausesPages = ({ location, pageContext }) => {
     return (

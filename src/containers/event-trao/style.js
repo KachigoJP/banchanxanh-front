@@ -1,6 +1,8 @@
 import styled, { themeGet, device } from "@theme/utils";
+import theme from "@theme";
 
 export const SectionArea = styled.section`
+    transition: opacity 300ms ease-in-out,
     padding: 70px 0 280px;
     ${device.medium} {
         padding: 100px 0 300px;
@@ -12,7 +14,7 @@ export const SectionArea = styled.section`
         padding: 150px 0 390px;
     }
 `;
-export const ContactColunm = styled.div`
+export const StyledColunm = styled.div`
     display: block;
     ${device.small} {
         padding: 0 100px;
@@ -38,7 +40,7 @@ export const ContactColunm = styled.div`
     }
 `;
 
-export const ContactMapArea = styled.div`
+export const StyledMapArea = styled.div`
     position: relative;
     width: 100%;
     height: auto;
@@ -53,8 +55,8 @@ export const ContactMapArea = styled.div`
         height: auto;
     }
 `;
-export const ContactInfoContentArea = styled.div`
-    margin-bottom: 70px;
+export const InfoContentArea = styled.div`
+    margin-bottom: 20px;
     min-width: auto;
     padding: 51px 20px 49px 20px;
     position: relative;
@@ -81,13 +83,8 @@ export const ContactInfoContentArea = styled.div`
     ${device.medium} {
         padding: 53px 70px 49px 70px;
     }
-    // ${device.medium} {
-    //     transform: translate(0, -50%);
-    //     position: absolute;
-    //     top: 50%;
-    // }
 `;
-export const ContactInfoItem = styled.div`
+export const InfoItem = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 28px;
     padding-bottom: 25px;
@@ -98,7 +95,7 @@ export const ContactInfoItem = styled.div`
         marging-bottom: 0;
     }
 `;
-export const ContactIcon = styled.div`
+export const StyledIcon = styled.div`
     left: 30px;
     position: absolute;
     top: 29px;
@@ -114,8 +111,7 @@ export const ContactIcon = styled.div`
         z-index: -1;
     }
 `;
-export const ContactInfoContent = styled.div`
-    padding-left: 128px;
+export const InfoContent = styled.div`
     a {
         color: #fff;
         display: block;
@@ -126,11 +122,44 @@ export const ContactInfoContent = styled.div`
         margin-bottom: 0;
     }
 `;
-export const ContactTitle = styled.h4`
+export const StyledTitle = styled.h4`
     color: #fff;
     font-size: 25px;
     margin-bottom: 12px;
     ${device.large} {
         font-size: 35px;
+    }
+`;
+
+export const InfoText = styled.p`
+    color: white;
+`;
+
+export const UnpaidText = styled.span`
+    color: red;
+`;
+
+export const FormGroup = styled.div`
+    margin-bottom: 20px;
+`;
+
+export const Subtitle = styled.h5`
+    color: ${theme.colors.primary};
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 12px;
+    padding-left: 64px;
+    position: relative;
+    &:after {
+        background-color: ${theme.colors.primary};
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: calc(50% - 1.5px);
+        width: 43px;
     }
 `;
