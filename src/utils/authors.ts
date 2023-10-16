@@ -1,4 +1,4 @@
-const authors = [
+export const authors = [
     {
         name: "Marinda ",
         imageUrl: "../../static/images/author/author-1.png",
@@ -16,5 +16,3 @@ const authors = [
         google: "https://google.com/",
     },
 ];
-
-module.exports = authors;

@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
-const path = require("path");
-const { slugify } = require("./src/utils/functions");
-const _ = require("lodash");
+import path from "path";
+import _ from "lodash";
+import { slugify } from "./src/utils/functions";
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
             alias: {
@@ -27,7 +26,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 };
 
 // Single Post Page
-exports.onCreateNode = ({ node, actions }) => {
+export const onCreateNode = ({ node, actions }) => {
     const { createNodeField } = actions;
 
     // fields create in qrapql file
@@ -65,7 +64,7 @@ exports.onCreateNode = ({ node, actions }) => {
     }
 };
 
-exports.createPages = ({ actions, graphql }) => {
+export const createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
     //  const singlePostTemplate = path.resolve('src/templates/single-post.js')
     const templates = {
@@ -187,7 +186,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
         });
         // Tag Number Count
-        let tagPostCounts = {};
+        let tagPostCounts: any = {};
         tags.forEach((tag) => {
             tagPostCounts[tag] = (tagPostCounts[tag] || 0) + 1;
         });

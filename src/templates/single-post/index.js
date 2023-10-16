@@ -8,7 +8,7 @@ import { graphql, Link } from "gatsby";
 import { Row, Container, Col } from "react-bootstrap";
 import { slugify } from "@utils/functions";
 import BlogSidebar from "@containers/blog/blog-sideber";
-import authors from "@utils/authors";
+import { authors } from "@utils/authors";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { DiscussionEmbed } from "disqus-react";
 import {

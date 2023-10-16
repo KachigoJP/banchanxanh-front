@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Button from "@components/ui/button";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { slugify } from "../../../utils/functions";
-import authors from "../../../utils/authors";
+import { authors } from "../../../utils/authors";
 import {
     PostItemWrap,
     PostThumb,
