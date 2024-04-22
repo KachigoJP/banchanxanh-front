@@ -11,6 +11,7 @@ const EventTraoArea = () => {
     const [startTime, setstartTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
     const [deltaTime, setDeltaTIme] = useState(0);
+    const [deltaTime15, setDeltaTime15] = useState(0);
     const [runnerData, setRunnerData] = useState({});
     const [recordData, setRecordData] = useState({});
     const [runner15Data, setRunner15Data] = useState({});
@@ -25,6 +26,9 @@ const EventTraoArea = () => {
         second: null,
         third: null,
     });
+
+    const startTime25 = 1713656963748;
+    const startTime15 = 1713657601275;
 
     React.useEffect(() => {
         const runnerRef = firebase.ref(fbDatabase, "runner");
@@ -92,8 +96,10 @@ const EventTraoArea = () => {
             return;
         }
         var id = setInterval(() => {
-            var delta = new Date() - startTime;
+            var delta = new Date() - startTime25;
+            var delta15 = new Date() - startTime15;
             setDeltaTIme(delta);
+            setDeltaTime15(delta15);
         }, 1);
         return () => clearInterval(id);
     }, [isRunning]);
@@ -122,8 +128,11 @@ const EventTraoArea = () => {
         const minute = Math.floor((ms / 1000 / 60) % 60)
             .toString()
             .padStart(2, "0");
+        const hour = Math.floor((ms / 1000 / 60 / 60) % 60)
+            .toString()
+            .padStart(2, "0");
 
-        return minute + ":" + second + ":" + milliseconds;
+        return hour + ":" + minute + ":" + second + ":" + milliseconds;
     };
 
     const processRanking = (records, runnerData) => {
@@ -170,6 +179,15 @@ const EventTraoArea = () => {
                         </StyledColunm>
                     </Col>
                 </Row>
+                <Row>
+                    <Col lg={12}>
+                        <StyledColunm>
+                            {isRunning ? (
+                                <h1>Start Time 15: {showTimer(deltaTime15)}</h1>
+                            ) : null}
+                        </StyledColunm>
+                    </Col>
+                </Row>
 
                 <Row>
                     <Col lg={6}>
@@ -195,7 +213,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking15?.first?.record -
-                                                        startTime
+                                                        startTime15
                                                 )}
                                             </td>
                                         </tr>
@@ -208,7 +226,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking15?.second?.record -
-                                                        startTime
+                                                        startTime15
                                                 )}
                                             </td>
                                         </tr>
@@ -221,7 +239,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking15?.third?.record -
-                                                        startTime
+                                                        startTime15
                                                 )}
                                             </td>
                                         </tr>
@@ -253,7 +271,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking25?.first?.record -
-                                                        startTime
+                                                        startTime25
                                                 )}
                                             </td>
                                         </tr>
@@ -266,7 +284,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking25?.second?.record -
-                                                        startTime
+                                                        startTime25
                                                 )}
                                             </td>
                                         </tr>
@@ -279,7 +297,7 @@ const EventTraoArea = () => {
                                             <td>
                                                 {showTimer(
                                                     ranking25?.third?.record -
-                                                        startTime
+                                                        startTime25
                                                 )}
                                             </td>
                                         </tr>
@@ -329,7 +347,7 @@ const EventTraoArea = () => {
                                                         {showTimer(
                                                             runner15Data[item]
                                                                 ?.record -
-                                                                startTime
+                                                                startTime15
                                                         )}
                                                     </td>
                                                 </tr>
@@ -379,7 +397,7 @@ const EventTraoArea = () => {
                                                         {showTimer(
                                                             runner25Data[item]
                                                                 ?.record -
-                                                                startTime
+                                                                startTime25
                                                         )}
                                                     </td>
                                                 </tr>
