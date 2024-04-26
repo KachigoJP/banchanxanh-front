@@ -1,9 +1,12 @@
-import HeartIcon from "@assets/images/svg/heart.svg";
-import { Col, Container, Row } from "react-bootstrap";
-import Logo from "@components/logo";
+import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { useTranslation } from "react-i18next";
+import { Col, Container, Row } from "react-bootstrap";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+
+// Source
+import HeartIcon from "@assets/images/svg/heart.svg";
+import Logo from "@components/common/logo";
 import {
     FooterWrap,
     FooterMain,
@@ -70,7 +73,7 @@ const Footer = () => {
     } = footerQuery.footerJson;
 
     const footerimage = getImage(footerShapeImage);
-    
+
     return (
         <FooterWrap>
             <FooterMain>
@@ -84,7 +87,9 @@ const Footer = () => {
                                         {footerAbout}
                                     </AboutWidgetText>
                                     <WidgetTotalRaised>
-                                        <RaisedTitle>{t("Total Raised")}:</RaisedTitle>
+                                        <RaisedTitle>
+                                            {t("Total Raised")}:
+                                        </RaisedTitle>
                                         <TaisedAmount>
                                             {raisedAmount}
                                         </TaisedAmount>
@@ -97,11 +102,11 @@ const Footer = () => {
                                 <WidgetTitle>{galleryTitle}</WidgetTitle>
                                 <WidgetGallery>
                                     <Row className="row-cols-3 row-gutter-10">
-                                        {gallery.map((item, i) => {
+                                        {gallery.map((item: any, i: number) => {
                                             const imageGallery = getImage(
                                                 item.galleryitem
                                             );
-                                            return (
+                                            return imageGallery ? (
                                                 <Col key={`gallery-${i}`}>
                                                     <GalleryItem>
                                                         <GatsbyImage
@@ -116,7 +121,7 @@ const Footer = () => {
                                                         </a>
                                                     </GalleryItem>
                                                 </Col>
-                                            );
+                                            ) : null;
                                         })}
                                     </Row>
                                 </WidgetGallery>
@@ -188,22 +193,26 @@ const Footer = () => {
                 <Row>
                     <Col sx={{ textAlign: "center" }}>
                         <CopyrightText>
-                            &copy; {new Date().getFullYear()} Ban Chan Xanh. Made with
+                            &copy; {new Date().getFullYear()} Ban Chan Xanh.
+                            Made with
                             <HeartIcon /> by
                             <a
                                 href="https://hasthemes.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                {" "}Chien Kieu
+                                {" "}
+                                Chien Kieu
                             </a>
                         </CopyrightText>
                     </Col>
                 </Row>
             </Container>
-            <FooterShapeLayer>
-                <GatsbyImage image={footerimage} alt="Image-Givest" />
-            </FooterShapeLayer>
+            {footerimage ? (
+                <FooterShapeLayer>
+                    <GatsbyImage image={footerimage} alt="Image-Givest" />
+                </FooterShapeLayer>
+            ) : null}
         </FooterWrap>
     );
 };

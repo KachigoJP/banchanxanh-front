@@ -1,5 +1,4 @@
-
-import { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -8,25 +7,11 @@ import "@assets/css/bootstrap.css";
 import "@assets/css/flaticon.css";
 import "@assets/css/elegantIcons.css";
 import "@assets/css/modal-video.min.css";
-import Logo from "@components/logo";
+import Logo from "@components/common/logo";
 import Button from "@components/common/button";
 import MainMenu from "@components/ui/menu/main-menu";
 import MobileNavMenu from "@components/ui/menu/mobile-menu";
-
-// import {
-//     HeaderTop,
-//     HeaderMenuArea,
-//     HeaderActionArea,
-//     MobileMenuArea,
-//     OffCanvasInner,
-//     MobileMenuBtn,
-//     ButtonBoxArea,
-//     OffCanvasContent,
-//     OffCanvasHeader,
-//     CloseAction,
-//     ButtonClose,
-// } from "./style";
- import * as Styled from "./style";
+import * as Styled from "./style";
 
 const Header = () => {
     const allmenuData = useStaticQuery(graphql`
@@ -51,7 +36,7 @@ const Header = () => {
 
     useEffect(() => {
         const header = document.querySelector(".header-section");
-        setHeaderTop(header.offsetTop);
+        if (header) setHeaderTop((header as HTMLElement).offsetTop);
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -71,14 +56,15 @@ const Header = () => {
     };
 
     const SearchHandaler = () => {
-        setOfcanvasSearchOpen((prev) => !prev);
+        // setOfcanvasSearchOpen((prev) => !prev);
     };
 
     return (
         <Fragment>
             <Styled.HeaderTop
-                className={`header-section ${scroll > headerTop ? "is-sticky" : ""
-                    }`}
+                className={`header-section ${
+                    scroll > headerTop ? "is-sticky" : ""
+                }`}
             >
                 <Container>
                     <Row className="align-items-center">
@@ -87,7 +73,7 @@ const Header = () => {
                         </Col>
                         <Col lg={9} md={8} sm={7} xs={4}>
                             <Styled.HeaderMenuArea>
-                                <MainMenu allmenuData={menuData} />
+                                <MainMenu menu={menuData} />
 
                                 <Styled.HeaderActionArea>
                                     <Styled.MobileMenuBtn
@@ -130,16 +116,16 @@ const Header = () => {
                         <Styled.OffCanvasHeader>
                             <Logo />
                             <Styled.CloseAction>
-                                <ButtonClose
+                                <Styled.ButtonClose
                                     onClick={ofcanvasHandaler}
                                     onKeyDown={SearchHandaler}
                                 >
                                     <i className="icofont-close"></i>
-                                </ButtonClose>
+                                </Styled.ButtonClose>
                             </Styled.CloseAction>
                         </Styled.OffCanvasHeader>
 
-                        <MobileNavMenu MobilemenuData={menuData} />
+                        <MobileNavMenu menu={menuData} />
                     </Styled.OffCanvasContent>
                 </Styled.OffCanvasInner>
             </Styled.MobileMenuArea>

@@ -1,8 +1,19 @@
-import styled, { themeGet, device, css } from "@theme/utils";
-import theme from "@theme";
+import { themeGet } from "@styled-system/theme-get";
+import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import { css } from "@emotion/react";
 
-export const createStyles = (theme, color, size, shape, variant) => css`
+// Source
+import { device } from "@theme";
+import { Theme } from "@theme";
+
+export const createStyles = (
+    theme: Theme,
+    color: string,
+    size: string,
+    shape: string,
+    variant: string
+) => css`
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
@@ -252,11 +263,9 @@ export const createStyles = (theme, color, size, shape, variant) => css`
 
 export const StyledAnchor = styled.a``;
 
-export const StyledLink = styled(Link)`
-`;
+export const StyledLink = styled(Link)``;
 
-export const StyledButton = styled.button`
-`;
+export const StyledButton = styled.button``;
 
 export const StyledSpan = styled.span`
     margin: 0 10px;

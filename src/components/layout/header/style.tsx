@@ -1,4 +1,8 @@
-import styled, { themeGet, device } from "@theme/utils";
+import { themeGet } from "@styled-system/theme-get";
+import styled from "@emotion/styled";
+
+// Source
+import { device } from "@theme";
 
 export const Span = styled.span`
     color: ${themeGet("colors.success")};

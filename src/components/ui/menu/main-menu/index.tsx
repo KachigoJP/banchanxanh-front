@@ -9,12 +9,15 @@ import { HeaderNavigationArea, Navbar, Navitem } from "./style";
 const MainMenu: React.FC<MenuProps> = (props) => {
     const { t } = useTranslation();
     const menuarr = props.menu;
+
     return (
         <HeaderNavigationArea>
             <Navbar className="main-menu">
-                {menuarr.map((menu) => {
+                {menuarr.map((item) => {
+                    const menu = item.node;
                     const hasSubmenu = menu.isSubmenu ? true : false;
                     const submenu = menu.submenu;
+
                     return (
                         <Navitem
                             key={`menu-${menu.id}`}
@@ -27,9 +30,9 @@ const MainMenu: React.FC<MenuProps> = (props) => {
                                 <ul className="submenu-nav">
                                     {submenu.map((submenu, i) => {
                                         return (
-                                            <Navitem key={`submenu${i}`}>
-                                                <Link to={submenu.link}>
-                                                    {t(submenu.text)}
+                                            <Navitem key={`submenu-${i}`}>
+                                                <Link to={submenu.node.link}>
+                                                    {t(submenu.node.text)}
                                                 </Link>
                                             </Navitem>
                                         );

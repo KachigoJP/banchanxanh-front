@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Layout from "@components/layout";
-// import SEO from "@components/ui/seo";
+import SEO from "@components/ui/seo";
 // import Hero from "@containers/home/hero";
 // import ServiceArea from "@containers/home/services";
 // import AboutArea from "@containers/home/about";
@@ -16,8 +16,7 @@ import Layout from "@components/layout";
 const IndexPage = () => {
     return (
         <Layout>
-            <div></div>
-            {/* <SEO title="Home" pathname="/" /> */}
+            <SEO title="Home" pathname="/" />
             {/* <Hero />
             <ServiceArea />
             <AboutArea />

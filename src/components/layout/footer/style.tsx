@@ -1,5 +1,8 @@
-import styled, { device, themeGet } from "@theme/utils";
-import theme from "@theme";
+import { themeGet } from "@styled-system/theme-get";
+import styled from "@emotion/styled";
+
+// Source
+import { device, themeDefault } from "@theme";
 
 export const FooterWrap = styled.footer`
     background-color: #001d23;
@@ -78,7 +81,7 @@ export const TaisedAmount = styled.div`
     }
     line-height: 1;
     background: ${themeGet("colors.secondary")};
-    background: ${theme.colors.gradient};
+    background: ${themeDefault.colors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;
@@ -91,7 +94,7 @@ export const WidgetTitle = styled.h4`
     margin-bottom: 34px;
     margin-top: 17px;
     &:before {
-        background-color: ${theme.colors.primary};
+        background-color: ${themeDefault.colors.primary};
         content: "";
         height: 4px;
         left: 0;
@@ -128,7 +131,7 @@ export const GalleryItem = styled.div`
         top: 0;
         width: 100%;
         background: ${themeGet("colors.secondary")};
-        background: ${theme.colors.gradient};
+        background: ${themeDefault.colors.gradient};
         transition: 0.3s;
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;

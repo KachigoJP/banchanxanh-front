@@ -1,7 +1,6 @@
 import React from "react";
 import { Global, css, useTheme } from "@emotion/react";
-import { device } from "@theme/utils";
-import { Theme } from "@theme";
+import { Theme, device } from "@theme";
 
 export const GlobalCSS = () => {
     const theme: Theme = useTheme() as Theme;

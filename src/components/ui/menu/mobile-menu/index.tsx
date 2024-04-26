@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React, { Fragment } from "react";
 
+// Sources
 import { MenuProps } from "@utils/interface";
 import { MobileMenuContent, Navbar, MobileNavitem } from "./style";
 import {
@@ -52,7 +53,8 @@ const MobileNavMenu: React.FC<MenuProps> = (props) => {
         <MobileMenuContent>
             <Navbar className="site-mobile-menu">
                 <ul>
-                    {menuArr.map((menu) => {
+                    {menuArr.map((item) => {
+                        const menu = item.node;
                         const hasSubmenu = menu.isSubmenu ? true : false;
                         const submenu = menu.submenu;
                         return (
@@ -78,10 +80,15 @@ const MobileNavMenu: React.FC<MenuProps> = (props) => {
                                             {submenu.map((submenu, i) => {
                                                 return (
                                                     <MobileNavitem
-                                                        key={`submenu${i}`}
+                                                        key={`submenu-${i}`}
                                                     >
-                                                        <Link to={submenu.link}>
-                                                            {submenu.text}
+                                                        <Link
+                                                            to={
+                                                                submenu.node
+                                                                    .link
+                                                            }
+                                                        >
+                                                            {submenu.node.text}
                                                         </Link>
                                                     </MobileNavitem>
                                                 );

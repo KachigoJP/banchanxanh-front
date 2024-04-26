@@ -1,23 +1,31 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
-import PropTypes from "prop-types";
-import { StyledButton, StyledAnchor, StyledLink, createStyles, StyledSpan } from "./style";
+import React from "react";
 
-const Button = ({
-    children,
-    type,
-    color,
-    size,
-    shape,
-    variant,
-    sx,
-    className,
-    path,
-    label,
-    ...props
-}) => {
+// Source
+import { ButtonProps } from "@utils/interface";
+import { Theme } from "@theme";
+import {
+    StyledButton,
+    StyledAnchor,
+    StyledLink,
+    createStyles,
+    StyledSpan,
+} from "./style";
+
+const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
+    const {
+        children,
+        color,
+        size,
+        shape,
+        variant,
+        sx,
+        className,
+        path,
+        label,
+    } = props;
+
     const buttonProps = {
-        css: (theme) => createStyles(theme, color, size, shape, variant),
+        css: (theme: Theme) => createStyles(theme, color, size, shape, variant),
     };
     if (path) {
         const internal = /^\/(?!\/)/.test(path);
@@ -65,39 +73,10 @@ const Button = ({
     }
 
     return (
-        <StyledButton
-            className={className}
-            type={type}
-            {...buttonProps}
-            {...props}
-            sx={sx}
-        >
+        <StyledButton {...buttonProps} {...props} sx={sx}>
             {children}
         </StyledButton>
     );
-};
-
-Button.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    sx: PropTypes.object,
-    type: PropTypes.oneOf(["button", "submit", "reset"]),
-    color: PropTypes.oneOf([
-        "primary",
-        "secondary",
-        "dark",
-        "light",
-        "gradient",
-        "theme-gradient",
-        "outlined-transparent",
-        "border-gradient",
-        "border-normal",
-    ]),
-    size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "fullwidth"]),
-    shape: PropTypes.oneOf(["rounded"]),
-    variant: PropTypes.oneOf(["outlined", "iconButton"]),
-    path: PropTypes.string,
-    label: PropTypes.string,
 };
 
 Button.defaultProps = {

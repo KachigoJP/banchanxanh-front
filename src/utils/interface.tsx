@@ -23,9 +23,42 @@ export interface MenuProps {
 }
 
 export interface MenuItem {
-    id: string;
-    isSubmenu: boolean;
-    link: string;
-    text: string;
-    submenu?: MenuItem[];
+    node: {
+        id: string;
+        isSubmenu: boolean;
+        link: string;
+        text: string;
+        submenu?: MenuItem[];
+    };
+}
+
+export interface ButtonProps {
+    className?: string;
+    sx?: Size;
+    type?: "button" | "submit" | "reset";
+    color?:
+        | "primary"
+        | "secondary"
+        | "dark"
+        | "light"
+        | "gradient"
+        | "theme-gradient"
+        | "outlined-transparent"
+        | "border-gradient"
+        | "border-normal";
+    size?: "xsmall" | "small" | "medium" | "large" | "fullwidth";
+    shape?: "rounded";
+    variant?: "outlined" | "iconButton";
+    path?: string;
+    label?: string;
+}
+
+export interface Size {
+    ml: string;
+}
+
+export interface VideoProps {
+    isOpen: boolean;
+    videoId: string;
+    setOpen: (value: boolean) => {};
 }

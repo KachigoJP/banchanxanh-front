@@ -20,7 +20,6 @@ const SEO: React.FC<SEOProps> = (props) => {
                         siteLanguage
                         image
                         titleTemplate
-                        twitterUsername
                         mainUrl
                     }
                     buildTime
@@ -129,16 +128,6 @@ const SEO: React.FC<SEOProps> = (props) => {
             <meta property="og:image:height" content={`${imgHeight}px`} />
             <meta property="og:image:alt" content={siteTitle} />
             <meta property="og:image:type" content="image/png" />
-
-            {/* Twitter Card tags */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-                name="twitter:creator"
-                content={site.siteMetadata.twitterUsername}
-            />
-            <meta name="twitter:title" content={siteTitle} />
-            <meta name="twitter:description" content={metaDescription} />
-            <meta name="twitter:image" content={bannerImage} />
         </Helmet>
     );
 };

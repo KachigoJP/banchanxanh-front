@@ -9,17 +9,17 @@ import "@i18n";
 import { themeDefault } from "@theme";
 import { ThemeProvider } from "@emotion/react";
 import { GlobalCSS } from "@theme/style";
-// import Header from "./header";
-// import Footer from "./footer";
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     return (
         <ThemeProvider theme={themeDefault}>
             <div className="wrapper">
                 <GlobalCSS />
-                {/* <Header /> */}
+                <Header />
                 {children}
-                {/* <Footer /> */}
+                <Footer />
             </div>
         </ThemeProvider>
     );
