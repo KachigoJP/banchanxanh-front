@@ -1,11 +1,10 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 import { css } from "@emotion/react";
+import { Link } from "gatsby";
 
 // Source
-import { device } from "@theme";
-import { Theme } from "@theme";
+import { device, Theme } from "@theme";
 
 export const createStyles = (
     theme: Theme,
@@ -84,13 +83,13 @@ export const createStyles = (
         display: inline-block;
         padding: 2px !important;
         z-index: 1;
-        background: ${themeGet("colors.secondary")};
+        background: ${themeGet("colors.secondary")(theme)};
         background: ${theme.colors.gradient};
         min-height: 40px;
         line-height: 40px;
         span {
             display: block;
-            background: ${themeGet("colors.secondary")};
+            background: ${themeGet("colors.secondary")(theme)};
             background: ${theme.colors.gradient};
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

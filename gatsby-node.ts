@@ -5,24 +5,24 @@ import { CreateWebpackConfigArgs, GatsbyNode } from "gatsby";
 // Source
 import { slugify } from "./src/utils/functions";
 
-export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
-    actions.setWebpackConfig({
-        resolve: {
-            alias: {
-                "@assets": path.resolve(__dirname, "./src/assets"),
-                "@components": path.resolve(__dirname, "./src/components"),
-                "@config": path.resolve(__dirname, "./src/config"),
-                "@data": path.resolve(__dirname, "./src/data"),
-                "@pages": path.resolve(__dirname, "./src/pages"),
-                "@theme": path.resolve(__dirname, "./src/theme"),
-                "@utils": path.resolve(__dirname, "./src/utils"),
-                // "@constants": path.resolve(__dirname, "./src/constants"),
-                // "@hooks": path.resolve(__dirname, "./src/hooks"),
-                "@i18n": path.resolve(__dirname, "./src/i18n"),
-            },
-        },
-    });
-};
+// export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
+//     actions.setWebpackConfig({
+//         resolve: {
+//             alias: {
+//                 "@assets": path.resolve(__dirname, "./src/assets"),
+//                 "@components": path.resolve(__dirname, "./src/components"),
+//                 "@config": path.resolve(__dirname, "./src/config"),
+//                 "@data": path.resolve(__dirname, "./src/data"),
+//                 "@pages": path.resolve(__dirname, "./src/pages"),
+//                 "@theme": path.resolve(__dirname, "./src/theme"),
+//                 "@utils": path.resolve(__dirname, "./src/utils"),
+//                 // "@constants": path.resolve(__dirname, "./src/constants"),
+//                 // "@hooks": path.resolve(__dirname, "./src/hooks"),
+//                 "@i18n": path.resolve(__dirname, "./src/i18n"),
+//             },
+//         },
+//     });
+// };
 
 // Single Post Page
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({

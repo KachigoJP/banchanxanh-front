@@ -1,7 +1,7 @@
 import React from "react";
 
 // Source
-import { ButtonProps } from "@utils/interface";
+import { ButtonProps } from "./interface";
 import { Theme } from "@theme";
 import {
     StyledButton,
@@ -13,15 +13,16 @@ import {
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
     const {
+        type = "button",
         children,
-        color,
-        size,
-        shape,
-        variant,
-        sx,
+        color = "primary",
+        size = "medium",
+        shape = "rounded",
+        variant = "outlined",
         className,
         path,
         label,
+        css,
     } = props;
 
     const buttonProps = {
@@ -37,7 +38,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
                     className={className}
                     to={path}
                     {...buttonProps}
-                    sx={sx}
+                    css={css}
                 >
                     {label && <span className="sr-only">{label}</span>}
                     <span>{children}</span>
@@ -50,7 +51,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
                     className={className}
                     href={path}
                     {...buttonProps}
-                    sx={sx}
+                    css={css}
                 >
                     {label && <span className="sr-only">{label}</span>}
                     <StyledSpan>{children}</StyledSpan>
@@ -61,7 +62,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
             <StyledAnchor
                 href={path}
                 {...buttonProps}
-                sx={sx}
+                css={css}
                 target="_blank"
                 rel="noopener"
                 className={className}
@@ -73,7 +74,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
     }
 
     return (
-        <StyledButton {...buttonProps} {...props} sx={sx}>
+        <StyledButton {...buttonProps} {...props} css={css}>
             {children}
         </StyledButton>
     );

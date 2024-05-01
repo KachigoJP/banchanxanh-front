@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 // Source
-import { SEOProps } from "@utils/interface";
+import { SEOProps } from "./interface";
 
 const SEO: React.FC<SEOProps> = (props) => {
     const { site } = useStaticQuery(
@@ -132,10 +132,10 @@ const SEO: React.FC<SEOProps> = (props) => {
     );
 };
 
-// SEO.defaultProps = {
-//     lang: `en`,
-//     description: ``,
-//     pathname: "/",
-// };
+SEO.defaultProps = {
+    lang: `en`,
+    description: ``,
+    pathname: "/",
+};
 
 export default SEO;

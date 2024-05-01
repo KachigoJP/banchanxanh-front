@@ -1,9 +1,6 @@
 import { themeGet } from "@styled-system/theme-get";
 import styled from "@emotion/styled";
 
-// Source
-import { device } from "@theme";
-
 export const MobileMenuContent = styled.div``;
 export const Navbar = styled.ul`
     margin-top: 50px;

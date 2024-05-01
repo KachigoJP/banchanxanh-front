@@ -26,7 +26,7 @@ import {
     FooterShapeLayer,
 } from "./style";
 
-const Footer = () => {
+const Footer: React.FC = () => {
     const { t } = useTranslation();
     const footerQuery = useStaticQuery(graphql`
         query FooterQuery {

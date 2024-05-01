@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 
 // Source
-import { MenuProps } from "@utils/interface";
+import { MenuProps } from "../interface";
 import { HeaderNavigationArea, Navbar, Navitem } from "./style";
 
 const MainMenu: React.FC<MenuProps> = (props) => {

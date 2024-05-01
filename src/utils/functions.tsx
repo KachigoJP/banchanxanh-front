@@ -39,15 +39,14 @@ export const slugify = function (text: string) {
 //     });
 // };
 
-// const flatDeep = (arr, d = 1) => {
-//     return d > 0
-//         ? arr.reduce(
-//               (acc, val) =>
-//                   acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val),
-//               []
-//           )
-//         : arr.slice();
-// };
+const flatDeep = (arr: any, d = 1) => {
+    return d > 0
+        ? arr.reduce((acc: any, val: any) => {
+              const value = Array.isArray(val) ? flatDeep(val, d - 1) : val;
+              return acc.concat(value);
+          }, [])
+        : arr.slice();
+};
 
 // function truncateString(str, num, dots = true) {
 //     let endDots = dots ? "..." : "";

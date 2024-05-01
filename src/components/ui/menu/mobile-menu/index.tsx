@@ -2,14 +2,14 @@ import { Link } from "gatsby";
 import React, { Fragment } from "react";
 
 // Sources
-import { MenuProps } from "@utils/interface";
-import { MobileMenuContent, Navbar, MobileNavitem } from "./style";
 import {
     getClosest,
     getSiblings,
     slideToggle,
     slideUp,
 } from "@utils/mobile-nav";
+import { MenuProps } from "../interface";
+import { MobileMenuContent, Navbar, MobileNavitem } from "./style";
 
 const MobileNavMenu: React.FC<MenuProps> = (props) => {
     const menuArr = props.menu;
