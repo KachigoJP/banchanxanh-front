@@ -1,4 +1,6 @@
-import styled, { themeGet, device } from "@theme/utils";
+import styled from "@emotion/styled";
+
+import { device } from "@theme";
 
 export const FunInnerContent = styled.div`
     display: flex;

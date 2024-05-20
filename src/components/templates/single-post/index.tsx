@@ -31,7 +31,7 @@ import { SinglePostProps } from "./interface";
 const SinglePosts: React.FC<SinglePostProps> = (props) => {
     const { data, location, pageContext } = props;
 
-    const post = data.markdownRemark.frontmatter;
+    const post = data.frontmatter;
     const image = getImage(post.thume_image.childImageSharp);
 
     // Author Post page
@@ -43,7 +43,7 @@ const SinglePosts: React.FC<SinglePostProps> = (props) => {
     // Disqus Comments add
     const disqusShorttname = "mitech-1";
     const disquscConfig = {
-        identifier: data.markdownRemark.id,
+        identifier: data.id,
         title: post.title,
         url: baseUrl + "/" + pageContext.slug,
     };
@@ -63,10 +63,12 @@ const SinglePosts: React.FC<SinglePostProps> = (props) => {
                             <PostDetailsContentWrap>
                                 <PostDetailsBody>
                                     <Thumb>
-                                        <GatsbyImage
-                                            image={image}
-                                            alt={post.title}
-                                        />
+                                        {image ? (
+                                            <GatsbyImage
+                                                image={image}
+                                                alt={post.title}
+                                            />
+                                        ) : null}
                                     </Thumb>
                                     <Content>
                                         <MetaBox>
@@ -105,8 +107,7 @@ const SinglePosts: React.FC<SinglePostProps> = (props) => {
                                         <Title>{post.title}</Title>
                                         <SingleBlogContent
                                             dangerouslySetInnerHTML={{
-                                                __html: data.markdownRemark
-                                                    .html,
+                                                __html: data.html,
                                             }}
                                         />
 

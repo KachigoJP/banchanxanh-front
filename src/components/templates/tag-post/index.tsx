@@ -1,25 +1,29 @@
-import PropTypes from "prop-types";
-import Layout from "@layout";
-import SEO from "@components/seo";
-import PageBreadcrumb from "@components/pagebreadcrumb";
-import { graphql } from "gatsby";
+import React from "react";
+import { graphql, Link } from "gatsby";
 import { Row, Container, Col } from "react-bootstrap";
-import BlogSidebar from "@containers/blog/blog-sideber";
-import BlogList from "../../components/blog/list-blog";
-import { BlogPostContentArea, BlogDetailsArea } from "./style";
 
-const TagPosts = ({ data, location, pageContext }) => {
+// Source
+import Layout from "@components/layout";
+import SEO from "@components/common/seo";
+// import PageBreadcrumb from "@components/pagebreadcrumb";
+import BlogSidebar from "@components/ui/blog/blog-sidebar";
+import BlogList from "@components/ui/blog/list-blog";
+import { BlogPostContentArea, BlogDetailsArea } from "./style";
+import { SingleTagProps } from "./interface";
+
+const TagPosts: React.FC<SingleTagProps> = (props) => {
+    const { data, location, pageContext } = props;
     const { tag } = pageContext;
 
     return (
         <Layout>
             <SEO title={"Blog Tags Post"} pathname="/" />
-            <PageBreadcrumb
+            {/* <PageBreadcrumb
                 pageContext={pageContext}
                 location={location}
                 crumbLabel="Blog Tag Post"
                 title="Blog Tag Post"
-            />
+            /> */}
             <BlogDetailsArea>
                 <Container>
                     <Row>
@@ -56,12 +60,6 @@ const TagPosts = ({ data, location, pageContext }) => {
             </BlogDetailsArea>
         </Layout>
     );
-};
-
-TagPosts.propTypes = {
-    data: PropTypes.object,
-    location: PropTypes.object,
-    pageContext: PropTypes.object,
 };
 
 export const tagQuery = graphql`

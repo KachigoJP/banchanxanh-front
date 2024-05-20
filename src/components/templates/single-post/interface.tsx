@@ -1,11 +1,7 @@
 import { BlogItem } from "@utils/interface";
 
 export interface SinglePostProps {
-    data: {
-        allMarkdownRemark: {
-            edges: BlogItem[];
-        };
-    };
+    data: BlogItem;
     location: Location;
     pageContext: any;
 }

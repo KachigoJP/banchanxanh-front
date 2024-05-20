@@ -5,14 +5,14 @@ import SEO from "@components/common/seo";
 import Hero from "@components/containers/home/hero";
 // import BlogArea from "@components/containers/home/blog";
 import ServiceArea from "@components/containers/home/services";
-// import AboutArea from "@containers/home/about";
-// import CausesArea from "@containers/home/causes";
-// import DonateArea from "../containers/home/donate";
-// import FunfactArea from "../containers/home/funfact";
-// import EventArea from "../containers/home/events";
-// import TestimonialArea from "../containers/home/testimonial";
-// import LatestBlog from "../containers/home/blog";
-// import SponsorsArea from "../containers/home/sponsors";
+import AboutArea from "@components/containers/home/about";
+import CausesArea from "@components/containers/home/causes";
+import DonateArea from "@components/containers/home/donate";
+import FunfactArea from "@components/containers/home/funfact";
+import EventArea from "@components/containers/home/events";
+import TestimonialArea from "@components/containers/home/testimonial";
+import LatestBlog from "@components/containers/home/blog";
+import SponsorsArea from "@components/containers/home/sponsors";
 
 const IndexPage = () => {
     return (
@@ -20,16 +20,16 @@ const IndexPage = () => {
             <SEO title="Home" pathname="/" />
             <Hero />
 
-            <ServiceArea />
             {/* <BlogArea /> */}
-            {/* 
+            <ServiceArea />
+
             <AboutArea />
             <CausesArea />
             <DonateArea />
             <FunfactArea />
             <TestimonialArea />
             <LatestBlog />
-            <SponsorsArea /> */}
+            <SponsorsArea />
         </Layout>
     );
 };

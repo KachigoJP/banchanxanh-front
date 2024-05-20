@@ -1,10 +1,8 @@
-import { BlogItem } from "@utils/interface";
+import { AllQuery, BlogItem } from "@utils/interface";
 
-export interface TagPostProps {
+export interface SingleTagProps {
     data: {
-        allMarkdownRemark: {
-            edges: BlogItem[];
-        };
+        allMarkdownRemark: AllQuery<BlogItem>;
     };
     location: Location;
     pageContext: any;
