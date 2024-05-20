@@ -6,9 +6,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import CausesItem from "@components/ui/causes";
 import SectionTitle from "@components/common/title";
 import { SectionArea } from "./style";
-import { CauseData } from "./interface";
+import { AllQuery, CauseItemData } from "@utils/interface";
 
-const CausesArea = () => {
+const CausesArea: React.FC = () => {
     const causesAreaQuery = useStaticQuery(graphql`
         query CausesAreaQuery {
             allCausesJson {
@@ -41,7 +41,8 @@ const CausesArea = () => {
         }
     `);
 
-    const causesAreaData = causesAreaQuery.allCausesJson.edges as CauseData[];
+    const causesAreaData =
+        causesAreaQuery.allCausesJson as AllQuery<CauseItemData>;
 
     return (
         <SectionArea>
@@ -60,35 +61,27 @@ const CausesArea = () => {
                     </Col>
                 </Row>
                 <Row>
-                    {causesAreaData &&
-                        causesAreaData
-                            .slice(0, 3)
-                            .map((causesData: CauseData) => {
-                                return (
-                                    <Col
-                                        lg={4}
-                                        md={6}
-                                        sm={6}
-                                        key={causesData.node.id}
-                                    >
-                                        <CausesItem
-                                            image={causesData.node.image}
-                                            title={causesData.node.title}
-                                            dec={causesData.node.dec}
-                                            adminName={
-                                                causesData.node.adminName
-                                            }
-                                            adminImage={
-                                                causesData.node.adminImage
-                                            }
-                                            slug={causesData.node.fields.slug}
-                                            donateInfo={
-                                                causesData.node.donateInfo
-                                            }
-                                        />
-                                    </Col>
-                                );
-                            })}
+                    {causesAreaData.edges &&
+                        causesAreaData.edges.slice(0, 3).map((causesData) => {
+                            return (
+                                <Col
+                                    lg={4}
+                                    md={6}
+                                    sm={6}
+                                    key={causesData.node.id}
+                                >
+                                    <CausesItem
+                                        image={causesData.node.image}
+                                        title={causesData.node.title}
+                                        dec={causesData.node.dec}
+                                        adminName={causesData.node.adminName}
+                                        adminImage={causesData.node.adminImage}
+                                        slug={causesData.node.fields.slug}
+                                        donateInfo={causesData.node.donateInfo}
+                                    />
+                                </Col>
+                            );
+                        })}
                 </Row>
             </Container>
         </SectionArea>

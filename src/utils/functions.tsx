@@ -39,7 +39,7 @@ export const slugify = function (text: string) {
 //     });
 // };
 
-const flatDeep = (arr: any, d = 1) => {
+export const flatDeep = (arr: any, d = 1) => {
     return d > 0
         ? arr.reduce((acc: any, val: any) => {
               const value = Array.isArray(val) ? flatDeep(val, d - 1) : val;

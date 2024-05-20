@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { themeGet } from "@styled-system/theme-get";
 
 // Source
-import { device, themeDefault as theme } from "@theme";
+import { device } from "@theme";
 
 export const SectionTitleArea = styled.div`
     position: relative;

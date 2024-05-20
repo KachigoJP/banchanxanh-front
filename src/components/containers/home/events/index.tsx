@@ -9,7 +9,7 @@ import SectionTitle from "@components/common/title";
 import Video from "@components/common/video";
 import EventItem from "@components/ui/events";
 import { SectionArea, EventContentWrap, LayerStyle, Thumb } from "./style";
-import { EventItemData } from "./interface";
+import { AllQuery, EventItemData } from "@utils/interface";
 
 const EventArea: React.FC = () => {
     const eventsQuery = useStaticQuery(graphql`
@@ -36,7 +36,7 @@ const EventArea: React.FC = () => {
         }
     `);
 
-    const eventsData = eventsQuery.allEventJson.edges as EventItemData[];
+    const eventsData = eventsQuery.allEventJson as AllQuery<EventItemData>;
 
     // Video Modal Popup
     const [isOpen, setOpen] = useState(false);
@@ -60,7 +60,7 @@ const EventArea: React.FC = () => {
                         />
                         <EventContentWrap>
                             {eventsData &&
-                                eventsData.slice(0, 3).map((item) => {
+                                eventsData.edges.slice(0, 3).map((item) => {
                                     return (
                                         <EventItem
                                             key={item.node.id}

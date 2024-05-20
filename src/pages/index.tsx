@@ -1,10 +1,10 @@
 import * as React from "react";
 
 import Layout from "@components/layout";
-import SEO from "@components/ui/seo";
+import SEO from "@components/common/seo";
 import Hero from "@components/containers/home/hero";
-import BlogArea from "@components/containers/home/blog";
-// import ServiceArea from "@containers/home/services";
+// import BlogArea from "@components/containers/home/blog";
+import ServiceArea from "@components/containers/home/services";
 // import AboutArea from "@containers/home/about";
 // import CausesArea from "@containers/home/causes";
 // import DonateArea from "../containers/home/donate";
@@ -19,9 +19,10 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Home" pathname="/" />
             <Hero />
-            <BlogArea />
-            {/* 
+
             <ServiceArea />
+            {/* <BlogArea /> */}
+            {/* 
             <AboutArea />
             <CausesArea />
             <DonateArea />
