@@ -1,3 +1,7 @@
+// Source
+import { NODE_TYPES } from "../utils/constants";
+import { ISiteConfig } from "./site_config";
+
 export interface Image {
     src: string;
     width: string;
@@ -9,6 +13,11 @@ export interface AllQuery<P> {
         node: P;
     }[];
 }
+
+export type NodeBuilderInput = {
+    type: string;
+    data: ISiteConfig;
+};
 
 export * from "@data/causes/interface";
 export * from "@data/event/interface";

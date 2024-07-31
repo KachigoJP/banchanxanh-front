@@ -65,7 +65,7 @@ const TagPosts: React.FC<SingleTagProps> = (props) => {
 export const tagQuery = graphql`
     query ($tag: String!) {
         allMarkdownRemark(
-            sort: { fields: frontmatter___date, order: DESC }
+            sort: { frontmatter: { date: DESC } }
             filter: { frontmatter: { tags: { in: [$tag] } } }
         ) {
             edges {

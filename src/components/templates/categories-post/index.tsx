@@ -30,20 +30,17 @@ const CategorisPosts: React.FC<BlogCategoriesPostProps> = (props) => {
                                     return (
                                         <BlogList
                                             key={i}
-                                            title={blog.node.frontmatter.title}
+                                            title={blog.frontmatter.title}
                                             thume_image={
-                                                blog.node.frontmatter
-                                                    .thume_image
+                                                blog.frontmatter.thume_image
                                             }
                                             categories={
-                                                blog.node.frontmatter.categories
+                                                blog.frontmatter.categories
                                             }
-                                            body={blog.node.excerpt}
-                                            date={blog.node.frontmatter.date}
-                                            slug={blog.node.fields.slug}
-                                            postAuthor={
-                                                blog.node.frontmatter.author
-                                            }
+                                            body={blog.excerpt}
+                                            date={blog.frontmatter.date}
+                                            slug={blog.fields.slug}
+                                            postAuthor={blog.frontmatter.author}
                                         />
                                     );
                                 })}
@@ -62,7 +59,7 @@ const CategorisPosts: React.FC<BlogCategoriesPostProps> = (props) => {
 export const CategorieQuery = graphql`
     query ($categorie: String!) {
         allMarkdownRemark(
-            sort: { fields: frontmatter___date, order: DESC }
+            sort: { frontmatter: { date: DESC } }
             filter: { frontmatter: { tags: { in: [$categorie] } } }
         ) {
             edges {

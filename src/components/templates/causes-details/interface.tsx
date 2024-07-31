@@ -1,4 +1,4 @@
-import { CauseItemData } from "@utils/interface";
+import { CauseItemData } from "../../../interfaces";
 
 export interface CausesDetailProps {
     data: {

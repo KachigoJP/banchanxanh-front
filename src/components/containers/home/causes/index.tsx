@@ -6,7 +6,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import CausesItem from "@components/ui/causes";
 import SectionTitle from "@components/common/title";
 import { SectionArea } from "./style";
-import { AllQuery, CauseItemData } from "@utils/interface";
+import { AllQuery, CauseItemData } from "../../../../interfaces";
 
 const CausesArea: React.FC = () => {
     const causesAreaQuery = useStaticQuery(graphql`

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 // Source
-import { BlogItem } from "@utils/interface";
+import { BlogItem } from "../../../interfaces";
 import BlogList from "@components/ui/blog/list-blog";
 import PaginationLinks from "@components/common/pagination";
 import { BlogPostContentArea, PaginationArea } from "./style";
@@ -10,10 +10,7 @@ import { BlogPostContentArea, PaginationArea } from "./style";
 const BlogPostArea: React.FC = () => {
     const listBlogQuery = useStaticQuery(graphql`
         query ListBlogQuery {
-            allMarkdownRemark(
-                sort: { fields: frontmatter___date, order: DESC }
-                limit: 3
-            ) {
+            allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 3) {
                 totalCount
                 edges {
                     node {
@@ -49,13 +46,13 @@ const BlogPostArea: React.FC = () => {
                     return (
                         <BlogList
                             key={i}
-                            title={blog.node.frontmatter.title}
-                            thume_image={blog.node.frontmatter.thume_image}
-                            categories={blog.node.frontmatter.categories}
-                            body={blog.node.excerpt}
-                            date={blog.node.frontmatter.date}
-                            slug={blog.node.fields.slug}
-                            postAuthor={blog.node.frontmatter.author}
+                            title={blog.frontmatter.title}
+                            thume_image={blog.frontmatter.thume_image}
+                            categories={blog.frontmatter.categories}
+                            body={blog.excerpt}
+                            date={blog.frontmatter.date}
+                            slug={blog.fields.slug}
+                            postAuthor={blog.frontmatter.author}
                         />
                     );
                 })}

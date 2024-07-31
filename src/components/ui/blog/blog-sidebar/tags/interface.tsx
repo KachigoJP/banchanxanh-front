@@ -1,4 +1,4 @@
-import { BlogItem } from "@utils/interface";
+import { BlogItem } from "../../../../../interfaces";
 
 export interface TagsProps {
     tags: BlogItem[];

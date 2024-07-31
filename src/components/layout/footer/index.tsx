@@ -72,6 +72,14 @@ const Footer: React.FC = () => {
         footerShapeImage,
     } = footerQuery.footerJson;
 
+    // const {
+    //     footer_about,
+    //     total_donate,
+    //     logo: logoUrl,
+    // } = footerQuery.siteConfig;
+
+    console.log(footerQuery.siteConfig);
+
     const footerimage = getImage(footerShapeImage);
 
     return (
@@ -82,7 +90,10 @@ const Footer: React.FC = () => {
                         <Col sm={12} md={6} lg={4} xl={4}>
                             <WidgetItem>
                                 <AboutWidget>
-                                    <Logo className="footer-logo" />
+                                    <Logo
+                                        className="footer-logo"
+                                        // logo={logoUrl}
+                                    />
                                     <AboutWidgetText>
                                         {footerAbout}
                                     </AboutWidgetText>
@@ -90,14 +101,12 @@ const Footer: React.FC = () => {
                                         <RaisedTitle>
                                             {t("Total Raised")}:
                                         </RaisedTitle>
-                                        <TaisedAmount>
-                                            {raisedAmount}
-                                        </TaisedAmount>
+                                        <TaisedAmount>{100000}</TaisedAmount>
                                     </WidgetTotalRaised>
                                 </AboutWidget>
                             </WidgetItem>
                         </Col>
-                        <Col sm={6} md={6} lg={4} xl={4}>
+                        {/* <Col sm={6} md={6} lg={4} xl={4}>
                             <WidgetItem>
                                 <WidgetTitle>{galleryTitle}</WidgetTitle>
                                 <WidgetGallery>
@@ -126,7 +135,7 @@ const Footer: React.FC = () => {
                                     </Row>
                                 </WidgetGallery>
                             </WidgetItem>
-                        </Col>
+                        </Col> */}
                         {/* <Col sm={6} md={6} lg={4} xl={4}>
                             <WidgetItem className="menu-wrap-two-column">
                                 <WidgetTitle>{menuTitle}</WidgetTitle>
@@ -197,7 +206,7 @@ const Footer: React.FC = () => {
                             Made with
                             <HeartIcon /> by
                             <a
-                                href="https://hasthemes.com/"
+                                href=""
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

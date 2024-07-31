@@ -1,4 +1,4 @@
-import { EventItemData } from "@utils/interface";
+import { EventItemData } from "../../../interfaces";
 
 export interface EventPostProps {
     data: {

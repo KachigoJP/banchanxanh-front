@@ -1,4 +1,4 @@
-import { Image } from "@utils/interface";
+import { Image } from "../../../interfaces";
 
 export interface SEOProps {
     title: string;

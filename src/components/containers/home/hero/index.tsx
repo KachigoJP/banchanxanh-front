@@ -62,7 +62,6 @@ const Hero = () => {
     } = heroSlider.heroJson;
 
     const image = getImage(sliderImage);
-    console.log("LOADDDDD", sliderImage);
     const image1 = getImage(circleImage);
     const image2 = getImage(shapeImage1);
     const image3 = getImage(shapeImage2);

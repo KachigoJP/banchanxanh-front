@@ -42,24 +42,16 @@ const PostList: React.FC<PostListProps> = ({
                                         return (
                                             <BlogList
                                                 key={i}
-                                                title={
-                                                    blog.node.frontmatter.title
-                                                }
-                                                thume_image={
-                                                    blog.node.frontmatter
-                                                        .thume_image
-                                                }
+                                                title={blog.frontmatter.title}
+                                                thume_image={null}
                                                 categories={
-                                                    blog.node.frontmatter
-                                                        .categories
+                                                    blog.frontmatter.categories
                                                 }
-                                                body={blog.node.excerpt}
-                                                date={
-                                                    blog.node.frontmatter.date
-                                                }
-                                                slug={blog.node.fields.slug}
+                                                body={blog.excerpt}
+                                                date={blog.frontmatter.date}
+                                                slug={blog.fields.slug}
                                                 postAuthor={
-                                                    blog.node.frontmatter.author
+                                                    blog.frontmatter.author
                                                 }
                                             />
                                         );
@@ -84,7 +76,7 @@ const PostList: React.FC<PostListProps> = ({
 export const PlstListQuery = graphql`
     query postListQuery($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { frontmatter: { date: DESC } }
             limit: $limit
             skip: $skip
         ) {

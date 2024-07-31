@@ -1,9 +1,18 @@
 import path from "path";
 import _ from "lodash";
-import { CreateWebpackConfigArgs, GatsbyNode } from "gatsby";
+import {
+    CreateWebpackConfigArgs,
+    GatsbyNode,
+    NodeInput,
+    SourceNodesArgs,
+} from "gatsby";
+import type { IRemoteImageNodeInput } from "gatsby-plugin-utils";
+import probe from "probe-image-size";
 
 // Source
 import { slugify } from "./src/utils/functions";
+import { NodeBuilderInput } from "./src/interfaces";
+import { createSiteConfigSchema, createAssetSchema } from "@utils/schemas";
 
 // export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
 //     actions.setWebpackConfig({
@@ -40,6 +49,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
             value: slugFromTitle,
         });
     }
+
     // Sevices Json File Create
     if (node.internal.type === "ServersJson") {
         createNodeField({
@@ -56,6 +66,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
             value: slugify(node.title),
         });
     }
+
     // Events Json File Create
     if (node.internal.type === "EventJson") {
         createNodeField({
@@ -71,7 +82,7 @@ export const createPages: GatsbyNode["createPages"] = ({
     graphql,
 }) => {
     const { createPage } = actions;
-    //  const singlePostTemplate = path.resolve('src/templates/single-post.js')
+    // const singlePostTemplate = path.resolve("src/templates/single-post.js");
     // const templates = {
     //     singlePost: path.resolve("src/templates/single-post/index.js"),
     //     tagPosts: path.resolve("src/templates/tag-post/index.js"),
@@ -250,4 +261,135 @@ export const createPages: GatsbyNode["createPages"] = ({
     //         });
     //     });
     // });
+};
+
+export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] =
+    ({ actions, schema }) => {
+        const { createTypes } = actions;
+
+        const typeDefs = [
+            schema.buildObjectType({
+                name: "SiteConfig",
+                fields: {
+                    id: "String!",
+                    name: "String!",
+                    title: "String!",
+                    url: "String!",
+                    keyword: "String!",
+                    description: "String!",
+                    slogan: "String!",
+                    total_donate: "String!",
+                    header_about: "String!",
+                    footer_about: "String!",
+                    logo: {
+                        type: "ImageAsset",
+                        resolve(source, args, context, info) {
+                            console.log("SOURCEEE", source.logo);
+                            const node = context.nodeModel.getNodeById({
+                                id: source.logo,
+                                type: "ImageAsset",
+                            });
+                            console.log("SOURCEEE", source.logo, info);
+                            console.log("SOURCEEE, node", node);
+
+                            return node;
+                        },
+                    },
+                    favicon: "ImageAsset",
+                    created_at: "String!",
+                    updated_at: "String!",
+                    deleted_at: "String!",
+                },
+                interfaces: ["Node"],
+            }),
+            schema.buildObjectType({
+                name: "ImageAsset",
+                fields: {
+                    url: "String",
+                    alt: "String",
+                    width: "Int",
+                    height: "Int",
+                },
+                interfaces: ["Node", "RemoteFile"],
+            }),
+        ];
+
+        createTypes(typeDefs);
+    };
+
+export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
+    // get data from GitHub API at build time
+    // const siteConfig = await fetch(`http://localhost:3000/site_config`);
+    // const siteConfigData = await siteConfig.json();
+    // nodeBuilder(gatsbyApi, {
+    //     type: "SiteConfig",
+    //     data: siteConfigData,
+    // });
+};
+
+const nodeBuilder = async (
+    gatsbyApi: SourceNodesArgs,
+    input: NodeBuilderInput
+) => {
+    const id = gatsbyApi.createNodeId(`${input.type}-${input.data.id}`);
+
+    const data: Record<string, unknown> = input.data as unknown as Record<
+        string,
+        unknown
+    >;
+
+    if (input.type === "SiteConfig") {
+        data.logo = await createAssetNode(gatsbyApi, input.data.logo);
+    }
+
+    const node = {
+        ...data,
+        id,
+        _id: data.id,
+        parent: null,
+        children: [],
+        internal: {
+            type: input.type,
+            contentDigest: gatsbyApi.createContentDigest(data),
+        },
+    };
+
+    console.log("SITE CONFIG", node);
+
+    await gatsbyApi.actions.createNode(node);
+};
+
+const createAssetNode = async (
+    gatsbyApi: SourceNodesArgs,
+    imageUrl: string
+) => {
+    const imageAttr = await probe(imageUrl);
+
+    const id = gatsbyApi.createNodeId(`Asset-${imageUrl}`);
+
+    const imageData = {
+        url: imageUrl,
+        mimeType: imageAttr.mime,
+        filename: imageUrl,
+        width: imageAttr.width,
+        height: imageAttr.height,
+    };
+    console.log("IMAGE DATA", imageData);
+
+    const assetNode = {
+        ...imageData,
+        id,
+        parent: null,
+        children: [],
+        internal: {
+            type: "ImageAsset",
+            contentDigest: gatsbyApi.createContentDigest(imageData),
+        },
+    } satisfies IRemoteImageNodeInput;
+
+    console.log("IMAGE DATA AssetNode", assetNode);
+
+    await gatsbyApi.actions.createNode(assetNode);
+
+    return id;
 };

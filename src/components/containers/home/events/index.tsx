@@ -9,7 +9,7 @@ import SectionTitle from "@components/common/title";
 import Video from "@components/common/video";
 import EventItem from "@components/ui/events";
 import { SectionArea, EventContentWrap, LayerStyle, Thumb } from "./style";
-import { AllQuery, EventItemData } from "@utils/interface";
+import { AllQuery, EventItemData } from "../../../../interfaces";
 
 const EventArea: React.FC = () => {
     const eventsQuery = useStaticQuery(graphql`

@@ -1,4 +1,4 @@
-import { AllQuery, BlogItem } from "@utils/interface";
+import { AllQuery, BlogItem } from "../../../interfaces";
 
 export interface SingleTagProps {
     data: {

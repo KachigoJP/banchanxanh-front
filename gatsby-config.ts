@@ -4,6 +4,10 @@ import type { GatsbyConfig } from "gatsby";
 // Source
 import AppConfig from "./src/config";
 
+require("dotenv").config({
+    path: ".env",
+});
+
 const config: GatsbyConfig = {
     siteMetadata: AppConfig,
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
