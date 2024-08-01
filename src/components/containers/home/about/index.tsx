@@ -63,7 +63,7 @@ const AboutArea: React.FC = () => {
     const imageTwo = getImage(image2);
 
     return (
-        <SectionArea>
+        <SectionArea id="about-us">
             <Container>
                 <Row>
                     <Col lg={9}>
