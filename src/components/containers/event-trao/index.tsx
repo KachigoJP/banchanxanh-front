@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Col, Row, Container } from "react-bootstrap";
-import { fbDatabase } from "@utils/firebase";
-import { ref, update } from "firebase/database";
 import { StaticImage } from "gatsby-plugin-image";
 import CheckinForm from "./checkin-form";
 import Button from "@components/common/button";
