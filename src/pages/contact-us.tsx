@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { Link, HeadFC, PageProps } from "gatsby";
 
 import Layout from "@components/layout";
 import SEO from "@components/common/seo";
-import PageBreadcrumb from "@components/common/breadcrumb";
+// import PageBreadcrumb from "@components/common/breadcrumb";
 import ContactUsArea from "@components/containers/contact-us";
 
 // const ContactPages = ({ location, pageContext }) => {
@@ -13,11 +12,11 @@ const ContactPages: React.FC<PageProps> = (props) => {
     return (
         <Layout>
             <SEO title="Contact Pages" pathname="/" />
-            <PageBreadcrumb
+            {/* <PageBreadcrumb
                 pageContext={pageContext}
                 location={location}
                 title="Liên Hệ"
-            />
+            /> */}
             <ContactUsArea />
         </Layout>
     );
