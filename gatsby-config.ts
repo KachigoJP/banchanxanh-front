@@ -1,38 +1,31 @@
-import AppConfig from "./config/config";
+import path from "path";
 import type { GatsbyConfig } from "gatsby";
 
-const activeEnv =
-    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development";
+// Source
+import AppConfig from "./src/config";
+
+require("dotenv").config({
+    path: ".env",
+});
 
 const config: GatsbyConfig = {
-    pathPrefix: AppConfig.pathPrefix,
-    siteMetadata: {
-        title: AppConfig.title,
-        titleTemplate: AppConfig.titleTemplate,
-        description: AppConfig.description,
-        image: AppConfig.image,
-        siteLanguage: AppConfig.siteLanguage,
-        author: AppConfig.author,
-        mainUrl: AppConfig.siteUrl,
-        siteUrl:
-            activeEnv === "development"
-                ? AppConfig.localUrl
-                : `${AppConfig.siteUrl}${AppConfig.pathPrefix}`,
-        canonical: AppConfig.canonical,
-        twitterUsername: AppConfig.twitterUsername,
-        keywords: AppConfig.keywords,
-    },
-    flags: {
-        DEV_SSR: true,
-    },
+    siteMetadata: AppConfig,
+    // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
+    // If you use VSCode you can also use the GraphQL plugin
+    // Learn more at: https://gatsby.dev/graphql-typegen
+    graphqlTypegen: true,
     plugins: [
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-image`,
+        "gatsby-plugin-image",
         `gatsby-plugin-emotion`,
         `gatsby-plugin-theme-ui`,
+        "gatsby-plugin-styled-components",
+        // "gatsby-plugin-google-gtag",
+        "gatsby-plugin-sitemap",
+        "gatsby-plugin-mdx",
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
         `gatsby-transformer-json`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -56,6 +49,28 @@ const config: GatsbyConfig = {
             },
         },
         {
+            resolve: "gatsby-plugin-manifest",
+            options: {
+                icon: "src/assets/images/favicon.png",
+            },
+        },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "images",
+                path: "./src/assets/images/",
+            },
+            __key: "images",
+        },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "pages",
+                path: "./src/pages/",
+            },
+            __key: "pages",
+        },
+        {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "data",
@@ -77,8 +92,6 @@ const config: GatsbyConfig = {
                 },
             },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -132,6 +145,24 @@ const config: GatsbyConfig = {
                         type: "image/png",
                     },
                 ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-alias-imports`,
+            options: {
+                alias: {
+                    "@assets": path.resolve(__dirname, "./src/assets"),
+                    "@components": path.resolve(__dirname, "./src/components"),
+                    "@config": path.resolve(__dirname, "./src/config"),
+                    "@data": path.resolve(__dirname, "./src/data"),
+                    "@pages": path.resolve(__dirname, "./src/pages"),
+                    "@theme": path.resolve(__dirname, "./src/theme"),
+                    "@utils": path.resolve(__dirname, "./src/utils"),
+                    // "@constants": path.resolve(__dirname, "./src/constants"),
+                    // "@hooks": path.resolve(__dirname, "./src/hooks"),
+                    "@i18n": path.resolve(__dirname, "./src/i18n"),
+                },
+                extensions: [".ts", ".tsx"],
             },
         },
     ],
