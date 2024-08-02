@@ -2,12 +2,11 @@ FROM node:18.20.4 as builder
 
 WORKDIR /app
 # Copies only package.json and yarn.lock before running yarn install. This enables better caching, as the yarn install step will only be re-run if these files have changed.
-COPY package.json ./
+# COPY package.json ./
+COPY . .
 # Uses the --frozen-lockfile option to ensure that yarn.lock is not updated during the install process
 # Adds the --production flag to only install production dependencies, skipping development dependencies
 RUN npm install --legacy-peer-deps
-
-COPY . .
 
 RUN npm run build
 
