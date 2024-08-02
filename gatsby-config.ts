@@ -39,15 +39,15 @@ const config: GatsbyConfig = {
                 ],
             },
         },
-        {
-            resolve: `gatsby-plugin-breadcrumb`,
-            options: {
-                useAutoGen: true,
-                autoGenHomeLabel: `Home`,
-                exclude: [`/dev-404-page`, `/404`, `/404.html`],
-                useClassNames: true,
-            },
-        },
+        // {
+        //     resolve: `gatsby-plugin-breadcrumb`,
+        //     options: {
+        //         useAutoGen: true,
+        //         autoGenHomeLabel: `Home`,
+        //         exclude: [`/dev-404-page`, `/404`, `/404.html`],
+        //         useClassNames: true,
+        //     },
+        // },
         {
             resolve: "gatsby-plugin-manifest",
             options: {
