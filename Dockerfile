@@ -1,6 +1,6 @@
 FROM node:18.20.4 as builder
 
-WORKDIR /app-p^^
+WORKDIR /app
 # Copies only package.json and yarn.lock before running yarn install. This enables better caching, as the yarn install step will only be re-run if these files have changed.
 COPY package.json ./
 # Uses the --frozen-lockfile option to ensure that yarn.lock is not updated during the install process
