@@ -78,8 +78,6 @@ const Footer: React.FC = () => {
     //     logo: logoUrl,
     // } = footerQuery.siteConfig;
 
-    console.log(footerQuery.siteConfig);
-
     const footerimage = getImage(footerShapeImage);
 
     return (

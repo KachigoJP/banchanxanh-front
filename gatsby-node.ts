@@ -284,13 +284,10 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
                     logo: {
                         type: "ImageAsset",
                         resolve(source, args, context, info) {
-                            console.log("SOURCEEE", source.logo);
                             const node = context.nodeModel.getNodeById({
                                 id: source.logo,
                                 type: "ImageAsset",
                             });
-                            console.log("SOURCEEE", source.logo, info);
-                            console.log("SOURCEEE, node", node);
 
                             return node;
                         },
@@ -354,8 +351,6 @@ const nodeBuilder = async (
         },
     };
 
-    console.log("SITE CONFIG", node);
-
     await gatsbyApi.actions.createNode(node);
 };
 
@@ -374,7 +369,6 @@ const createAssetNode = async (
         width: imageAttr.width,
         height: imageAttr.height,
     };
-    console.log("IMAGE DATA", imageData);
 
     const assetNode = {
         ...imageData,
@@ -386,8 +380,6 @@ const createAssetNode = async (
             contentDigest: gatsbyApi.createContentDigest(imageData),
         },
     } satisfies IRemoteImageNodeInput;
-
-    console.log("IMAGE DATA AssetNode", assetNode);
 
     await gatsbyApi.actions.createNode(assetNode);
 

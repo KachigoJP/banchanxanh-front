@@ -30,10 +30,19 @@ const EventTraoArea: React.FC = () => {
                     }
                 }
             }
+            allXeJson {
+                edges {
+                    node {
+                        XE
+                        event_code
+                    }
+                }
+            }
         }
     `);
 
     const cabin = traoQuery.allCabinJson.edges as any[];
+    const xe = traoQuery.allXeJson.edges as any[];
 
     const [data, setData] = useState<any>(null);
     const [money, setMoney] = useState<number>(0);
@@ -41,11 +50,18 @@ const EventTraoArea: React.FC = () => {
     const onChangeCode = (data: any) => {
         for (const item of cabin) {
             const info: any = item.node as any;
-            console.log("INFO", info);
 
             if (data.event_code == info.event_code) {
                 data.cabin = info.cabin;
                 data.subject = info.subject;
+            }
+        }
+
+        for (const item of xe) {
+            const info: any = item.node as any;
+
+            if (data.event_code == info.event_code) {
+                data.xe = info.Xe;
             }
         }
 
@@ -85,6 +101,9 @@ const EventTraoArea: React.FC = () => {
                                                 <InfoText>
                                                     Mã tham dự:{" "}
                                                     {data.event_code}
+                                                </InfoText>
+                                                <InfoText>
+                                                    Xe: {data.xe}
                                                 </InfoText>
                                                 <InfoText>
                                                     Họ Tên: {data.fullname}
