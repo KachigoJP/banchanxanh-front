@@ -61,12 +61,17 @@ const EventTraoArea: React.FC = () => {
             const info: any = item.node as any;
 
             if (data.event_code == info.event_code) {
-                data.xe = info.Xe;
+                data.xe = info.XE;
             }
         }
 
         setData(data);
         setMoney(data.ao + data.khan + data.travel_cost);
+
+        const info = document.querySelector("#info");
+        if (info) {
+            info.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
@@ -76,91 +81,84 @@ const EventTraoArea: React.FC = () => {
                     <Col lg={12}>
                         <StyledColunm>
                             <CheckinForm onChangeCode={onChangeCode} />
-                            {data ? (
-                                <>
-                                    <Subtitle>Thông tin đăng ký</Subtitle>
-                                    <InfoContentArea>
-                                        <InfoItem>
-                                            <InfoContent>
-                                                {money > 0 ? (
-                                                    <>
-                                                        <InfoText>
-                                                            TỔNG SỐ TIỀN CẦN
-                                                            THANH TOÁN: {money}{" "}
-                                                            JPY
-                                                        </InfoText>
-                                                        <UnpaidText>
-                                                            (Bạn vui lòng thanh
-                                                            toán tại quầy
-                                                            checkin của Ban Tổ
-                                                            Chức)
-                                                        </UnpaidText>
-                                                    </>
-                                                ) : null}
+                            <Subtitle>Thông tin đăng ký</Subtitle>
+                            <InfoContentArea>
+                                <InfoItem>
+                                    {data ? (
+                                        <InfoContent id="info">
+                                            {money > 0 ? (
+                                                <>
+                                                    <InfoText>
+                                                        TỔNG SỐ TIỀN CẦN THANH
+                                                        TOÁN: {money} JPY
+                                                    </InfoText>
+                                                    <UnpaidText>
+                                                        (Bạn vui lòng thanh toán
+                                                        tại quầy checkin của Ban
+                                                        Tổ Chức)
+                                                    </UnpaidText>
+                                                </>
+                                            ) : null}
 
-                                                <InfoText>
-                                                    Mã tham dự:{" "}
-                                                    {data.event_code}
-                                                </InfoText>
-                                                <InfoText>
-                                                    Xe: {data.xe}
-                                                </InfoText>
-                                                <InfoText>
-                                                    Họ Tên: {data.fullname}
-                                                </InfoText>
-                                                <InfoText>
-                                                    Số thành viên:{" "}
-                                                    {`${data.peope_num} người`}
-                                                </InfoText>
-                                                {data.cabin ? (
-                                                    <>
-                                                        <InfoText>
-                                                            {`${data.cabin}: ${data.subject}`}
-                                                        </InfoText>
-                                                    </>
-                                                ) : null}
+                                            <InfoText>
+                                                Mã tham dự: {data.event_code}
+                                            </InfoText>
+                                            <InfoText>Xe: {data.xe}</InfoText>
+                                            <InfoText>
+                                                Họ Tên: {data.fullname}
+                                            </InfoText>
+                                            <InfoText>
+                                                Số thành viên:{" "}
+                                                {`${data.peope_num} người`}
+                                            </InfoText>
+                                            {data.cabin ? (
+                                                <>
+                                                    <InfoText>
+                                                        {`${data.cabin}: ${data.subject}`}
+                                                    </InfoText>
+                                                </>
+                                            ) : null}
 
-                                                <InfoText>
-                                                    Tiền Khăn:{" "}
-                                                    <UnpaidText
-                                                        className={
-                                                            data.khan > 0
-                                                                ? "unpaid"
-                                                                : ""
-                                                        }
-                                                    >
-                                                        {data.khan} JPY
-                                                    </UnpaidText>
-                                                </InfoText>
-                                                <InfoText>
-                                                    Tiền Áo:{" "}
-                                                    <UnpaidText
-                                                        className={
-                                                            data.ao > 0
-                                                                ? "unpaid"
-                                                                : ""
-                                                        }
-                                                    >
-                                                        {data.ao} JPY
-                                                    </UnpaidText>
-                                                </InfoText>
-                                                <InfoText>
-                                                    Tiền Xe:
-                                                    <UnpaidText
-                                                        className={
-                                                            data.travel_cost > 0
-                                                                ? "unpaid"
-                                                                : ""
-                                                        }
-                                                    >
-                                                        {data.travel_cost} JPY
-                                                    </UnpaidText>
-                                                </InfoText>
-                                            </InfoContent>
-                                        </InfoItem>
-                                    </InfoContentArea>
-                                </>
-                            ) : null}
+                                            <InfoText>
+                                                Tiền Khăn:{" "}
+                                                <UnpaidText
+                                                    className={
+                                                        data.khan > 0
+                                                            ? "unpaid"
+                                                            : ""
+                                                    }
+                                                >
+                                                    {data.khan} JPY
+                                                </UnpaidText>
+                                            </InfoText>
+                                            <InfoText>
+                                                Tiền Áo:{" "}
+                                                <UnpaidText
+                                                    className={
+                                                        data.ao > 0
+                                                            ? "unpaid"
+                                                            : ""
+                                                    }
+                                                >
+                                                    {data.ao} JPY
+                                                </UnpaidText>
+                                            </InfoText>
+                                            <InfoText>
+                                                Tiền Xe:
+                                                <UnpaidText
+                                                    className={
+                                                        data.travel_cost > 0
+                                                            ? "unpaid"
+                                                            : ""
+                                                    }
+                                                >
+                                                    {data.travel_cost} JPY
+                                                </UnpaidText>
+                                            </InfoText>
+                                        </InfoContent>
+                                    ) : null}
+                                </InfoItem>
+                            </InfoContentArea>
                         </StyledColunm>
                     </Col>
                 </Row>

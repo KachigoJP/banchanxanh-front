@@ -16,7 +16,6 @@ import {
 } from "./style";
 import { CheckinForm } from "./interface";
 
-// const ComponentForm = (props) => {
 const ComponentForm: React.FC<CheckinForm> = (props) => {
     const traoQuery = useStaticQuery(graphql`
         query TraoQuery {
@@ -90,7 +89,9 @@ const ComponentForm: React.FC<CheckinForm> = (props) => {
             }
         }
 
-        setErrMess("Vui lòng nhập đúng mã tham gia!");
+        setErrMess(
+            "Không tìm thấy thông tin. Bạn Bạn vui lòng kiểm tra đã nhập đúng thông tin đã đăng ký chưa!"
+        );
     };
 
     const onChangeSearch = (event: any) => {
@@ -132,7 +133,8 @@ const ComponentForm: React.FC<CheckinForm> = (props) => {
                                             (Thông tin có thể nhập bao gồm)
                                         </Description>
                                         <Description>
-                                            Họ tên. VD: kieu quoc chien
+                                            Đầy đủ họ và tên. VD: kieu quoc
+                                            chien
                                         </Description>
                                         <Description>
                                             Số điện thoại. VD: 08024221232
