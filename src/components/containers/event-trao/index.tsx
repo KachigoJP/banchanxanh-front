@@ -83,9 +83,9 @@ const EventTraoArea: React.FC = () => {
                             <CheckinForm onChangeCode={onChangeCode} />
                             <Subtitle>Thông tin đăng ký</Subtitle>
                             <InfoContentArea>
-                                <InfoItem>
+                                <InfoItem id="info">
                                     {data ? (
-                                        <InfoContent id="info">
+                                        <InfoContent>
                                             {money > 0 ? (
                                                 <>
                                                     <InfoText>
