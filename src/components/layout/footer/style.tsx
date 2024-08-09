@@ -57,6 +57,7 @@ export const AboutWidget = styled.div`
     }
 `;
 export const AboutWidgetText = styled.p`
+    font-size: 25px;
     margin-bottom: 25px;
 `;
 

@@ -39,6 +39,7 @@
             "@pages": ["./src/pages"],
             "@theme": ["./src/theme"],
             "@utils": ["./src/utils"],
+            "@graphql": ["./src/graphql"],
             // "@constants": path.resolve(__dirname, "./src/constants"),
             // "@hooks": path.resolve(__dirname, "./src/hooks"),
             "@i18n": ["./src/i18n"],
@@ -51,7 +52,9 @@
             "@utils/*": ["./src/utils/*"],
             // "@constants": path.resolve(__dirname, "./src/constants"),
             // "@hooks": path.resolve(__dirname, "./src/hooks"),
-            "@i18n/*": ["./src/i18n/*"]
+            "@i18n/*": ["./src/i18n/*"],
+            "@interfaces/*": ["./src/interfaces/*"],
+            "@graphql/*": ["./src/graphql/*"]
         } /* Specify a set of entries that re-map imports to additional lookup locations. */,
         // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
         // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */

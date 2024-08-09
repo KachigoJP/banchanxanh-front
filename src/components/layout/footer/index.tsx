@@ -6,6 +6,7 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 
 // Source
 import HeartIcon from "@assets/images/svg/heart.svg";
+import { useSettings } from "@graphql/settings";
 import Logo from "@components/common/logo";
 import {
     FooterWrap,
@@ -25,6 +26,7 @@ import {
     NavItem,
     FooterShapeLayer,
 } from "./style";
+import { ISetting } from "../../../interfaces/setting";
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
@@ -58,6 +60,19 @@ const Footer: React.FC = () => {
                 menuTitle
                 galleryTitle
             }
+
+            allSetting {
+                nodes {
+                    id
+                    key
+                    value
+                    type
+                    image {
+                        gatsbyImage(width: 300)
+                    }
+                    description
+                }
+            }
         }
     `);
 
@@ -72,11 +87,13 @@ const Footer: React.FC = () => {
         footerShapeImage,
     } = footerQuery.footerJson;
 
-    // const {
-    //     footer_about,
-    //     total_donate,
-    //     logo: logoUrl,
-    // } = footerQuery.siteConfig;
+    // const setting: Record<string, ISetting> = {};
+
+    // for (const item of footerQuery.allSetting.nodes) {
+    //     setting[item.key] = item as ISetting;
+    // }
+
+    const settings = useSettings();
 
     const footerimage = getImage(footerShapeImage);
 
@@ -90,21 +107,21 @@ const Footer: React.FC = () => {
                                 <AboutWidget>
                                     <Logo
                                         className="footer-logo"
-                                        // logo={logoUrl}
+                                        logo={settings.logo?.image}
                                     />
                                     <AboutWidgetText>
-                                        {footerAbout}
+                                        {settings.footer_slogan?.value || ""}
                                     </AboutWidgetText>
-                                    <WidgetTotalRaised>
+                                    {/* <WidgetTotalRaised>
                                         <RaisedTitle>
                                             {t("Total Raised")}:
                                         </RaisedTitle>
                                         <TaisedAmount>{100000}</TaisedAmount>
-                                    </WidgetTotalRaised>
+                                    </WidgetTotalRaised> */}
                                 </AboutWidget>
                             </WidgetItem>
                         </Col>
-                        {/* <Col sm={6} md={6} lg={4} xl={4}>
+                        <Col sm={6} md={6} lg={4} xl={4}>
                             <WidgetItem>
                                 <WidgetTitle>{galleryTitle}</WidgetTitle>
                                 <WidgetGallery>
@@ -133,8 +150,8 @@ const Footer: React.FC = () => {
                                     </Row>
                                 </WidgetGallery>
                             </WidgetItem>
-                        </Col> */}
-                        {/* <Col sm={6} md={6} lg={4} xl={4}>
+                        </Col>
+                        <Col sm={6} md={6} lg={4} xl={4}>
                             <WidgetItem className="menu-wrap-two-column">
                                 <WidgetTitle>{menuTitle}</WidgetTitle>
                                 <WidgetMenuWrap>
@@ -191,10 +208,16 @@ const Footer: React.FC = () => {
                                     </Row>
                                 </WidgetMenuWrap>
                             </WidgetItem>
-                        </Col> */}
+                        </Col>
                     </Row>
                 </Container>
-                {/* <div className="scroll-to-top"><img src="assets/img/icons/arrow-up-line.png" alt="Icon-Image" /></div> */}
+                <div className="scroll-to-top">
+                    <StaticImage
+                        className="shape-img3"
+                        src="../../../assets/images/icons/arrow-up-line.png"
+                        alt="Icon-Image"
+                    />
+                </div>
             </FooterMain>
             <Container>
                 <Row>

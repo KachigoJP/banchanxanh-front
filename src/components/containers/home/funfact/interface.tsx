@@ -2,14 +2,10 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export interface FunfactItemData {
     node: {
-        id: string;
-        title: string;
-        countNumber: number;
-        countAmount: string;
-        shapImage: {
+        f1IconImage: {
             childImageSharp: IGatsbyImageData;
         };
-        iconImage: {
+        shap4Image: {
             childImageSharp: IGatsbyImageData;
         };
     };

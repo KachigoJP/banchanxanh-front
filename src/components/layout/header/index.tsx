@@ -12,9 +12,10 @@ import Button from "@components/common/button";
 import MainMenu from "@components/ui/menu/main-menu";
 import MobileNavMenu from "@components/ui/menu/mobile-menu";
 import * as Styled from "./style";
+import { ISetting } from "@interfaces/setting";
 
 const Header = () => {
-    const allmenuData = useStaticQuery(graphql`
+    const staticQuery = useStaticQuery(graphql`
         query AllmenuQuery {
             allMenuJson {
                 edges {
@@ -26,9 +27,21 @@ const Header = () => {
                     }
                 }
             }
+            allSetting {
+                nodes {
+                    id
+                    key
+                    value
+                    type
+                    image {
+                        gatsbyImage(width: 300)
+                    }
+                    description
+                }
+            }
         }
     `);
-    const menuData = allmenuData.allMenuJson.edges;
+    const menuData = staticQuery.allMenuJson.edges;
 
     // const gatsbyRepoData = useStaticQuery(graphql`
     //     query test {
@@ -38,6 +51,12 @@ const Header = () => {
     //         }
     //     }
     // `);
+
+    const setting: Record<string, ISetting> = {};
+
+    for (const item of staticQuery.allSetting.nodes) {
+        setting[item.key] = item as ISetting;
+    }
 
     // Sticky Menu
     const [scroll, setScroll] = useState(0);
@@ -78,7 +97,7 @@ const Header = () => {
                 <Container>
                     <Row className="align-items-center">
                         <Col lg={3} md={4} sm={5} xs={8}>
-                            <Logo />
+                            <Logo logo={setting?.logo?.image} />
                         </Col>
                         <Col lg={9} md={8} sm={7} xs={4}>
                             <Styled.HeaderMenuArea>
@@ -95,7 +114,7 @@ const Header = () => {
                                     </Styled.MobileMenuBtn>
                                     <Styled.ButtonBoxArea>
                                         <Button
-                                            sx={{ ml: "15px" }}
+                                            css={{ ml: "15px" }}
                                             type="button"
                                             path="/contact-us"
                                             color="gradient"
@@ -123,7 +142,7 @@ const Header = () => {
                     ></div>
                     <Styled.OffCanvasContent>
                         <Styled.OffCanvasHeader>
-                            <Logo />
+                            <Logo logo={setting?.logo?.image} />
                             <Styled.CloseAction>
                                 <Styled.ButtonClose
                                     onClick={ofcanvasHandaler}

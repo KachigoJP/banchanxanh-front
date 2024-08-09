@@ -7,7 +7,9 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useTranslation } from "react-i18next";
 
 // Source
+import Images from "@utils/images";
 import Button from "@components/common/button";
+import { useSettings } from "@graphql/settings";
 import {
     HomeSliderItem,
     Section,
@@ -52,6 +54,9 @@ const Hero = () => {
         }
     `);
 
+    const settings = useSettings();
+    console.log("settings", settings);
+
     const {
         subTitle,
         title,
@@ -61,7 +66,7 @@ const Hero = () => {
         shapeImage2,
     } = heroSlider.heroJson;
 
-    const image = getImage(sliderImage);
+    const heroImage = getImage(settings.hero_image.image);
     const image1 = getImage(circleImage);
     const image2 = getImage(shapeImage1);
     const image3 = getImage(shapeImage2);
@@ -91,12 +96,12 @@ const Hero = () => {
                                         alt="BanChanXanh"
                                         className="logo"
                                     />
-                                    <h6>{subTitle}</h6>
+                                    <h6>{settings.title.value}</h6>
                                 </SubTitle>
                                 <HeroTitleWrap>
                                     <h1
                                         dangerouslySetInnerHTML={{
-                                            __html: title,
+                                            __html: settings.slogan.value,
                                         }}
                                     />
                                 </HeroTitleWrap>
@@ -126,27 +131,39 @@ const Hero = () => {
                         >
                             <LayerStyle>
                                 <div className="thumb scene">
-                                    {image ? (
+                                    {heroImage ? (
                                         <span
                                             className="scene-layer"
                                             data-depth="0.20"
                                         >
-                                            <GatsbyImage image={image} alt="" />
+                                            <GatsbyImage
+                                                image={heroImage}
+                                                alt=""
+                                                imgStyle={{ aspectRatio: "1" }}
+                                            />
                                         </span>
                                     ) : null}
 
                                     <div className="shape-circle scene">
-                                        {image1 ? (
-                                            <span
-                                                className="scene-layer"
-                                                data-depth="0.10"
-                                            >
-                                                <GatsbyImage
-                                                    image={image1}
-                                                    alt=""
-                                                />
-                                            </span>
-                                        ) : null}
+                                        <span
+                                            className="scene-layer"
+                                            data-depth="0.10"
+                                        >
+                                            <StaticImage
+                                                src="../../../../assets/images/shape/circle1.png"
+                                                alt="Hero Circle Image"
+                                            />
+                                        </span>
+                                        <span
+                                            className="scene-layer"
+                                            data-depth="0.40"
+                                            ref={sceneEl}
+                                        >
+                                            <StaticImage
+                                                src="../../../../assets/images/shape/circle1.png"
+                                                alt="Hero Circle Image"
+                                            />
+                                        </span>
                                         {image3 ? (
                                             <span
                                                 className="scene-layer"
@@ -204,28 +221,28 @@ const Hero = () => {
                         <div className="shape-style1">
                             <StaticImage
                                 className="shape-img1"
-                                src="../../../../data/images/shape/map1.png"
+                                src="../../../../assets/images/shape/map1.png"
                                 alt=""
                             />
                         </div>
                         <div className="shape-style2">
                             <StaticImage
                                 className="shape-img2"
-                                src="../../../../data/images/shape/map2.png"
+                                src="../../../../assets/images/shape/map2.png"
                                 alt=""
                             />
                         </div>
                         <div className="shape-style3">
                             <StaticImage
                                 className="shape-img3"
-                                src="../../../../data/images/shape/banner-line1.png"
+                                src="../../../../assets/images/shape/banner-line1.png"
                                 alt=""
                             />
                         </div>
                         <div className="shape-style4">
                             <StaticImage
                                 className="shape-img3"
-                                src="../../../../data/images/shape/banner-line2.png"
+                                src="../../../../assets/images/shape/banner-line2.png"
                                 alt=""
                             />
                         </div>

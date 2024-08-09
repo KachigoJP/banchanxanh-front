@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 // Source
 import { device } from "@theme";
-import DonnerImag from "@data/images/photos/bg-donate1.jpg";
+import DonateImage from "@data/images/photos/bg-donate1.jpg";
 
 export const SectionArea = styled.section`
     overflow: hidden;
@@ -21,7 +21,7 @@ export const TdonnersConten = styled.div`
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        background: url(${DonnerImag});
+        background: url(${DonateImage});
         margin-top: 70px;
         min-height: 300px;
         position: relative;

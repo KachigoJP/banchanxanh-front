@@ -19,17 +19,16 @@ const IndexPage = () => {
         <Layout>
             <SEO title="Home" pathname="/" />
             <Hero />
+            <FunfactArea />
 
             {/* <BlogArea /> */}
-            <ServiceArea />
+            {/* <ServiceArea /> */}
 
             <AboutArea />
-            <CausesArea />
-            <DonateArea />
-            <FunfactArea />
-            <TestimonialArea />
-            <LatestBlog />
-            <SponsorsArea />
+            {/* <CausesArea /> */}
+            {/* <DonateArea /> */}
+            {/* <TestimonialArea /> */}
+            {/* <LatestBlog /> */}
         </Layout>
     );
 };

@@ -152,6 +152,7 @@ export const HeroTitleWrap = styled.div`
 export const LayerStyle = styled.div`
     margin-top: 54px;
     position: relative;
+
     ${device.small} {
         max-width: 380px;
         margin-left: auto;

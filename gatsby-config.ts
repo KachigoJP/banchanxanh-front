@@ -10,9 +10,6 @@ require("dotenv").config({
 
 const config: GatsbyConfig = {
     siteMetadata: AppConfig,
-    // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-    // If you use VSCode you can also use the GraphQL plugin
-    // Learn more at: https://gatsby.dev/graphql-typegen
     graphqlTypegen: true,
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -39,15 +36,6 @@ const config: GatsbyConfig = {
                 ],
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-breadcrumb`,
-        //     options: {
-        //         useAutoGen: true,
-        //         autoGenHomeLabel: `Home`,
-        //         exclude: [`/dev-404-page`, `/404`, `/404.html`],
-        //         useClassNames: true,
-        //     },
-        // },
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -58,7 +46,7 @@ const config: GatsbyConfig = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "images",
-                path: "./src/assets/images/",
+                path: `${__dirname}/src/assets/images/`,
             },
             __key: "images",
         },
@@ -75,13 +63,6 @@ const config: GatsbyConfig = {
             options: {
                 name: "data",
                 path: `${__dirname}/src/data/`,
-            },
-        },
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "images",
-                path: `${__dirname}/src/assets/images/`,
             },
         },
         {
@@ -161,6 +142,8 @@ const config: GatsbyConfig = {
                     // "@constants": path.resolve(__dirname, "./src/constants"),
                     // "@hooks": path.resolve(__dirname, "./src/hooks"),
                     "@i18n": path.resolve(__dirname, "./src/i18n"),
+                    "@interfaces": path.resolve(__dirname, "./src/interfaces"),
+                    "@graphql": path.resolve(__dirname, "./src/graphql"),
                 },
                 extensions: [".ts", ".tsx"],
             },

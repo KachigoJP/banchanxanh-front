@@ -1,4 +1,7 @@
+import { IGatsbyImageData, ImageDataLike } from "gatsby-plugin-image";
+
 export interface LogoProps {
     className?: string;
-    logo?: string;
+    alt?: string;
+    logo: ImageDataLike | null;
 }

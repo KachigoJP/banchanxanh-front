@@ -7,31 +7,13 @@ import {
     SourceNodesArgs,
 } from "gatsby";
 import type { IRemoteImageNodeInput } from "gatsby-plugin-utils";
+import type { createRemoteFileNode } from "gatsby-source-filesystem";
 import probe from "probe-image-size";
 
 // Source
 import { slugify } from "./src/utils/functions";
 import { NodeBuilderInput } from "./src/interfaces";
-import { createSiteConfigSchema, createAssetSchema } from "@utils/schemas";
-
-// export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
-//     actions.setWebpackConfig({
-//         resolve: {
-//             alias: {
-//                 "@assets": path.resolve(__dirname, "./src/assets"),
-//                 "@components": path.resolve(__dirname, "./src/components"),
-//                 "@config": path.resolve(__dirname, "./src/config"),
-//                 "@data": path.resolve(__dirname, "./src/data"),
-//                 "@pages": path.resolve(__dirname, "./src/pages"),
-//                 "@theme": path.resolve(__dirname, "./src/theme"),
-//                 "@utils": path.resolve(__dirname, "./src/utils"),
-//                 // "@constants": path.resolve(__dirname, "./src/constants"),
-//                 // "@hooks": path.resolve(__dirname, "./src/hooks"),
-//                 "@i18n": path.resolve(__dirname, "./src/i18n"),
-//             },
-//         },
-//     });
-// };
+import { ISetting } from "./src/interfaces/setting";
 
 // Single Post Page
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
@@ -268,60 +250,59 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
         const { createTypes } = actions;
 
         const typeDefs = [
+            // schema.buildObjectType({
+            //     name: "ImageAsset",
+            //     fields: {
+            //         alt: "String",
+            //     },
+            //     interfaces: ["Node", "RemoteFile"],
+            // }),
             schema.buildObjectType({
-                name: "SiteConfig",
+                name: "Setting",
                 fields: {
                     id: "String!",
-                    name: "String!",
-                    title: "String!",
-                    url: "String!",
-                    keyword: "String!",
+                    key: "String!",
+                    value: "String!",
+                    type: "String!",
                     description: "String!",
-                    slogan: "String!",
-                    total_donate: "String!",
-                    header_about: "String!",
-                    footer_about: "String!",
-                    logo: {
-                        type: "ImageAsset",
-                        resolve(source, args, context, info) {
-                            const node = context.nodeModel.getNodeById({
-                                id: source.logo,
-                                type: "ImageAsset",
-                            });
-
-                            return node;
-                        },
-                    },
-                    favicon: "ImageAsset",
-                    created_at: "String!",
-                    updated_at: "String!",
-                    deleted_at: "String!",
+                    image: "ImageAsset",
                 },
                 interfaces: ["Node"],
             }),
-            schema.buildObjectType({
-                name: "ImageAsset",
-                fields: {
-                    url: "String",
-                    alt: "String",
-                    width: "Int",
-                    height: "Int",
-                },
-                interfaces: ["Node", "RemoteFile"],
-            }),
         ];
 
-        createTypes(typeDefs);
+        // createTypes(typeDefs);
+        createTypes(`
+            type Setting implements Node {
+                _id: Int!
+                id: String!
+                key: String!
+                value: String!
+                type: String!
+                description: String!
+                image: ImageAsset @link
+            }
+            type ImageAsset implements Node & RemoteFile {
+                url: String
+                mimeType: String
+                filename: String
+                filesize: String
+                width: Int!
+                height: Int!
+            }
+        `);
     };
 
 export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
-    // get data from GitHub API at build time
-    // const siteConfig = await fetch(`http://localhost:3000/site_config`);
-    // const siteConfigData = await siteConfig.json();
-    // nodeBuilder(gatsbyApi, {
-    //     type: "SiteConfig",
-    //     data: siteConfigData,
-    // });
+    const settings = await fetch(`http://localhost:3000/settings`);
+    const settingsData: any = await settings.json();
+
+    settingsData.data.forEach((item: ISetting) => {
+        nodeBuilder(gatsbyApi, {
+            type: "Setting",
+            data: item,
+        });
+    });
 };
 
 const nodeBuilder = async (
@@ -335,8 +316,10 @@ const nodeBuilder = async (
         unknown
     >;
 
-    if (input.type === "SiteConfig") {
-        data.logo = await createAssetNode(gatsbyApi, input.data.logo);
+    if (input.type === "Setting") {
+        if (input.data.type == "image") {
+            data.image = await createAssetNode(gatsbyApi, input.data.value);
+        }
     }
 
     const node = {
@@ -360,12 +343,13 @@ const createAssetNode = async (
 ) => {
     const imageAttr = await probe(imageUrl);
 
-    const id = gatsbyApi.createNodeId(`Asset-${imageUrl}`);
+    const id = gatsbyApi.createNodeId(`ImageAsset-${imageUrl}`);
 
     const imageData = {
         url: imageUrl,
         mimeType: imageAttr.mime,
         filename: imageUrl,
+        filesize: imageAttr.length,
         width: imageAttr.width,
         height: imageAttr.height,
     };
@@ -379,7 +363,7 @@ const createAssetNode = async (
             type: "ImageAsset",
             contentDigest: gatsbyApi.createContentDigest(imageData),
         },
-    } satisfies IRemoteImageNodeInput;
+    };
 
     await gatsbyApi.actions.createNode(assetNode);
 

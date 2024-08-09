@@ -132,10 +132,10 @@ const SEO: React.FC<SEOProps> = (props) => {
     );
 };
 
-SEO.defaultProps = {
-    lang: `en`,
-    description: ``,
-    pathname: "/",
-};
+// SEO.defaultProps = {
+//     lang: `en`,
+//     description: ``,
+//     pathname: "/",
+// };
 
 export default SEO;

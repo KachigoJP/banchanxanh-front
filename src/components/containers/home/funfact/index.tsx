@@ -3,26 +3,22 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Col, Container, Row } from "react-bootstrap";
 
 // Source
-import FunfactItem from "@components/ui/funfact";
+import FunfactItem from "@components/ui/funfact-item";
 import { SectionArea } from "./style";
 import { FunfactItemData } from "./interface";
 
 const FunfactArea: React.FC = () => {
-    const funFactorQuery = useStaticQuery(graphql`
-        query FunFactorQuery {
-            allFunJson {
+    const ImagesQuery = useStaticQuery(graphql`
+        query ImagesQuery {
+            allImagesJson {
                 edges {
                     node {
-                        id
-                        title
-                        countNumber
-                        countAmount
-                        shapImage {
+                        f1IconImage {
                             childImageSharp {
                                 gatsbyImageData
                             }
                         }
-                        iconImage {
+                        shap4Image {
                             childImageSharp {
                                 gatsbyImageData
                             }
@@ -32,34 +28,41 @@ const FunfactArea: React.FC = () => {
             }
         }
     `);
-    const funFactorData = funFactorQuery.allFunJson.edges as FunfactItemData[];
+    const funFactorData = ImagesQuery.allImagesJson.edges[0] as FunfactItemData;
 
     return (
         <SectionArea>
             <Container>
                 <Row className="row-gutter-0 funfact-items-style1">
-                    {funFactorData.map((item) => {
-                        return (
-                            <Col
-                                md={4}
-                                sm={6}
-                                className="funfact-item"
-                                key={item.node.id}
-                            >
-                                <FunfactItem
-                                    countNumber={item.node.countNumber}
-                                    countAmount={item.node.countAmount}
-                                    title={item.node.title}
-                                    iconImage={
-                                        item.node.iconImage.childImageSharp
-                                    }
-                                    shapImage={
-                                        item.node.shapImage.childImageSharp
-                                    }
-                                />
-                            </Col>
-                        );
-                    })}
+                    <Col md={4} sm={6} className="funfact-item">
+                        <FunfactItem
+                            countNumber={520}
+                            countSymbol="K"
+                            title={"dddd"}
+                            iconImage={funFactorData.node.f1IconImage}
+                            shapImage={funFactorData.node.shap4Image}
+                        />
+                    </Col>
+
+                    <Col md={4} sm={6} className="funfact-item">
+                        <FunfactItem
+                            countNumber={500}
+                            countSymbol="M"
+                            title={"eeee"}
+                            iconImage={funFactorData.node.f1IconImage}
+                            shapImage={funFactorData.node.shap4Image}
+                        />
+                    </Col>
+
+                    <Col md={4} sm={6} className="funfact-item">
+                        <FunfactItem
+                            countNumber={20}
+                            countSymbol="+"
+                            title={"fff"}
+                            iconImage={funFactorData.node.f1IconImage}
+                            shapImage={funFactorData.node.shap4Image}
+                        />
+                    </Col>
                 </Row>
             </Container>
         </SectionArea>

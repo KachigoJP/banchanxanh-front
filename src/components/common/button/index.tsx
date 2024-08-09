@@ -80,10 +80,4 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = (props) => {
     );
 };
 
-Button.defaultProps = {
-    type: "button",
-    size: "medium",
-    shape: "rounded",
-};
-
 export default Button;
