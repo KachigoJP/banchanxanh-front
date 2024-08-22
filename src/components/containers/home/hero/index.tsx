@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import Images from "@utils/images";
 import Button from "@components/common/button";
 import { useSettings } from "@graphql/settings";
+import { usePhotos } from "@graphql/photos";
 import {
     HomeSliderItem,
     Section,
@@ -24,61 +25,20 @@ import {
 
 const Hero = () => {
     const { t } = useTranslation();
-    const heroSlider = useStaticQuery(graphql`
-        query HeroSlider {
-            heroJson {
-                id
-                subTitle
-                title
-                circleImage {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-                sliderImage {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-                shapeImage1 {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-                shapeImage2 {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-            }
-        }
-    `);
 
     const settings = useSettings();
-    console.log("settings", settings);
-
-    const {
-        subTitle,
-        title,
-        circleImage,
-        sliderImage,
-        shapeImage1,
-        shapeImage2,
-    } = heroSlider.heroJson;
-
     const heroImage = getImage(settings.hero_image.image);
-    const image1 = getImage(circleImage);
-    const image2 = getImage(shapeImage1);
-    const image3 = getImage(shapeImage2);
 
     // Parallax actives
     const sceneEl = useRef(null);
+
     useEffect(() => {
         if (sceneEl.current) {
             const parallaxInstance = new Parallax(sceneEl.current, {
                 relativeInput: true,
             });
             parallaxInstance.enable();
+
             return () => parallaxInstance.disable();
         }
     }, []);
@@ -139,12 +99,24 @@ const Hero = () => {
                                             <GatsbyImage
                                                 image={heroImage}
                                                 alt=""
-                                                imgStyle={{ aspectRatio: "1" }}
+                                                imgStyle={{
+                                                    maxWidth: 600,
+                                                    aspectRatio: "1",
+                                                }}
                                             />
                                         </span>
                                     ) : null}
-
                                     <div className="shape-circle scene">
+                                        <span
+                                            className="scene-layer"
+                                            data-depth="0.40"
+                                            ref={sceneEl}
+                                        >
+                                            <StaticImage
+                                                src="../../../../assets/images/shape/2.png"
+                                                alt="Hero Shape 2"
+                                            />
+                                        </span>
                                         <span
                                             className="scene-layer"
                                             data-depth="0.10"
@@ -154,47 +126,22 @@ const Hero = () => {
                                                 alt="Hero Circle Image"
                                             />
                                         </span>
-                                        <span
-                                            className="scene-layer"
-                                            data-depth="0.40"
-                                            ref={sceneEl}
-                                        >
-                                            <StaticImage
-                                                src="../../../../assets/images/shape/circle1.png"
-                                                alt="Hero Circle Image"
-                                            />
-                                        </span>
-                                        {image3 ? (
-                                            <span
-                                                className="scene-layer"
-                                                data-depth="0.40"
-                                                ref={sceneEl}
-                                            >
-                                                <GatsbyImage
-                                                    className="circle-img"
-                                                    image={image3}
-                                                    alt=""
-                                                />
-                                            </span>
-                                        ) : null}
                                     </div>
                                 </div>
-                                {image2 ? (
-                                    <div
-                                        className="shape-style1 scene"
-                                        ref={sceneEl}
+                                <div
+                                    className="shape-style1 scene"
+                                    ref={sceneEl}
+                                >
+                                    <span
+                                        className="scene-layer"
+                                        data-depth="0.30"
                                     >
-                                        <span
-                                            className="scene-layer"
-                                            data-depth="0.30"
-                                        >
-                                            <GatsbyImage
-                                                image={image2}
-                                                alt=""
-                                            />
-                                        </span>
-                                    </div>
-                                ) : null}
+                                        <StaticImage
+                                            src="../../../../assets/images/shape/1.png"
+                                            alt="Hero Shape 1"
+                                        />
+                                    </span>
+                                </div>
 
                                 <DonateCircleWrap>
                                     <div className="pie-chart-circle"></div>

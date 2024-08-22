@@ -17,6 +17,7 @@ import {
 const TestimonialItem: React.FC<TestimonialItemProps> = (props) => {
     const { client, clientSaidText, clientDesignation, clientImage } = props;
     const image = getImage(clientImage);
+
     return (
         <div className="testimonial-single">
             <ClientThumbWrap>
@@ -31,7 +32,7 @@ const TestimonialItem: React.FC<TestimonialItemProps> = (props) => {
             <ClientInfo>
                 <StaticImage
                     className="shape-line-img"
-                    src="../../data/images/shape/line-t1.png"
+                    src="../../../assets/images/shape/line-t1.png"
                     alt="Image-Givest"
                 />
                 <ClientName>{client}</ClientName>

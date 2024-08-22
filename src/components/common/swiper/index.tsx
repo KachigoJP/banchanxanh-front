@@ -21,31 +21,29 @@ import { SwiperProps } from "./interface";
 const SwiperSlider: React.FC<React.PropsWithChildren<SwiperProps>> = (
     props
 ) => {
-    const {
-        children,
-        layout,
-        spaceBetween = 50,
-        slidesPerView = 4,
-        ...remainProps
-    } = props;
+    const { children, layout, spaceBetween = 50, slidesPerView = 4 } = props;
 
-    const settings = {
-        module: [Navigation, Pagination, Scrollbar, A11y, EffectFade],
-        spaceBetween,
-        slidesPerView,
-        loop: true,
-        centeredSlides: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        ...remainProps,
-    };
     const { nav, dots } = layout;
 
     return (
         <div className={`swiper-main-wrapper ${nav} ${dots}`}>
-            <Swiper {...settings}>{children}</Swiper>
+            <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
+                spaceBetween={spaceBetween}
+                slidesPerView={slidesPerView}
+                loop={true}
+                autoplay={{
+                    delay: 500,
+                    disableOnInteraction: false,
+                }}
+                centeredSlides={true}
+                navigation={{
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                }}
+            >
+                {children}
+            </Swiper>
         </div>
     );
 };

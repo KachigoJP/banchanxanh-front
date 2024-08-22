@@ -26,7 +26,7 @@ import {
     NavItem,
     FooterShapeLayer,
 } from "./style";
-import { ISetting } from "../../../interfaces/setting";
+import { ISetting } from "../../../interfaces/response";
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
@@ -86,12 +86,6 @@ const Footer: React.FC = () => {
         quickLinkTwo,
         footerShapeImage,
     } = footerQuery.footerJson;
-
-    // const setting: Record<string, ISetting> = {};
-
-    // for (const item of footerQuery.allSetting.nodes) {
-    //     setting[item.key] = item as ISetting;
-    // }
 
     const settings = useSettings();
 

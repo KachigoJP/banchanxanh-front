@@ -4,31 +4,13 @@ import { Col, Container, Row } from "react-bootstrap";
 
 // Source
 import FunfactItem from "@components/ui/funfact-item";
+import { useSettings } from "@graphql/settings";
 import { SectionArea } from "./style";
-import { FunfactItemData } from "./interface";
+import { usePhotos } from "@graphql/photos";
 
 const FunfactArea: React.FC = () => {
-    const ImagesQuery = useStaticQuery(graphql`
-        query ImagesQuery {
-            allImagesJson {
-                edges {
-                    node {
-                        f1IconImage {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                        shap4Image {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
-    const funFactorData = ImagesQuery.allImagesJson.edges[0] as FunfactItemData;
+    const settings = useSettings();
+    const photos = usePhotos();
 
     return (
         <SectionArea>
@@ -36,31 +18,31 @@ const FunfactArea: React.FC = () => {
                 <Row className="row-gutter-0 funfact-items-style1">
                     <Col md={4} sm={6} className="funfact-item">
                         <FunfactItem
-                            countNumber={520}
-                            countSymbol="K"
-                            title={"dddd"}
-                            iconImage={funFactorData.node.f1IconImage}
-                            shapImage={funFactorData.node.shap4Image}
+                            countNumber={parseInt(settings.member_num.value)}
+                            countSymbol=""
+                            title={"Người tham gia"}
+                            iconImage={photos.icon_1.image}
+                            shapImage={photos.shape_4.image}
                         />
                     </Col>
 
                     <Col md={4} sm={6} className="funfact-item">
                         <FunfactItem
-                            countNumber={500}
-                            countSymbol="M"
-                            title={"eeee"}
-                            iconImage={funFactorData.node.f1IconImage}
-                            shapImage={funFactorData.node.shap4Image}
+                            countNumber={parseInt(settings.trip_num.value)}
+                            countSymbol=""
+                            title={"Hành Trình"}
+                            iconImage={photos.icon_2.image}
+                            shapImage={photos.shape_4.image}
                         />
                     </Col>
 
                     <Col md={4} sm={6} className="funfact-item">
                         <FunfactItem
-                            countNumber={20}
-                            countSymbol="+"
-                            title={"fff"}
-                            iconImage={funFactorData.node.f1IconImage}
-                            shapImage={funFactorData.node.shap4Image}
+                            countNumber={parseInt(settings.school_num.value)}
+                            countSymbol=""
+                            title={"Ngôi trường đã xây"}
+                            iconImage={photos.icon_3.image}
+                            shapImage={photos.shape_4.image}
                         />
                     </Col>
                 </Row>

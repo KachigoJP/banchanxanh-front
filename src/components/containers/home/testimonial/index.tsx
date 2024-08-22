@@ -6,7 +6,7 @@ import { SwiperSlide } from "swiper/react";
 
 // Source
 import SectionTitle from "@components/common/title";
-import TestimonialItem from "@components/ui/testimonial";
+import TestimonialItem from "@components/ui/testimonial-item";
 import Swiper from "@components/common/swiper";
 import {
     SectionArea,
@@ -14,30 +14,25 @@ import {
     TestimonialContent,
     NavigationWrap,
 } from "./style";
-import { TestimoniaItem } from "./interface";
+import { ITestimoniaItem } from "./interface";
 
 const TestimonialArea: React.FC = () => {
     const testimonialQuery = useStaticQuery(graphql`
-        query TestimonialQuery {
-            allTestimonialJson {
-                edges {
-                    node {
-                        id
-                        clientName
-                        clientSaidText
-                        clientDesignation
-                        clientImage {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
+        query {
+            allTestimonial {
+                nodes {
+                    id
+                    person_name
+                    person_title
+                    person_photo {
+                        gatsbyImage(width: 300)
                     }
+                    content
                 }
             }
         }
     `);
-    const testimonialData = testimonialQuery.allTestimonialJson
-        .edges as TestimoniaItem[];
+    const testimonialData = testimonialQuery.allTestimonial.nodes as any[];
 
     return (
         <SectionArea>
@@ -58,8 +53,8 @@ const TestimonialArea: React.FC = () => {
                                         "123px",
                                     ],
                                 }}
-                                subTitle={"Recent Events"}
-                                title={"What People Say About Us."}
+                                subTitle={"Cảm nghĩ cá nhân"}
+                                title={"Mọi người nói gì về chúng tôi?"}
                             />
                         </TitleWrap>
                     </Col>
@@ -76,24 +71,21 @@ const TestimonialArea: React.FC = () => {
                                     spaceBetween={0}
                                 >
                                     {testimonialData &&
-                                        testimonialData.map((item) => {
+                                        testimonialData.map((item: any) => {
                                             return (
-                                                <SwiperSlide key={item.node.id}>
+                                                <SwiperSlide key={item.id}>
                                                     <TestimonialItem
                                                         client={
-                                                            item.node.clientName
+                                                            item.person_name
                                                         }
                                                         clientSaidText={
-                                                            item.node
-                                                                .clientSaidText
+                                                            item.content
                                                         }
                                                         clientDesignation={
-                                                            item.node
-                                                                .clientDesignation
+                                                            item.person_title
                                                         }
                                                         clientImage={
-                                                            item.node
-                                                                .clientImage
+                                                            item.person_photo
                                                         }
                                                     />
                                                 </SwiperSlide>
@@ -101,17 +93,17 @@ const TestimonialArea: React.FC = () => {
                                         })}
                                 </Swiper>
                                 <NavigationWrap>
-                                    <div className="swiper-button-next">
-                                        <StaticImage
-                                            className="icon-img"
-                                            src="../../../data/images/icons/test-arrow-left.png"
-                                            alt="Image-Icon"
-                                        />
-                                    </div>
                                     <div className="swiper-button-prev">
                                         <StaticImage
                                             className="icon-img"
-                                            src="../../../data/images/icons/test-arrow-right.png"
+                                            src="../../../../assets/images/icons/test-arrow-left.png"
+                                            alt="Image-Icon"
+                                        />
+                                    </div>
+                                    <div className="swiper-button-next">
+                                        <StaticImage
+                                            className="icon-img"
+                                            src="../../../../assets/images/icons/test-arrow-right.png"
                                             alt="Image-Icon"
                                         />
                                     </div>

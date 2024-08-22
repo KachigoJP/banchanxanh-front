@@ -44,7 +44,7 @@ const SectionTitle: React.FC<TitleProps> = (props) => {
                 {showImage && (
                     <StaticImage
                         className="img-shape"
-                        src="../../../data/images/shape/3.png"
+                        src="../../../assets/images/shape/3.png"
                         alt="Givest-HasTech"
                     />
                 )}

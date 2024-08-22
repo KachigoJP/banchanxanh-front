@@ -18,6 +18,7 @@ export const ClientThumb = styled.div`
     width: 129px;
     & img {
         border-radius: 50%;
+        aspect-ratio: 1;
     }
 `;
 
@@ -39,12 +40,18 @@ export const ClientContent = styled.div`
     margin-bottom: 38px;
     position: relative;
     max-width: 500px;
+    max-height: 200px;
+    overflow: hidden;
 `;
 export const ClientText = styled.p`
     color: #c2c2c2;
     font-size: 25px;
     font-family: ${themeGet("fonts.heading")};
     line-height: 1.6;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 `;
 export const ClientInfo = styled.div`
     .shape-line-img {

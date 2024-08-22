@@ -1,11 +1,11 @@
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
-export interface TestimoniaItem {
-    node: {
-        id: string;
-        clientName: string;
-        clientSaidText: string;
-        clientDesignation: string;
-        clientImage: IGatsbyImageData;
+export interface ITestimoniaItem {
+    id: string;
+    person_name: string;
+    person_title: string;
+    person_photo: {
+        childImageSharp: IGatsbyImageData;
     };
+    content: string;
 }

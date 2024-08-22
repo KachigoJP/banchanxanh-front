@@ -40,7 +40,6 @@ const FunfactItem: React.FC<FunfactItemProps> = (props) => {
                 <NumberOfFunArea>
                     <h2>
                         <span className="counter-animate">
-                            {" "}
                             <CountUp start={0} end={countNumber} />{" "}
                         </span>
                         {countSymbol}
@@ -51,9 +50,7 @@ const FunfactItem: React.FC<FunfactItemProps> = (props) => {
                     src="../../../assets/images/shape/funfact-line1.png"
                     alt="Image-Givest"
                 />
-                <Title>
-                    {"//"} {title}
-                </Title>
+                <Title>{title}</Title>
             </FunFactContent>
         </FunInnerContent>
     );

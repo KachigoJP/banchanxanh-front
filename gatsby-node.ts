@@ -13,7 +13,7 @@ import probe from "probe-image-size";
 // Source
 import { slugify } from "./src/utils/functions";
 import { NodeBuilderInput } from "./src/interfaces";
-import { ISetting } from "./src/interfaces/setting";
+import { IService, ISetting, ITestimonial } from "./src/interfaces/response";
 
 // Single Post Page
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
@@ -249,29 +249,6 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
     ({ actions, schema }) => {
         const { createTypes } = actions;
 
-        const typeDefs = [
-            // schema.buildObjectType({
-            //     name: "ImageAsset",
-            //     fields: {
-            //         alt: "String",
-            //     },
-            //     interfaces: ["Node", "RemoteFile"],
-            // }),
-            schema.buildObjectType({
-                name: "Setting",
-                fields: {
-                    id: "String!",
-                    key: "String!",
-                    value: "String!",
-                    type: "String!",
-                    description: "String!",
-                    image: "ImageAsset",
-                },
-                interfaces: ["Node"],
-            }),
-        ];
-
-        // createTypes(typeDefs);
         createTypes(`
             type Setting implements Node {
                 _id: Int!
@@ -281,6 +258,24 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
                 type: String!
                 description: String!
                 image: ImageAsset @link
+            }
+            type Service implements Node {
+                _id: Int!
+                id: String!
+                key: String!
+                title: String!
+                sub_title: String!
+                image: ImageAsset @link
+                content: String!
+                tag: String!
+            }
+            type Testimonial implements Node {
+                _id: Int!
+                id: String!
+                person_name: String!
+                person_photo: ImageAsset @link
+                person_title: String!
+                content: String!
             }
             type ImageAsset implements Node & RemoteFile {
                 url: String
@@ -300,7 +295,27 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
     settingsData.data.forEach((item: ISetting) => {
         nodeBuilder(gatsbyApi, {
             type: "Setting",
-            data: item,
+            data: item as unknown as Record<string, unknown>,
+        });
+    });
+
+    const services = await fetch(`http://localhost:3000/services`);
+    const servicesData: any = await services.json();
+
+    servicesData.data.forEach((item: ISetting) => {
+        nodeBuilder(gatsbyApi, {
+            type: "Service",
+            data: item as unknown as Record<string, unknown>,
+        });
+    });
+
+    const testimonials = await fetch(`http://localhost:3000/testimonials`);
+    const testimonialsData: any = await testimonials.json();
+
+    testimonialsData.data.forEach((item: ITestimonial) => {
+        nodeBuilder(gatsbyApi, {
+            type: "Testimonial",
+            data: item as unknown as Record<string, unknown>,
         });
     });
 };
@@ -318,8 +333,25 @@ const nodeBuilder = async (
 
     if (input.type === "Setting") {
         if (input.data.type == "image") {
-            data.image = await createAssetNode(gatsbyApi, input.data.value);
+            data.image = await createAssetNode(
+                gatsbyApi,
+                input.data.value as string
+            );
         }
+    }
+
+    if (input.type === "Service") {
+        data.image = await createAssetNode(
+            gatsbyApi,
+            input.data.image as string
+        );
+    }
+
+    if (input.type === "Testimonial") {
+        // data.person_photo = await createAssetNode(
+        //     gatsbyApi,
+        //     input.data.person_photo as string
+        // );
     }
 
     const node = {

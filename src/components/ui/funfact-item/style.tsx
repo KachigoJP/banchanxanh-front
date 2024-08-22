@@ -53,4 +53,6 @@ export const IconBox = styled.div`
 export const FunFactContent = styled.div``;
 export const NumberOfFunArea = styled.div``;
 
-export const Title = styled.p``;
+export const Title = styled.p`
+    font-size: 22px;
+`;

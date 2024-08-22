@@ -1,30 +1,16 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
 import { Col, Container, Row } from "react-bootstrap";
 
 // Source
 import SectionTitle from "@components/common/title";
-import SponsorLogo from "@components/ui/sponsors";
+import SponsorLogo from "@components/ui/sponsors-logo";
+import { usePhotos } from "@graphql/photos";
 import { SectionArea, BrandLogoContent } from "./style";
 
 const SponsorsArea: React.FC = () => {
-    const sponsorsQuery = useStaticQuery(graphql`
-        query SponsorsQuery {
-            allSponsorsJson {
-                edges {
-                    node {
-                        id
-                        sponsorLogo {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
-    const sponsorsData = sponsorsQuery.allSponsorsJson.edges;
+    const photos = usePhotos();
+
     return (
         <SectionArea>
             <Container>
@@ -41,25 +27,20 @@ const SponsorsArea: React.FC = () => {
                                 mb: ["30px", "50px", "60px", "60px", "60px"],
                                 mt: ["0px", "0px", "0px", "0px", "60px"],
                             }}
-                            title={"Our Current Sponsors."}
+                            title={"Đồng hành cùng chúng tôi"}
                         />
                     </Col>
                     <Col xl={{ span: 7, offset: 1 }} lg={8}>
                         <BrandLogoContent>
                             <Row className="row row-cols-3 row-cols-sm-5">
-                                {sponsorsData &&
-                                    sponsorsData.map((item) => {
-                                        return (
-                                            <Col key={item.node.id}>
-                                                <SponsorLogo
-                                                    sponsorLogo={
-                                                        item.node.sponsorLogo
-                                                            .childImageSharp
-                                                    }
-                                                />
-                                            </Col>
-                                        );
-                                    })}
+                                <Col>
+                                    <SponsorLogo
+                                        sponsorLogo={
+                                            photos.sponsor_sm2000.image
+                                                .childImageSharp
+                                        }
+                                    />
+                                </Col>
                             </Row>
                         </BrandLogoContent>
                     </Col>

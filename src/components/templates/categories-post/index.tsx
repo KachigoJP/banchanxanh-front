@@ -4,7 +4,6 @@ import { Row, Container, Col } from "react-bootstrap";
 
 import Layout from "@components/layout";
 import SEO from "@components/common/seo";
-// import PageBreadcrumb from "@components/pagebreadcrumb";
 import BlogSidebar from "@components/ui/blog/blog-sidebar";
 import BlogList from "@components/ui/blog/list-blog";
 import { BlogPostContentArea, BlogDetailsArea } from "./style";
@@ -16,11 +15,6 @@ const CategorisPosts: React.FC<BlogCategoriesPostProps> = (props) => {
     return (
         <Layout>
             <SEO title={"Blog Categories Post"} pathname="/" />
-            {/* <PageBreadcrumb
-                pageContext={pageContext}
-                location={location}
-                title="Chi tiết hành trình"
-            /> */}
             <BlogDetailsArea>
                 <Container>
                     <Row>

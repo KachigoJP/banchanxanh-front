@@ -6,9 +6,7 @@ import { BrandLogoItem } from "./style";
 import { SponsorItemProps } from "./interface";
 
 const SponsorLogo: React.FC<SponsorItemProps> = (props) => {
-    const { sponsorLogo } = props;
-    const image = getImage(sponsorLogo);
-
+    const image = getImage(props.sponsorLogo);
     return (
         <BrandLogoItem>
             {image ? <GatsbyImage image={image} alt="Image-Givest" /> : null}

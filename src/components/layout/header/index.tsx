@@ -12,7 +12,8 @@ import Button from "@components/common/button";
 import MainMenu from "@components/ui/menu/main-menu";
 import MobileNavMenu from "@components/ui/menu/mobile-menu";
 import * as Styled from "./style";
-import { ISetting } from "@interfaces/setting";
+import { ISetting } from "@interfaces/response";
+import { useSettings } from "@graphql/settings";
 
 const Header = () => {
     const staticQuery = useStaticQuery(graphql`
@@ -27,38 +28,14 @@ const Header = () => {
                     }
                 }
             }
-            allSetting {
-                nodes {
-                    id
-                    key
-                    value
-                    type
-                    image {
-                        gatsbyImage(width: 300)
-                    }
-                    description
-                }
-            }
         }
     `);
+
     const menuData = staticQuery.allMenuJson.edges;
+    const setting = useSettings();
 
-    // const gatsbyRepoData = useStaticQuery(graphql`
-    //     query test {
-    //         example {
-    //             nameWithOwner
-    //             url
-    //         }
-    //     }
-    // `);
-
-    const setting: Record<string, ISetting> = {};
-
-    for (const item of staticQuery.allSetting.nodes) {
-        setting[item.key] = item as ISetting;
-    }
-
-    // Sticky Menu
+    // State
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scroll, setScroll] = useState(0);
     const [headerTop, setHeaderTop] = useState(0);
 
@@ -75,16 +52,8 @@ const Header = () => {
         setScroll(window.scrollY);
     };
 
-    // OfCanvas Menu
-    const [ofcanvasOpen, setOfcanvasOpen] = useState(false);
-
-    // OfCanvas Menu Open & Remove
-    const ofcanvasHandaler = () => {
-        setOfcanvasOpen((prev) => !prev);
-    };
-
-    const SearchHandaler = () => {
-        // setOfcanvasSearchOpen((prev) => !prev);
+    const onClickMenu = () => {
+        setIsMenuOpen((prev) => !prev);
     };
 
     return (
@@ -104,10 +73,7 @@ const Header = () => {
                                 <MainMenu menu={menuData} />
 
                                 <Styled.HeaderActionArea>
-                                    <Styled.MobileMenuBtn
-                                        onClick={ofcanvasHandaler}
-                                        onKeyDown={SearchHandaler}
-                                    >
+                                    <Styled.MobileMenuBtn onClick={onClickMenu}>
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -130,13 +96,12 @@ const Header = () => {
                 </Container>
             </Styled.HeaderTop>
             <Styled.MobileMenuArea
-                className={`${ofcanvasOpen ? "mobile-menu-open" : ""}`}
+                className={`${isMenuOpen ? "mobile-menu-open" : ""}`}
             >
                 <Styled.OffCanvasInner>
                     <div
                         className="OffCanvasContent"
-                        onClick={ofcanvasHandaler}
-                        onKeyDown={SearchHandaler}
+                        onClick={onClickMenu}
                         role="button"
                         tabIndex={0}
                     ></div>
@@ -144,10 +109,7 @@ const Header = () => {
                         <Styled.OffCanvasHeader>
                             <Logo logo={setting?.logo?.image} />
                             <Styled.CloseAction>
-                                <Styled.ButtonClose
-                                    onClick={ofcanvasHandaler}
-                                    onKeyDown={SearchHandaler}
-                                >
+                                <Styled.ButtonClose onClick={onClickMenu}>
                                     <i className="icofont-close"></i>
                                 </Styled.ButtonClose>
                             </Styled.CloseAction>

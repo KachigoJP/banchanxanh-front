@@ -1,4 +1,4 @@
-import { ISetting } from "@interfaces/setting";
+import { ISetting } from "@interfaces/index";
 import { graphql, useStaticQuery } from "gatsby";
 
 export const useSettings = () => {

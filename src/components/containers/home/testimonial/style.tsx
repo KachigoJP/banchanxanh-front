@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 // Source
 import { device } from "@theme";
-import testimonialTitleBg from "@data/images/testimonial/bg-testi1.jpg";
+import testimonialTitleBg from "@assets/images/photos/gallery1.jpg";
 
 export const SectionArea = styled.section`
     padding: 100px 0 60px;
@@ -108,6 +108,15 @@ export const NavigationWrap = styled.div`
     z-index: 999;
     top: -133px;
     display: none;
+
+    ${device.mobile} {
+        left: -5%;
+        height: 100px;
+        display: block;
+        padding-left: 22px;
+        top: 60px;
+    }
+
     ${device.small} {
         left: calc(65% + 1px);
         height: 100px;
