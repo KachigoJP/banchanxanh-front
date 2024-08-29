@@ -289,7 +289,7 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
     };
 
 export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
-    const settings = await fetch(`http://localhost:3000/settings`);
+    const settings = await fetch(`${process.env.API_URL}/settings`);
     const settingsData: any = await settings.json();
 
     settingsData.data.forEach((item: ISetting) => {
@@ -299,7 +299,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
         });
     });
 
-    const services = await fetch(`http://localhost:3000/services`);
+    const services = await fetch(`${process.env.API_URL}/services`);
     const servicesData: any = await services.json();
 
     servicesData.data.forEach((item: ISetting) => {
@@ -309,7 +309,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (gatsbyApi) => {
         });
     });
 
-    const testimonials = await fetch(`http://localhost:3000/testimonials`);
+    const testimonials = await fetch(`${process.env.API_URL}/testimonials`);
     const testimonialsData: any = await testimonials.json();
 
     testimonialsData.data.forEach((item: ITestimonial) => {
@@ -347,11 +347,11 @@ const nodeBuilder = async (
         );
     }
 
-    if (input.type === "Testimonial") {
-        // data.person_photo = await createAssetNode(
-        //     gatsbyApi,
-        //     input.data.person_photo as string
-        // );
+    if (input.type === "Testimonial" && input.data.person_photo !== "") {
+        data.person_photo = await createAssetNode(
+            gatsbyApi,
+            input.data.person_photo as string
+        );
     }
 
     const node = {
